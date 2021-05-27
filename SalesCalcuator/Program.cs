@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace SalesCalcuator {
     class Program {
-        static void Main(string[] args) {
+        static void Main(string[] args) {       
             
         }
-
+        
         //List2-15
         //売上データを読み込み、Saleオブジェクトのリストを返す
         static List<Sale> ReadSales(string filePath) {
