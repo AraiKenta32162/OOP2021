@@ -9,24 +9,24 @@ namespace Exercise2 {
         static void Main(string[] args) {
             if (args.Length >= 1 && args[0] == "-toi") {
                 //メートルからインチへの対応表を出力
-                PrintMeterToInchList(1, 10);
+                PrintInchToMeterList(1, 10);
             } else {
                 //インチからメートルへの対応表を出力
-                PrintInchToMeterList(1, 10);
+                PrintMeterToInchList(1, 10);
             }
         }
 
         private static void PrintMeterToInchList(int start, int stop) {
             for (int meter = start; meter <= stop; meter++) {
                 double Inch = InchConverter.FromMeter(meter);
-                Console.WriteLine("{0} inch = {1:0.0000} m", meter, Inch);
+                Console.WriteLine("{0} m = {1:0.0000} inch", meter, Inch);
             }
         }
 
         private static void PrintInchToMeterList(int start, int stop) {
             for (int inch = start; inch < stop; inch++) {
                 double meter = InchConverter.ToMeter(inch);
-                Console.WriteLine("{0} m = {1:0.0000} inch", inch, meter);
+                Console.WriteLine("{0} inch = {1:0.0000} m", inch, meter);
             }
         }
     }
