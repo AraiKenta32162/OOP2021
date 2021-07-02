@@ -8,13 +8,10 @@ namespace Test01 {
         // コンストラクタ
         public ScoreCounter(string filePath) {
             _score = ReadScore(filePath);
-
-
-            
         }
 
 
-        //メソッドの概要： 
+        //メソッドの概要： データ読み込み
         private static IEnumerable<Student> ReadScore(string filePath) {
             var scores = new List<Student>();
             var lines = File.ReadAllLines(filePath);
@@ -28,15 +25,9 @@ namespace Test01 {
                 scores.Add(score);
             }
             return scores;
-
-
-
-
-
-            
         }
 
-        //メソッドの概要： 
+        //メソッドの概要： スコアを求める
         public IDictionary<string, int> GetPerStudentScore() {
             var dict = new Dictionary<string,int>();
             foreach (var score in _score) {
