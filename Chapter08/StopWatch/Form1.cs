@@ -24,18 +24,29 @@ namespace StopWatch {
             //lbTimerDisp.Text = "00:00:00.00";//この記述でも可
         }
 
-        private void btStart_Click(object sender, EventArgs e) {
-            sw.Start();
-
+        //画面更新用タイマーのタイムアウト
+        private void tmDisp_Tick(object sender, EventArgs e) {
+            lbTimerDisp.Text = sw.Elapsed.ToString(@"hh\:mm\:ss\.ff");
         }
-
+        //スタート
+        private void btStart_Click(object sender, EventArgs e) {
+            sw.Start();　　//ストップウォッチスタート
+            tmDisp.Start();//画面更新用のタイマースタート
+        }
+        //ストップ
         private void btStop_Click(object sender, EventArgs e) {
             sw.Stop();
+            tmDisp.Stop();
         }
-
+        //リセット
         private void btReset_Click(object sender, EventArgs e) {
-            var sw = new TimeSpan(0);
-            lbTimerDisp.Text = string.Format(@"hh\:mm\:ss\.ff",00);
+            sw.Reset();
+            lbTimerDisp.Text = sw.Elapsed.ToString(@"hh\:mm\:ss\.ff");
+        }
+        //ラップ
+        private void btLap_Click(object sender, EventArgs e) {
+            //lbLapDisp.Items.Insert(0, lbTimerDisp.Text);
+            lbLapDisp.Items.Insert(0,sw.Elapsed.ToString(@"hh\:mm\:ss\.ff"));
         }
     }
 }
