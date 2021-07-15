@@ -71,6 +71,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercise1", "Chapter08\Exer
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StopWatch", "Chapter08\StopWatch\StopWatch.csproj", "{D3638F13-7905-49D8-9DEC-7FD68AC5CFCB}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CarReportSystem", "CarReportSystem", "{AF1888AC-826E-4940-8567-0EE7AFBB04DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarReportSystem", "CarReportSystem\CarReportSystem\CarReportSystem.csproj", "{C82266BE-6C97-4294-89E1-F1FD0B87B6E0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -165,6 +169,10 @@ Global
 		{D3638F13-7905-49D8-9DEC-7FD68AC5CFCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D3638F13-7905-49D8-9DEC-7FD68AC5CFCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D3638F13-7905-49D8-9DEC-7FD68AC5CFCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C82266BE-6C97-4294-89E1-F1FD0B87B6E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C82266BE-6C97-4294-89E1-F1FD0B87B6E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C82266BE-6C97-4294-89E1-F1FD0B87B6E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C82266BE-6C97-4294-89E1-F1FD0B87B6E0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -195,6 +203,7 @@ Global
 		{D935AB50-8DC0-43E4-9FD1-41100B855DDA} = {798DD325-2891-429B-86CA-057D28E62F1F}
 		{302270ED-90F6-4C23-B20C-13D9FB0E90D4} = {D935AB50-8DC0-43E4-9FD1-41100B855DDA}
 		{D3638F13-7905-49D8-9DEC-7FD68AC5CFCB} = {D935AB50-8DC0-43E4-9FD1-41100B855DDA}
+		{C82266BE-6C97-4294-89E1-F1FD0B87B6E0} = {AF1888AC-826E-4940-8567-0EE7AFBB04DF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6EE481A7-3F21-4B53-B2EC-D12CF3AC5182}
