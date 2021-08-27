@@ -21,7 +21,7 @@ namespace Exercise1
             Exercise1_3(file);
             Console.WriteLine("------------");
 
-            
+
         }
 
         private static void Exercise1_1(string file)
@@ -49,13 +49,17 @@ namespace Exercise1
                              .OrderBy(x => int.Parse(x.Firstplayed));
             foreach (var sport in sports)
             {
-                Console.WriteLine("{0}", sport.Name);
+                Console.WriteLine("{0} {1}", sport.Name, sport.Firstplayed);
             }
         }
 
         private static void Exercise1_3(string file)
         {
-            
+            var xdoc = XDocument.Load("Sample.xml");
+            var sports = xdoc.Root.Elements()
+                             .Select(x => new {
+
+                             });
         }
     }
 }
