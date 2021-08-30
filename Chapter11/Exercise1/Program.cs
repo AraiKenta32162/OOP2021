@@ -55,11 +55,15 @@ namespace Exercise1
 
         private static void Exercise1_3(string file)
         {
-            var xdoc = XDocument.Load("Sample.xml");
-            var sports = xdoc.Root.Elements()
+            var xdoc = XDocument.Load(file);
+            var sport = xdoc.Root.Elements()
                              .Select(x => new {
-
-                             });
+                                 Name = x.Element("name").Value,
+                                 Teammembers = x.Element("teammembers").Value
+                             })
+                             .OrderByDescending(x => int.Parse(x.Teammembers))
+                             .First();
+            Console.WriteLine("{0}", sport.Name);
         }
     }
 }
