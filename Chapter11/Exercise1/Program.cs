@@ -21,8 +21,11 @@ namespace Exercise1
             Exercise1_3(file);
             Console.WriteLine("------------");
 
-
+            Exercise1_4(file);
+            Console.WriteLine("------------");
         }
+
+        
 
         private static void Exercise1_1(string file)
         {
@@ -65,5 +68,21 @@ namespace Exercise1
                              .First();
             Console.WriteLine("{0}", sport.Name);
         }
+        
+        private static void Exercise1_4(string file)
+        {
+            var newfile = "sport.xml";
+
+            //P290　リスト11.15を参考に
+            var xdoc = XDocument.Load(file);
+            var element = new XElement("ballsport",
+                 new XElement("name", "サッカー", new XAttribute("kanji", "蹴球")),
+                 new XElement("teammembers", "11"),
+                 new XElement("firstplayed", "1863")
+              );
+            xdoc.Root.Add(element);
+            xdoc.Save(newfile);
+        }
+    }
     }
 }
