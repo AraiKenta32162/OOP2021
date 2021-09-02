@@ -71,18 +71,19 @@ namespace Exercise1
         
         private static void Exercise1_4(string file)
         {
-            var newfile = "sport.xml";
+            var newfile = "sport.xml";//新しいファイル
 
             //P290　リスト11.15を参考に
-            var xdoc = XDocument.Load(file);
+            var xdoc = XDocument.Load(file);//追加先のXMLファイルを読み込む
+
+            //追加するデータ
             var element = new XElement("ballsport",
                  new XElement("name", "サッカー", new XAttribute("kanji", "蹴球")),
                  new XElement("teammembers", "11"),
                  new XElement("firstplayed", "1863")
               );
-            xdoc.Root.Add(element);
+            xdoc.Root.Add(element);//追加先へ追加
             xdoc.Save(newfile);
         }
-    }
     }
 }
