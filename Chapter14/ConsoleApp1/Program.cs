@@ -12,13 +12,19 @@ namespace Section04
 {
     class Program
     {
+        
         Dictionary<string, int> Area = new Dictionary<string, int>()
         {
             {"前橋", 4210},
             {"みなかみ", 4220},
             {"宇都宮", 4110},
-            {"水戸", 4010}
+            {"水戸", 4010},
+            {"熊谷",  4320}
         };
+
+        //コードを保存する
+        List<int> cityCode = new List<int>();
+
         static void Main(string[] args)
         {
             new Program();
@@ -30,28 +36,40 @@ namespace Section04
             Console.WriteLine("yahoo!週間天気予報");
             Console.WriteLine();//改行
             Console.WriteLine("地域コードを入力してください");
-            for (int i = 0; i < Area.Count; i++)
+
+            int num = 1;
+            foreach (KeyValuePair<string, int> pair in Area)
             {
-                Console.WriteLine("{0}:{1}", i + 1, );
+                Console.WriteLine("{0}:{1}", num++, pair.Key);
+                cityCode.Add(pair.Value);//コードをリストへ保存
             }
-            Console.WriteLine("");
-            Console.WriteLine("1:前橋");　　　//4210
-            Console.WriteLine("2:みなかみ");　//4220
-            Console.WriteLine("3:宇都宮");　　//4110
-            Console.WriteLine("4:水戸");　　　//4010
+                    
             Console.WriteLine("9:その他(直接入力)");
             Console.WriteLine();//改行
 
             Console.Write(">");
             //文字列として数字を取り込む
             var selectArea = Console.ReadLine();
+            int pos = int.Parse(selectArea);
 
-            if (true)
+            IEnumerable<string> results;
+
+            int code;
+
+            if (pos != 9)
             {
-                int a = int.Parse();
+                code = cityCode[pos - 1];
+                //results = GetWeatherReportFromYahoo(cityCode[pos - 1]);
             }
-            
-            var results = GetWeatherReportFromYahoo(4210);//前橋
+            else
+            {
+                Console.Write("都市コードを入力:");
+                code = int.Parse(Console.ReadLine());
+                //results = GetWeatherReportFromYahoo(int.Parse(inputCode));
+            }
+
+            results = GetWeatherReportFromYahoo(code);
+
             foreach (var s in results)
             {
                 Console.WriteLine(s);
