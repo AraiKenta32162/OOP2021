@@ -23,7 +23,7 @@ namespace RssReader
 
         private void btRead_Click(object sender, EventArgs e)
         {
-            setRssTitle(tbUrl.Text);            
+            setRssTitle(tbUrl.Text);             
         }
         //指定したURL先からXMLデータを取得し、title要素を取得し、リストボックスへセットする
         private void setRssTitle(string uri)
@@ -39,10 +39,11 @@ namespace RssReader
                 foreach (var node in nodes)
                 {
                     lbTitles.Items.Add(node.Value);
-                    
+                    List<string> link = new List<string>();
+                    link.Add();
                 }
             }
-        }        
+        }
     }
 }
 
