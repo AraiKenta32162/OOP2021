@@ -83,9 +83,9 @@ namespace Section04
             using (var wc = new WebClient())
             {
                 wc.Headers.Add("Content-type", "charset=UTF-8");
-                var uriString = string.Format(
-                    @"http://rss.weather.yahoo.co.jp/rss/days/{0}.xml", cityCode);
-                var url = new Uri(uriString);
+                //var uriString = string.Format(
+                //    @"http://rss.weather.yahoo.co.jp/rss/days/{0}.xml", cityCode);
+                //var url = new Uri(uriString);
                 var stream = wc.OpenRead(url);
 
                 XDocument xdoc = XDocument.Load(stream);

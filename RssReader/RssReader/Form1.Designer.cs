@@ -60,15 +60,15 @@ namespace RssReader
             this.lbTitles.ItemHeight = 15;
             this.lbTitles.Location = new System.Drawing.Point(17, 58);
             this.lbTitles.Name = "lbTitles";
-            this.lbTitles.Size = new System.Drawing.Size(166, 379);
+            this.lbTitles.Size = new System.Drawing.Size(198, 379);
             this.lbTitles.TabIndex = 2;
             // 
             // wbBrowser
             // 
-            this.wbBrowser.Location = new System.Drawing.Point(189, 58);
+            this.wbBrowser.Location = new System.Drawing.Point(221, 58);
             this.wbBrowser.MinimumSize = new System.Drawing.Size(20, 20);
             this.wbBrowser.Name = "wbBrowser";
-            this.wbBrowser.Size = new System.Drawing.Size(586, 379);
+            this.wbBrowser.Size = new System.Drawing.Size(554, 379);
             this.wbBrowser.TabIndex = 3;
             // 
             // btRead
