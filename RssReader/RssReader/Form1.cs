@@ -16,6 +16,8 @@ namespace RssReader
 {
     public partial class Form1 : Form
     {
+        private IEnumerable<XElement> items;
+
         public Form1()
         {
             InitializeComponent();
@@ -33,19 +35,33 @@ namespace RssReader
                 wc.Headers.Add("Content-type", "charset=UTF-8");
 
                 var stream = wc.OpenRead(uri);
-
                 XDocument xdoc = XDocument.Load(stream);
-                var nodes = xdoc.Root.Descendants("title");
-                foreach (var node in nodes)
+                items = xdoc.Root.Descendants("item").Select(x => new ItemData
                 {
-                    lbTitles.Items.Add(node.Value);
-                    List<string> link = new List<string>();
-                    link.Add();
+                    Title = (string)x.Element("title"),
+                    Link = (string)x.Element("link"),
+                    pubDate = (DateTime)x.Element("pubData"),
+                    Description = (string)x.Element("description")
+                });
+
+                foreach (var item in items)
+                {
+                    lbTitles.Items.Add(item.Element("title").Value);
+
+                   //List<string> link = new List<string>();
+                   //wbBrowser.Url = new Uri("https://www.yahoo.co.jp/");
                 }
             }
+        }
+
+        private void lbTitles_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string link = (items.ToArray())[lbTitles.SelectedIndex].Link;
+            wbBrowser.Url = new Uri(link);
         }
     }
 }
 
 
 //https://news.yahoo.co.jp/rss/topics/top-picks.xml
+//https://www.yahoo.co.jp/

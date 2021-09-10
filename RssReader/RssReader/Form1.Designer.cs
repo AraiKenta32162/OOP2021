@@ -62,6 +62,7 @@ namespace RssReader
             this.lbTitles.Name = "lbTitles";
             this.lbTitles.Size = new System.Drawing.Size(198, 379);
             this.lbTitles.TabIndex = 2;
+            this.lbTitles.SelectedIndexChanged += new System.EventHandler(this.lbTitles_SelectedIndexChanged);
             // 
             // wbBrowser
             // 
