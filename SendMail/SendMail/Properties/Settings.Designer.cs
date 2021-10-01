@@ -9,6 +9,8 @@
 //------------------------------------------------------------------------------
 
 
+using System;
+
 namespace SendMail.Properties
 {
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
