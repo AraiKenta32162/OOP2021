@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Net;
 using System.Net.Mail;
-using System.Text;
-using System.Threading.Tasks;
+using System.Runtime.Serialization;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace SendMail
 {
@@ -53,7 +49,7 @@ namespace SendMail
                 //SMTPを使ってメールを送信する
                 SmtpClient smtpClient = new SmtpClient();
                 //メール送信のための認証情報を設定（ユーザー名、パスワード）
-
+                
                 smtpClient.Credentials
                     = new NetworkCredential(settings.MailAddr,settings.Pass);
                 smtpClient.Host = settings.Host;
@@ -87,6 +83,16 @@ namespace SendMail
         private void btConfig_Click(object sender, EventArgs e)
         {
             configForm.ShowDialog();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            //逆シリアル化
+            using (var reader = XmlReader.Create("mailsetting.xml"))
+            {
+                var serializer = new DataContractSerializer(typeof(Settings));
+                settings = serializer.ReadObject(reader) as Settings;
+            }
         }
     }
 }
