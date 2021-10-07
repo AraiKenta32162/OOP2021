@@ -1,13 +1,5 @@
-﻿using SendMail.Properties;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
+﻿using System;
 using System.Runtime.Serialization;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
 
@@ -54,7 +46,7 @@ namespace SendMail
             settings.Pass = tbPass.Text;
             settings.Ssl = cbSsl.Checked;
 
-            //シリアル化
+            //XMLファイルへ書き出し（シリアル化）
             var xws = new XmlWriterSettings
             {
                 Encoding = new System.Text.UTF8Encoding(false),
@@ -72,6 +64,17 @@ namespace SendMail
         private void btCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        //設定画面をロードすると一度だけ実行されるイベントハンドラ
+        private void ConfigForm_Load(object sender, EventArgs e)
+        {
+            tbHost.Text = settings.Host;
+            tbPort.Text = settings.Port.ToString();
+            tbUserName.Text = settings.MailAddr;
+            tbPass.Text = settings.Pass;
+            cbSsl.Checked = settings.Ssl;
+            tbSender.Text = settings.MailAddr;
         }
     }
 }

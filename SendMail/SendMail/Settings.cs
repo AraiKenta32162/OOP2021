@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SendMail
+﻿namespace SendMail
 {
     public class Settings
     {
@@ -52,3 +46,4 @@ namespace SendMail
         }
     }
 }
+//32162@ojs.ac.jp
