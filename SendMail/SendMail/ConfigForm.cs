@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Runtime.Serialization;
 using System.Windows.Forms;
-using System.Xml;
 
 namespace SendMail
 {
@@ -17,49 +15,29 @@ namespace SendMail
         //デフォルト
         private void btDefault_Click(object sender, EventArgs e)
         {
-            
             tbHost.Text = settings.sHost();
             tbPort.Text = settings.sPort();
             tbUserName.Text = settings.sMailAddr();
             tbPass.Text = settings.sPass();
             cbSsl.Checked = settings.bSsl();//SSL
             tbSender.Text = settings.sMailAddr();//送信元
-            //cbSsl.Checked = true;
         }
+
         //OK
         private void btOk_Click(object sender, EventArgs e)
         {
-            SettingResist();
+            btApply_Click(sender, e);//適用ボタンの処理の呼び出し
             this.Close();
         }
+
         //適用
         private void btApply_Click(object sender, EventArgs e)
         {
-            SettingResist();
+            //settinfオブジェクトに入力データを渡して登録を行う
+            settings.setSendConfig(tbHost.Text, int.Parse(tbPort.Text),
+                                  tbUserName.Text, tbPass.Text, cbSsl.Checked);
         }
-        //送信データ登録
-        private void SettingResist()
-        {
-            settings.Host = tbHost.Text;
-            settings.Port = int.Parse(tbPort.Text);
-            settings.MailAddr = tbUserName.Text;
-            settings.Pass = tbPass.Text;
-            settings.Ssl = cbSsl.Checked;
 
-            //XMLファイルへ書き出し（シリアル化）
-            var xws = new XmlWriterSettings
-            {
-                Encoding = new System.Text.UTF8Encoding(false),
-                Indent = true,
-                IndentChars = "    ",
-            };
-
-            using (var writer = XmlWriter.Create("mailsetting.xml", xws))
-            {
-                var serializer = new DataContractSerializer(settings.GetType());
-                serializer.WriteObject(writer, settings);
-            }
-        }
         //キャンセル
         private void btCancel_Click(object sender, EventArgs e)
         {

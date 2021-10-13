@@ -1,9 +1,12 @@
-﻿namespace SendMail
+﻿using System.Runtime.Serialization;
+using System.Xml;
+
+namespace SendMail
 {
     public class Settings
     {
         private static Settings instance = null;
-
+        
         public int Port { get; set; }           //ポート番号
         public string Host { get; set; }        //ホスト名
         public string MailAddr { get; set; }    //メールアドレス
@@ -11,7 +14,10 @@
         public bool Ssl { get; set; }           //SSL
 
         //コンストラクタ
-        private Settings(){}
+        private Settings()
+        {
+            
+        }
 
         //インスタンスの取得
         public static Settings getInstance()
@@ -19,8 +25,46 @@
             if (instance == null)
             {
                 instance = new Settings();
+
+                //XMLファイルを読み込み（逆シリアル化）【P.303参照】
+                using (var reader = XmlReader.Create("mailsetting.xml"))
+                {
+                    var serializer = new DataContractSerializer(typeof(Settings));
+                    var readSettings = serializer.ReadObject(reader) as Settings;
+
+                    instance.Host = readSettings.Host;
+                    instance.Port = readSettings.Port;
+                    instance.MailAddr = readSettings.MailAddr;
+                    instance.Pass = readSettings.Pass;
+                    instance.Ssl = readSettings.Ssl;
+                }                
             }
             return instance;
+        }
+
+        //送信データ登録
+        public void setSendConfig(string host,int port,string mailAddr,
+                                 string pass,bool ssl)
+        {
+            Host = host;
+            Port = port;
+            MailAddr = mailAddr;
+            Pass = pass;
+            Ssl = ssl;
+
+            //XMLファイルへ書き出し（シリアル化）
+            var xws = new XmlWriterSettings
+            {
+                Encoding = new System.Text.UTF8Encoding(false),
+                Indent = true,
+                IndentChars = "    ",
+            };
+
+            using (var writer = XmlWriter.Create("mailsetting.xml", xws))
+            {
+                var serializer = new DataContractSerializer(this.GetType());
+                serializer.WriteObject(writer, this);
+            }
         }
 
         //初期値
@@ -43,7 +87,7 @@
         public bool bSsl()
         {
             return true;
-        }
+        }        
     }
 }
 //32162@ojs.ac.jp

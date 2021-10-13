@@ -47,7 +47,7 @@ namespace SendMail
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label1.Location = new System.Drawing.Point(33, 14);
+            this.label1.Location = new System.Drawing.Point(25, 12);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(48, 24);
@@ -58,7 +58,7 @@ namespace SendMail
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label2.Location = new System.Drawing.Point(11, 118);
+            this.label2.Location = new System.Drawing.Point(3, 116);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(70, 24);
@@ -69,7 +69,7 @@ namespace SendMail
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label3.Location = new System.Drawing.Point(11, 164);
+            this.label3.Location = new System.Drawing.Point(3, 154);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(70, 24);
@@ -79,7 +79,7 @@ namespace SendMail
             // tbTo
             // 
             this.tbTo.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.tbTo.Location = new System.Drawing.Point(82, 8);
+            this.tbTo.Location = new System.Drawing.Point(71, 11);
             this.tbTo.Margin = new System.Windows.Forms.Padding(2);
             this.tbTo.Name = "tbTo";
             this.tbTo.Size = new System.Drawing.Size(442, 31);
@@ -88,7 +88,7 @@ namespace SendMail
             // tbTitle
             // 
             this.tbTitle.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.tbTitle.Location = new System.Drawing.Point(82, 117);
+            this.tbTitle.Location = new System.Drawing.Point(72, 116);
             this.tbTitle.Margin = new System.Windows.Forms.Padding(2);
             this.tbTitle.Name = "tbTitle";
             this.tbTitle.Size = new System.Drawing.Size(442, 31);
@@ -97,17 +97,17 @@ namespace SendMail
             // tbMessage
             // 
             this.tbMessage.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.tbMessage.Location = new System.Drawing.Point(82, 159);
+            this.tbMessage.Location = new System.Drawing.Point(74, 151);
             this.tbMessage.Margin = new System.Windows.Forms.Padding(2);
             this.tbMessage.Multiline = true;
             this.tbMessage.Name = "tbMessage";
-            this.tbMessage.Size = new System.Drawing.Size(441, 199);
+            this.tbMessage.Size = new System.Drawing.Size(441, 205);
             this.tbMessage.TabIndex = 1;
             // 
             // btSend
             // 
             this.btSend.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btSend.Location = new System.Drawing.Point(440, 361);
+            this.btSend.Location = new System.Drawing.Point(432, 359);
             this.btSend.Margin = new System.Windows.Forms.Padding(2);
             this.btSend.Name = "btSend";
             this.btSend.Size = new System.Drawing.Size(82, 34);
@@ -120,7 +120,7 @@ namespace SendMail
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label4.Location = new System.Drawing.Point(31, 46);
+            this.label4.Location = new System.Drawing.Point(23, 44);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(50, 24);
@@ -130,7 +130,7 @@ namespace SendMail
             // tbCc
             // 
             this.tbCc.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.tbCc.Location = new System.Drawing.Point(82, 43);
+            this.tbCc.Location = new System.Drawing.Point(72, 46);
             this.tbCc.Margin = new System.Windows.Forms.Padding(2);
             this.tbCc.Name = "tbCc";
             this.tbCc.Size = new System.Drawing.Size(442, 31);
@@ -140,7 +140,7 @@ namespace SendMail
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label5.Location = new System.Drawing.Point(20, 81);
+            this.label5.Location = new System.Drawing.Point(12, 79);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(61, 24);
@@ -150,7 +150,7 @@ namespace SendMail
             // tbBcc
             // 
             this.tbBcc.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.tbBcc.Location = new System.Drawing.Point(82, 78);
+            this.tbBcc.Location = new System.Drawing.Point(72, 81);
             this.tbBcc.Margin = new System.Windows.Forms.Padding(2);
             this.tbBcc.Name = "tbBcc";
             this.tbBcc.Size = new System.Drawing.Size(442, 31);
@@ -159,7 +159,7 @@ namespace SendMail
             // btConfig
             // 
             this.btConfig.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btConfig.Location = new System.Drawing.Point(35, 366);
+            this.btConfig.Location = new System.Drawing.Point(367, 361);
             this.btConfig.Name = "btConfig";
             this.btConfig.Size = new System.Drawing.Size(60, 31);
             this.btConfig.TabIndex = 3;
@@ -171,7 +171,7 @@ namespace SendMail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(554, 405);
+            this.ClientSize = new System.Drawing.Size(523, 405);
             this.Controls.Add(this.btConfig);
             this.Controls.Add(this.btSend);
             this.Controls.Add(this.tbMessage);
