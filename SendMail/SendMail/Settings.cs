@@ -1,11 +1,18 @@
-﻿using System.Runtime.Serialization;
+﻿using System;
+using System.Runtime.Serialization;
 using System.Xml;
+using System.IO;
+using System.Security;
 
 namespace SendMail
 {
+    //設定情報
     public class Settings
     {
         private static Settings instance = null;
+
+        //送信データが設定済み
+        public static bool Set { get; private set; } = true;
         
         public int Port { get; set; }           //ポート番号
         public string Host { get; set; }        //ホスト名
@@ -27,23 +34,31 @@ namespace SendMail
                 instance = new Settings();
 
                 //XMLファイルを読み込み（逆シリアル化）【P.303参照】
-                using (var reader = XmlReader.Create("mailsetting.xml"))
+                try
                 {
-                    var serializer = new DataContractSerializer(typeof(Settings));
-                    var readSettings = serializer.ReadObject(reader) as Settings;
+                    using (var reader = XmlReader.Create("mailsetting.xml"))
+                    {
+                        var serializer = new DataContractSerializer(typeof(Settings));
+                        var readSettings = serializer.ReadObject(reader) as Settings;
 
-                    instance.Host = readSettings.Host;
-                    instance.Port = readSettings.Port;
-                    instance.MailAddr = readSettings.MailAddr;
-                    instance.Pass = readSettings.Pass;
-                    instance.Ssl = readSettings.Ssl;
-                }                
+                        instance.Host = readSettings.Host;
+                        instance.Port = readSettings.Port;
+                        instance.MailAddr = readSettings.MailAddr;
+                        instance.Pass = readSettings.Pass;
+                        instance.Ssl = readSettings.Ssl;
+                    }
+                }
+                //ファイルがない場合（初回起動時）
+                catch (Exception ex)
+                {
+                    Set = false; //データ未設定
+                }
             }
             return instance;
         }
 
         //送信データ登録
-        public void setSendConfig(string host,int port,string mailAddr,
+        public bool setSendConfig(string host,int port,string mailAddr,
                                  string pass,bool ssl)
         {
             Host = host;
@@ -65,6 +80,10 @@ namespace SendMail
                 var serializer = new DataContractSerializer(this.GetType());
                 serializer.WriteObject(writer, this);
             }
+
+            Set = true;
+
+            return true;//登録完了
         }
 
         //初期値
@@ -90,4 +109,3 @@ namespace SendMail
         }        
     }
 }
-//32162@ojs.ac.jp

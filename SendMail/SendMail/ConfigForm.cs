@@ -56,4 +56,3 @@ namespace SendMail
         }
     }
 }
-//32162@ojs.ac.jp
