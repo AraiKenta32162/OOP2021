@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SampleEntityFramework.Models.Author">
+    <Position X="2" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAABAAAAACAAAAAAAQAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Author.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SampleEntityFramework.Models.Book">
+    <Position X="5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAEAAgAAAAAAAAAAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>Models\Book.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Yu Gothic UI" Size="9" />
+</ClassDiagram>
