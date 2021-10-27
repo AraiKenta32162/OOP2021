@@ -33,6 +33,13 @@ namespace AddressBook
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.personDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.personBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.infosys202119DataSet = new AddressBook.infosys202119DataSet();
             this.btConnect = new System.Windows.Forms.Button();
             this.btNameFilter = new System.Windows.Forms.Button();
             this.tbNameSearch = new System.Windows.Forms.TextBox();
@@ -47,13 +54,6 @@ namespace AddressBook
             this.tbName = new System.Windows.Forms.TextBox();
             this.btBirthdayFilter = new System.Windows.Forms.Button();
             this.dtpBirthdaySearch = new System.Windows.Forms.DateTimePicker();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.personBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.infosys202119DataSet = new AddressBook.infosys202119DataSet();
             this.personTableAdapter = new AddressBook.infosys202119DataSetTableAdapters.PersonTableAdapter();
             this.tableAdapterManager = new AddressBook.infosys202119DataSetTableAdapters.TableAdapterManager();
             ((System.ComponentModel.ISupportInitialize)(this.personDataGridView)).BeginInit();
@@ -90,11 +90,54 @@ namespace AddressBook
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.personDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.personDataGridView.Location = new System.Drawing.Point(6, 153);
+            this.personDataGridView.MultiSelect = false;
             this.personDataGridView.Name = "personDataGridView";
             this.personDataGridView.RowTemplate.Height = 21;
+            this.personDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.personDataGridView.Size = new System.Drawing.Size(598, 192);
             this.personDataGridView.TabIndex = 1;
             this.personDataGridView.SelectionChanged += new System.EventHandler(this.personDataGridView_SelectionChanged);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "No";
+            this.dataGridViewTextBoxColumn1.HeaderText = "No";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Name";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Name";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Birthday";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Birthday";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Telephone";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Telephone";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Memo";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Memo";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // personBindingSource
+            // 
+            this.personBindingSource.DataMember = "Person";
+            this.personBindingSource.DataSource = this.infosys202119DataSet;
+            // 
+            // infosys202119DataSet
+            // 
+            this.infosys202119DataSet.DataSetName = "infosys202119DataSet";
+            this.infosys202119DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btConnect
             // 
@@ -219,47 +262,6 @@ namespace AddressBook
             this.dtpBirthdaySearch.Name = "dtpBirthdaySearch";
             this.dtpBirthdaySearch.Size = new System.Drawing.Size(174, 19);
             this.dtpBirthdaySearch.TabIndex = 9;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "No";
-            this.dataGridViewTextBoxColumn1.HeaderText = "No";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Name";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Name";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Birthday";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Birthday";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Telephone";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Telephone";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Memo";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Memo";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            // 
-            // personBindingSource
-            // 
-            this.personBindingSource.DataMember = "Person";
-            this.personBindingSource.DataSource = this.infosys202119DataSet;
-            // 
-            // infosys202119DataSet
-            // 
-            this.infosys202119DataSet.DataSetName = "infosys202119DataSet";
-            this.infosys202119DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // personTableAdapter
             // 
