@@ -116,6 +116,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chapter13", "Chapter13", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleEntityFramework", "EntityFramework\SampleEntityFramework.csproj", "{5673020D-0951-48F2-8AAF-ECC6DEA2A7D5}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ADO.NET", "ADO.NET", "{C864911C-5109-4321-AC3C-2E24BB6C51B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddressBook", "ADO.NET\AddressBook\AddressBook.csproj", "{1E3EE1E6-2EF6-4CFB-B59B-18CD169DA80C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -262,6 +266,10 @@ Global
 		{5673020D-0951-48F2-8AAF-ECC6DEA2A7D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5673020D-0951-48F2-8AAF-ECC6DEA2A7D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5673020D-0951-48F2-8AAF-ECC6DEA2A7D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E3EE1E6-2EF6-4CFB-B59B-18CD169DA80C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E3EE1E6-2EF6-4CFB-B59B-18CD169DA80C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E3EE1E6-2EF6-4CFB-B59B-18CD169DA80C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E3EE1E6-2EF6-4CFB-B59B-18CD169DA80C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -305,6 +313,7 @@ Global
 		{EEFFEAA9-ACCE-48D2-B2AE-29E12B30C4EB} = {757D2EE2-D519-46C4-A534-DCA748B2049A}
 		{5DE34E1E-C34D-4063-B842-3C481BEA9394} = {1BEDB3BD-49C4-4303-9938-B03F98BB4734}
 		{5673020D-0951-48F2-8AAF-ECC6DEA2A7D5} = {82A1CC18-D031-4C0F-8D47-F777EDE8893B}
+		{1E3EE1E6-2EF6-4CFB-B59B-18CD169DA80C} = {C864911C-5109-4321-AC3C-2E24BB6C51B8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6EE481A7-3F21-4B53-B2EC-D12CF3AC5182}

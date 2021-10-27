@@ -13,8 +13,8 @@ namespace SampleEntityFramework
     {
         static void Main(string[] args)
         {
-            //Console.WriteLine("# 1.1");
-            //Exercise13_1_1();
+            Console.WriteLine("# 1.1");
+            Exercise13_1_1();
             Console.WriteLine("# 1.2");
             Exercise13_1_2();
             Console.WriteLine("# 1.3");
