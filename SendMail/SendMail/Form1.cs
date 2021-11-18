@@ -23,7 +23,7 @@ namespace SendMail
 
         private void btSend_Click(object sender, EventArgs e)
         {
-            if (!Settings.Set)
+            if (!Settings.Set || String.IsNullOrWhiteSpace(tbMessage.Text))
             {
                 MessageBox.Show("送信情報を設定してください");
                 return;
@@ -36,15 +36,16 @@ namespace SendMail
                 //差出人アドレス
                 mailMessage.From = new MailAddress(settings.MailAddr);
                 //宛先（To）
-                if (tbTo.Text != "")
-                {                    
-                    mailMessage.To.Add(tbTo.Text);
-                }
-                else
-                {                    
-                    MessageBox.Show("アドレスを入力してください");
-                    return;
-                }
+                mailMessage.Body = tbMessage.Text;
+                //if (tbTo.Text != "")
+                //{                    
+                //    mailMessage.To.Add(tbTo.Text);
+                //}
+                //else
+                //{                    
+                //    MessageBox.Show("アドレスを入力してください");
+                //    return;
+                //}
 
                 if (tbCc.Text != "")
                 {
@@ -58,16 +59,17 @@ namespace SendMail
                 //件名（タイトル）
                 mailMessage.Subject = tbTitle.Text;
                 //本文
-                if(tbMessage.Text != "" && tbMessage.Text != " " && tbMessage.Text != "　")
-                {
-                    mailMessage.Body = tbMessage.Text;
-                }
-                else
-                {
-                    MessageBox.Show("本文を入力してください");
-                    return;
-                }
-                
+                //if(tbMessage.Text != "" && tbMessage.Text != " " && tbMessage.Text != "　")
+                //{
+                //    mailMessage.Body = tbMessage.Text;
+                //}
+                //else
+                //{
+                //    MessageBox.Show("本文を入力してください");
+                //    return;
+                //}
+                mailMessage.Body = tbMessage.Text;
+
 
                 //SMTPを使ってメールを送信する
                 SmtpClient smtpClient = new SmtpClient();
