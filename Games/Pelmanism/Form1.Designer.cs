@@ -1,4 +1,6 @@
 ﻿
+using System;
+
 namespace Pelmanism
 {
     partial class FormGame
@@ -53,7 +55,7 @@ namespace Pelmanism
             this.buttonStart.TabIndex = 1;
             this.buttonStart.Text = "スタート";
             this.buttonStart.UseVisualStyleBackColor = true;
-            this.buttonStart.Click += new System.EventHandler(this.buttonStart_Click_1);
+            this.buttonStart.Click += new System.EventHandler(this.buttonStart_Click);
             // 
             // labelGuidance
             // 
@@ -79,6 +81,8 @@ namespace Pelmanism
             this.PerformLayout();
 
         }
+
+        
 
         #endregion
 

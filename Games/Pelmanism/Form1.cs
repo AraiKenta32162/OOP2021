@@ -202,5 +202,6 @@ namespace Pelmanism
             gameSec++;
             labelSec.Text = gameSec + "秒経過";
         }
+        
     }
 }
