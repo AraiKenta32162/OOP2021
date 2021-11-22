@@ -65,7 +65,6 @@ namespace Pelmanism
             Controls.AddRange(playingCards);
             ResumeLayout(false);
             labelGuidance.Text = "スタートボタンをクリックしてゲームを開始してください。";
-
         }
 
         private void CardButtons_Click(object sender, EventArgs e)
@@ -196,12 +195,10 @@ namespace Pelmanism
 
         }
 
-
         private void timer1_Tick(object sender, EventArgs e)
         {
             gameSec++;
             labelSec.Text = gameSec + "秒経過";
         }
-        
     }
 }
