@@ -267,7 +267,10 @@ namespace CarReportSystem {
 
         }
         //新規追加ボタン押下
+        private void btUpDate_Click_1(object sender, EventArgs e)
+        {
 
+        }
 
     }
 }

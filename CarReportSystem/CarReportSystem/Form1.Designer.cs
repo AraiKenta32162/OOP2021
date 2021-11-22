@@ -310,6 +310,7 @@ namespace CarReportSystem {
             this.btUpDate.TabIndex = 9;
             this.btUpDate.Text = "更新";
             this.btUpDate.UseVisualStyleBackColor = true;
+            this.btUpDate.Click += new System.EventHandler(this.btUpDate_Click_1);
             // 
             // btExit
             // 
