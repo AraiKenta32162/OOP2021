@@ -228,6 +228,8 @@ namespace CarReportSystem {
             ImageConverter imgconv = new ImageConverter();
             Image img = (Image)imgconv.ConvertFrom(b);
             return img;
+
+
         }
         // Imageオブジェクトをバイト配列に変換
         public static byte[] ImageToByteArray(Image img)
@@ -237,40 +239,35 @@ namespace CarReportSystem {
             return b;
         }
 
-        //private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
-        //{
-        //    dtpDate.Value = DateTime.Now;
-        //    cbAuthor.Text = "";
-        //    cbCarName.Text = "";
-        //    tbReport.Text = "";
-        //    setMakerRadioButton(CarReport.MakerGroup.その他);
-        //    pbPicture.Image = null;
-        //}
-        public static Image ByteArrayToImage(byte[] b)
-        {
-            Image img = null;
-            if (b.Length > 0)
-            {
-                ImageConverter imgconv = new ImageConverter)();
-                img = (Image)imgconv.ConvertFrom(b);
-            }
-            return img;
-        }
+        
 
-        //Imageオブジェクトをバイト配列に変換
-        public static byte[] ImageToByteArray(Image img)
-        {
-            ImageConverter imgconv = new ImageConverter();
-            byte[] b = (byte[])imgconv.ConvertTo(img, typeof(byte[]));
-            return b;
-        }
+        //public static Image ByteArrayToImage(byte[] b)
+        //{
+        //    Image img = null;
+        //    if (b.Length > 0)
+        //    {
+        //        ImageConverter imgconv = new ImageConverter();
+        //        img = (Image)imgconv.ConvertFrom(b);
+        //    }
+        //    return img;
+        //}
+
+        ////Imageオブジェクトをバイト配列に変換
+        //public static byte[] ImageToByteArray(Image img)
+        //{
+        //    ImageConverter imgconv = new ImageConverter();
+        //    byte[] b = (byte[])imgconv.ConvertTo(img, typeof(byte[]));
+        //    return b;
+        //}
 
         //データグリッドビューのエラー対応
+
         private void carReportDataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
 
         }
         //新規追加ボタン押下
+
 
     }
 }
