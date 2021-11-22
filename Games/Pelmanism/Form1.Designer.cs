@@ -29,9 +29,11 @@ namespace Pelmanism
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.labelSec = new System.Windows.Forms.Label();
             this.buttonStart = new System.Windows.Forms.Button();
             this.labelGuidance = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // labelSec
@@ -51,6 +53,7 @@ namespace Pelmanism
             this.buttonStart.TabIndex = 1;
             this.buttonStart.Text = "スタート";
             this.buttonStart.UseVisualStyleBackColor = true;
+            this.buttonStart.Click += new System.EventHandler(this.buttonStart_Click_1);
             // 
             // labelGuidance
             // 
@@ -82,6 +85,7 @@ namespace Pelmanism
         private System.Windows.Forms.Label labelSec;
         private System.Windows.Forms.Button buttonStart;
         private System.Windows.Forms.Label labelGuidance;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
