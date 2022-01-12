@@ -230,6 +230,7 @@ namespace SendMail
             this.編集EToolStripMenuItem.Name = "編集EToolStripMenuItem";
             this.編集EToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
             this.編集EToolStripMenuItem.Text = "編集(&E)";
+            this.編集EToolStripMenuItem.Click += new System.EventHandler(this.編集EToolStripMenuItem_Click);
             // 
             // ヘルプHToolStripMenuItem
             // 

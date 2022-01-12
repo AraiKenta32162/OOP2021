@@ -136,6 +136,11 @@ namespace SendMail
             tbBcc.Text = "";
             tbTitle.Text = "";
             tbMessage.Text = "";
-        } 
+        }
+
+        private void 編集EToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }        
     }
 }
