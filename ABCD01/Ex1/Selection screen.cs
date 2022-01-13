@@ -18,11 +18,13 @@ namespace Ex1
     {
         IEnumerable<ItemData> items = null;
         List<string> link = new List<string>();
+        
 
         //設定画面
         private Seibi seibi = new Seibi();
         private Tooling tooling = new Tooling();
         private MaintenanceDetails maintenance = new MaintenanceDetails();
+        private TouringReport touring = new TouringReport();
 
         public Selection_screen()
         {
@@ -34,7 +36,7 @@ namespace Ex1
             //ImageオブジェクトのGraphicsオブジェクトを作成する
             Graphics g = Graphics.FromImage(canvas);
 
-            string drawString = /*"二輪点検整備・運行記録管理\r\nシステム"*/"MS　Touring ＆ Maintenance note";
+            string drawString = "MS　Touring ＆ Maintenance note";
             //Fontを作成
             Font fnt = new Font(/*"ＭＳ ゴシック"*/"Stencil", 35);
             //線形グラデーション（横にライムグリーンから薄青）を作成
@@ -62,7 +64,10 @@ namespace Ex1
             pictureBox1.Image = canvas;
 
             //this.BackgroundImage = Image.FromFile(@"C:\Windows\desktop\メイン背景.jpg");
-            pictureBox1.BackColor = Color.Transparent;            
+            pictureBox1.BackColor = Color.Transparent;
+
+            setRssTitle("https://news.yahoo.co.jp/rss/media/bikeno/all.xml");
+            //setRssTitle("https://news.yahoo.co.jp/rss/media/autoby/all.xml");
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -90,13 +95,15 @@ namespace Ex1
             maintenance.ShowDialog();
             this.Visible = true;
         }
-                        
-        private void button6_Click(object sender, EventArgs e)
+
+        private void button4_Click(object sender, EventArgs e)
         {
-            setRssTitle("https://news.yahoo.co.jp/rss/topics/top-picks.xml");
+            this.Visible = false;
+            touring.ShowDialog();
+            this.Visible = true;
         }
 
-#region  RSS
+        #region  RSS
         private void setRssTitle(string uri)
         {            
             using (var wc = new WebClient())
@@ -107,20 +114,21 @@ namespace Ex1
 
                 items = xdoc.Root.Descendants("item").Select(x => new ItemData
                 {
-                    Title = (string)x.Element("title"),
+                    Title = (string)x.Element("title"),//.Replace("バイクのニュース"," ")
                     Link = (string)x.Element("link"),
                     PubDate = (DateTime)x.Element("pubDate"),
                     Description = (string)x.Element("description")
                     
             });
-
+                
                 foreach (var item in items)
-                {
+                {                    
                     listBox1.Items.Add(item.Title);
-                    //panel1.Items.Add(item.Title);
                 }
             }
         }
+
+
 
         #endregion
 
@@ -148,5 +156,7 @@ namespace Ex1
         }
          /*-----------------------------------------------------*/
         #endregion
+
+        
     }
 }

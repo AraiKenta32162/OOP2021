@@ -1,6 +1,8 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Drawing;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Windows.Forms;
 
 namespace CarReportSystem
@@ -145,20 +147,25 @@ namespace CarReportSystem
         }
 
         private void btOpen_Click(object sender, EventArgs e) {
-            if (ofdFileOpen.ShowDialog() == DialogResult.OK) {
-                try {
+            try
+            {
+                if (ofdFileOpen.ShowDialog() == DialogResult.OK)
+                {
                     //バイナリ形式で逆シリアル化
                     var bf = new BinaryFormatter();
-                    using (FileStream fs = File.Open(ofdFileOpen.FileName, FileMode.Open, FileAccess.Read)) {
+                    using (FileStream fs = File.Open(ofdFileOpen.FileName, FileMode.Open, FileAccess.Read))
+                    {
                         //逆シリアル化して読み込む
                         listCarReport = (BindingList<CarReport>)bf.Deserialize(fs);
                         dgvRegistData.DataSource = null;
                         dgvRegistData.DataSource = listCarReport;
                     }
                 }
-                catch(Exception ex) {
-                    MessageBox.Show(ex.Message);
-                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
                 //読み込んだデータを各コンボボックスに登録する
                 foreach (var item in listCarReport) {
                     setCbAuthor(item.Auther);
@@ -171,10 +178,11 @@ namespace CarReportSystem
                 //    setCbCarName(dgvRegistData.Rows[i].Cells[3].ToString());
                 //}
             }
-        }
 
         private void fmMain_Load(object sender, EventArgs e) {
             dgvRegistData.Columns[5].Visible = false;
         }
+
+        
     }
 }

@@ -36,6 +36,7 @@ namespace Ex1
         private void btPictureDelete_Click(object sender, EventArgs e)
         {
             pbPicture.Image = null;
+
         }
 
         private void button1_Click(object sender, EventArgs e)

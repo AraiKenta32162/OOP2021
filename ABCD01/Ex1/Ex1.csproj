@@ -75,6 +75,7 @@
     <Compile Include="MaintenanceDetails.Designer.cs">
       <DependentUpon>MaintenanceDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ms.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -102,6 +103,12 @@
     <Compile Include="Tooling.Designer.cs">
       <DependentUpon>Tooling.cs</DependentUpon>
     </Compile>
+    <Compile Include="TouringReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TouringReport.Designer.cs">
+      <DependentUpon>TouringReport.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="MaintenanceDetails.resx">
       <DependentUpon>MaintenanceDetails.cs</DependentUpon>
     </EmbeddedResource>
@@ -118,6 +125,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Tooling.resx">
       <DependentUpon>Tooling.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TouringReport.resx">
+      <DependentUpon>TouringReport.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
