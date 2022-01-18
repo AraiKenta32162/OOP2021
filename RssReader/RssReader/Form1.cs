@@ -1,15 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-//using System.ComponentModel;
+using System.ComponentModel;
 using System.Data;
-//using System.Drawing;
+using System.Drawing;
 using System.Linq;
 using System.Net;
-//using System.Text;
-//using System.Text.RegularExpressions;
-//using System.Threading.Tasks;
+using System.Text;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using System.Windows.Forms;
-//using System.Xml;
 using System.Xml.Linq;
 
 namespace RssReader
@@ -17,33 +16,35 @@ namespace RssReader
     public partial class Form1 : Form
     {
         IEnumerable<ItemData> items = null;
-        List<String> link = new List<string>();
+        List<string> link = new List<string>();
 
         public Form1()
         {
             InitializeComponent();
         }
+        
 
         private void btRead_Click(object sender, EventArgs e)
         {
             setRssTitle(tbUrl.Text);
-            
+            //setRssTitle1(tbUrl.Text);
         }
-        //指定したURL先からXMLデータを取得し、title要素を取得し、リストボックスへセットする
+        
         private void setRssTitle(string uri)
         {
             using (var wc = new WebClient())
             {
                 wc.Headers.Add("Content-type", "charset=UTF-8");
-
                 var stream = wc.OpenRead(uri);
                 XDocument xdoc = XDocument.Load(stream);
+
                 items = xdoc.Root.Descendants("item").Select(x => new ItemData
                 {
                     Title = (string)x.Element("title"),
                     Link = (string)x.Element("link"),
-                    pubDate = (DateTime)x.Element("pubData"),
+                    PubDate = (DateTime)x.Element("pubDate"),
                     Description = (string)x.Element("description")
+
                 });
 
                 foreach (var item in items)
@@ -52,29 +53,66 @@ namespace RssReader
                 }
             }
         }
-        //
-        private void lbTitles_Click(object sender, EventArgs e)
-        {
-            string link = (items.ToArray())[lbTitles.SelectedIndex].Link;
-            //wbBrowser.Url = new Uri(link);
 
-            lbDescription.Text = "概要\n";
-            lbDescription.Text += (items.ToArray())[lbTitles.SelectedIndex].pubDate + "\n";
-            lbDescription.Text += (items.ToArray())[lbTitles.SelectedIndex].Description;
-        }
+        /*private void setRssTitle1(string uri)
+        {
+            using (var wc = new WebClient())
+            {
+                wc.Headers.Add("text/javascript", "AcBy5YFny2HQgVUCR18tO5YUTf6MpVlcJqGTd-a9-SI");
+                var stream = wc.OpenRead(uri);
+                XDocument xdoc = XDocument.Load(stream);
+
+                items = xdoc.Root.Descendants("item").Select(x => new ItemData
+                {
+                    Title = (string)x.Element("title"),
+                    Link = (string)x.Element("link"),
+                    PubDate = (DateTime)x.Element("pubDate"),
+                    Description = (string)x.Element("description")
+
+                });
+
+                foreach (var item in items)
+                {
+                    lbTitles.Items.Add(item.Title);
+                }
+            }
+        }*/
+
         private void Form1_Load(object sender, EventArgs e)
         {
             tbUrl.Text = "https://news.yahoo.co.jp/rss/topics/top-picks.xml";
+            //tbUrl.Text = "https://news.google.com/topstories?tab=rn&hl=ja&gl=JP&ceid=JP:ja";
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void lbTitles_Click(object sender, EventArgs e)
         {
-            var wbForm = new Form2((items.ToArray())[lbTitles.SelectedIndex].Link);
-            wbForm.Show();
+            //wbBrowser.Url = new Uri(link[lbTitles.SelectedIndex]);
+            string link = (items.ToArray())[lbTitles.SelectedIndex].Link;   //配列へ変換して[]でアクセス
+            //wbBrowser.Url = new Uri(link);
+
+            lbD.Text = "概要\n";
+            lbD.Text += (items.ToArray())[lbTitles.SelectedIndex].PubDate+"\n";
+            lbD.Text += (items.ToArray())[lbTitles.SelectedIndex].Description;
+
+        }
+
+        private void btWeb_Click(object sender, EventArgs e)
+        {
+            
+            var wbform = new Form2((items.ToArray())[lbTitles.SelectedIndex].Link);
+            wbform.Show();
         }
     }
 }
 
-
-//https://news.yahoo.co.jp/rss/topics/top-picks.xml
-//https://www.yahoo.co.jp/
+/*(1)*/
+//var Link = xdoc.Root.Descendants("link");
+//var nodes = xdoc.Root.Descendants("title");
+//foreach (var l in Link)
+//{
+//    link.Add(l.Value);
+//}
+//foreach (var node in nodes)
+//{
+//    lbTitles.Items.Add(node.Value);
+//}

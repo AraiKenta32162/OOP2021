@@ -29,60 +29,59 @@ namespace RssReader
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
+            this.wbTwo = new System.Windows.Forms.WebBrowser();
+            this.btBack = new System.Windows.Forms.Button();
+            this.btFoward = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // wbTwo
             // 
-            this.button1.Location = new System.Drawing.Point(69, 37);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(90, 40);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.wbTwo.Location = new System.Drawing.Point(12, 58);
+            this.wbTwo.MinimumSize = new System.Drawing.Size(20, 20);
+            this.wbTwo.Name = "wbTwo";
+            this.wbTwo.ScriptErrorsSuppressed = true;
+            this.wbTwo.Size = new System.Drawing.Size(776, 394);
+            this.wbTwo.TabIndex = 0;
+            this.wbTwo.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.wbTwo_DocumentCompleted);
             // 
-            // button2
+            // btBack
             // 
-            this.button2.Location = new System.Drawing.Point(238, 37);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(95, 40);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btBack.Location = new System.Drawing.Point(12, 12);
+            this.btBack.Name = "btBack";
+            this.btBack.Size = new System.Drawing.Size(87, 40);
+            this.btBack.TabIndex = 1;
+            this.btBack.Text = "戻る";
+            this.btBack.UseVisualStyleBackColor = true;
+            this.btBack.Click += new System.EventHandler(this.btBack_Click);
             // 
-            // webBrowser1
+            // btFoward
             // 
-            this.webBrowser1.Location = new System.Drawing.Point(69, 94);
-            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(671, 300);
-            this.webBrowser1.TabIndex = 2;
+            this.btFoward.Location = new System.Drawing.Point(105, 12);
+            this.btFoward.Name = "btFoward";
+            this.btFoward.Size = new System.Drawing.Size(87, 40);
+            this.btFoward.TabIndex = 1;
+            this.btFoward.Text = "進む";
+            this.btFoward.UseVisualStyleBackColor = true;
+            this.btFoward.Click += new System.EventHandler(this.btFoward_Click);
             // 
             // Form2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.webBrowser1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btFoward);
+            this.Controls.Add(this.btBack);
+            this.Controls.Add(this.wbTwo);
             this.Name = "Form2";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);
-            this.Controls.SetChildIndex(this.button1, 0);
-            this.Controls.SetChildIndex(this.button2, 0);
-            this.Controls.SetChildIndex(this.webBrowser1, 0);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.WebBrowser webBrowser1;
+        private System.Windows.Forms.Button btBack;
+        private System.Windows.Forms.Button btFoward;
+        public System.Windows.Forms.WebBrowser wbTwo;
     }
 }
