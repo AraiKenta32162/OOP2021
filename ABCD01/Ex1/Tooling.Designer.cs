@@ -44,9 +44,9 @@ namespace Ex1
             this.btPictureDelete = new System.Windows.Forms.Button();
             this.btPictureOpen = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.TouringAddbt = new System.Windows.Forms.Button();
+            this.Namecb = new System.Windows.Forms.ComboBox();
+            this.TouringClosebt = new System.Windows.Forms.Button();
             this.ofdPictureOpen = new System.Windows.Forms.OpenFileDialog();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -155,10 +155,11 @@ namespace Ex1
             // 
             // pbPicture
             // 
+            this.pbPicture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbPicture.Location = new System.Drawing.Point(307, 57);
             this.pbPicture.Name = "pbPicture";
             this.pbPicture.Size = new System.Drawing.Size(257, 153);
-            this.pbPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pbPicture.TabIndex = 14;
             this.pbPicture.TabStop = false;
             // 
@@ -191,42 +192,42 @@ namespace Ex1
             this.label7.TabIndex = 15;
             this.label7.Text = "画像";
             // 
-            // button1
+            // TouringAddbt
             // 
-            this.button1.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button1.Location = new System.Drawing.Point(411, 214);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(96, 38);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "追加";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.TouringAddbt.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.TouringAddbt.Location = new System.Drawing.Point(411, 214);
+            this.TouringAddbt.Name = "TouringAddbt";
+            this.TouringAddbt.Size = new System.Drawing.Size(96, 38);
+            this.TouringAddbt.TabIndex = 18;
+            this.TouringAddbt.Text = "追加";
+            this.TouringAddbt.UseVisualStyleBackColor = true;
+            this.TouringAddbt.Click += new System.EventHandler(this.TouringAddbt_Click);
             // 
-            // comboBox1
+            // Namecb
             // 
-            this.comboBox1.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.Namecb.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.Namecb.FormattingEnabled = true;
+            this.Namecb.Items.AddRange(new object[] {
             "ZRX1200r",
             "XL1200r",
             "ZZR250",
             "XV250ビラーゴ",
             "エリミネーター125"});
-            this.comboBox1.Location = new System.Drawing.Point(78, 85);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(212, 23);
-            this.comboBox1.TabIndex = 20;
+            this.Namecb.Location = new System.Drawing.Point(78, 85);
+            this.Namecb.Name = "Namecb";
+            this.Namecb.Size = new System.Drawing.Size(212, 23);
+            this.Namecb.TabIndex = 20;
             // 
-            // button2
+            // TouringClosebt
             // 
-            this.button2.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button2.Location = new System.Drawing.Point(513, 214);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(81, 38);
-            this.button2.TabIndex = 21;
-            this.button2.Text = "戻る";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.TouringClosebt.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.TouringClosebt.Location = new System.Drawing.Point(513, 214);
+            this.TouringClosebt.Name = "TouringClosebt";
+            this.TouringClosebt.Size = new System.Drawing.Size(81, 38);
+            this.TouringClosebt.TabIndex = 21;
+            this.TouringClosebt.Text = "戻る";
+            this.TouringClosebt.UseVisualStyleBackColor = true;
+            this.TouringClosebt.Click += new System.EventHandler(this.TouringClosebt_Click);
             // 
             // ofdPictureOpen
             // 
@@ -257,9 +258,9 @@ namespace Ex1
             this.ClientSize = new System.Drawing.Size(606, 254);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.TouringClosebt);
+            this.Controls.Add(this.Namecb);
+            this.Controls.Add(this.TouringAddbt);
             this.Controls.Add(this.btPictureDelete);
             this.Controls.Add(this.btPictureOpen);
             this.Controls.Add(this.label7);
@@ -299,9 +300,9 @@ namespace Ex1
         private System.Windows.Forms.Button btPictureDelete;
         private System.Windows.Forms.Button btPictureOpen;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button TouringAddbt;
+        private System.Windows.Forms.ComboBox Namecb;
+        private System.Windows.Forms.Button TouringClosebt;
         private System.Windows.Forms.OpenFileDialog ofdPictureOpen;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label5;

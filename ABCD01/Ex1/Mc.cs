@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Ex1
 {
     [Serializable]
-    class Ms
+    class Mc
     {
         [DisplayName("日付")]
         public DateTime Date { get; set; }  //日付
@@ -36,6 +32,26 @@ namespace Ex1
             SUZUKI,
             KAWASAKI,
             その他,
+        }
+        public void UpDate(DateTime date,
+                            string auther,
+                            string carName,
+                            string distance,
+                            string exhaust,
+                            string inspection,
+                            MakerGroup maker,
+                            string outline,
+                            string details)
+        {
+            this.Date = date;
+            this.Auther = auther;
+            this.CarName = carName;
+            this.Distance = distance;
+            this.Exhaust = exhaust;
+            this.Inspection = inspection;
+            this.Maker = maker;
+            this.Outline = outline;
+            this.Details = details; 
         }
     }
 }

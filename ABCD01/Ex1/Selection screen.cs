@@ -36,9 +36,9 @@ namespace Ex1
             //ImageオブジェクトのGraphicsオブジェクトを作成する
             Graphics g = Graphics.FromImage(canvas);
 
-            string drawString = "MS　Touring ＆ Maintenance note";
+            string drawString = "MC　Touring ＆ Maintenance note";
             //Fontを作成
-            Font fnt = new Font(/*"ＭＳ ゴシック"*/"Stencil", 35);
+            Font fnt = new Font("Stencil", 35);
             //線形グラデーション（横にライムグリーンから薄青）を作成
             LinearGradientBrush b = new LinearGradientBrush(
                                         pictureBox1.ClientRectangle,
@@ -62,41 +62,40 @@ namespace Ex1
 
             //PictureBox1に表示する
             pictureBox1.Image = canvas;
-
-            //this.BackgroundImage = Image.FromFile(@"C:\Windows\desktop\メイン背景.jpg");
+                        
             pictureBox1.BackColor = Color.Transparent;
 
             setRssTitle("https://news.yahoo.co.jp/rss/media/bikeno/all.xml");
             //setRssTitle("https://news.yahoo.co.jp/rss/media/autoby/all.xml");
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Maintenancebt_Click(object sender, EventArgs e)
         {
             this.Visible = false;
             seibi.ShowDialog();
             this.Visible = true;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Touringbt_Click(object sender, EventArgs e)
         {
             this.Visible = false;
             tooling.ShowDialog();
             this.Visible = true;
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void Closebt_Click(object sender, EventArgs e)
         {
                 Application.Exit();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void Logbt_Click(object sender, EventArgs e)
         {
             this.Visible = false;
             maintenance.ShowDialog();
             this.Visible = true;
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void Reportbt_Click(object sender, EventArgs e)
         {
             this.Visible = false;
             touring.ShowDialog();
@@ -130,33 +129,8 @@ namespace Ex1
 
 
 
+
+
         #endregion
-
-        #region  GetProcessesByWindowTitle
-        /*------------------------------------------*/
-        /*public System.Diagnostics.Process[] GetProcessesByWindowTitle(string windowTitle)
-        {
-            System.Collections.ArrayList list = new System.Collections.ArrayList();
-
-            //すべてのプロセスを列挙する
-            foreach (System.Diagnostics.Process p
-                in System.Diagnostics.Process.GetProcesses())
-            {
-                //指定された文字列がメインウィンドウのタイトルに含まれているか調べる
-                if (0 <= p.MainWindowTitle.IndexOf(windowTitle))
-                {
-                    //含まれていたら、コレクションに追加
-                    list.Add(p);
-                }
-            }
-
-            //コレクションを配列にして返す
-            return (System.Diagnostics.Process[])
-                list.ToArray(typeof(System.Diagnostics.Process));
-        }
-         /*-----------------------------------------------------*/
-        #endregion
-
-        
     }
 }

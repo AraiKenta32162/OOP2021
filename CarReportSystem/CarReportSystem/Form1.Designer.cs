@@ -240,7 +240,7 @@ namespace CarReportSystem {
             // 
             this.dgvRegistData.AllowUserToAddRows = false;
             this.dgvRegistData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRegistData.Location = new System.Drawing.Point(78, 314);
+            this.dgvRegistData.Location = new System.Drawing.Point(78, 313);
             this.dgvRegistData.MultiSelect = false;
             this.dgvRegistData.Name = "dgvRegistData";
             this.dgvRegistData.RowTemplate.Height = 21;

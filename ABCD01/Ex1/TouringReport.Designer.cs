@@ -30,9 +30,9 @@ namespace Ex1
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.Backbt = new System.Windows.Forms.Button();
+            this.Displaybt = new System.Windows.Forms.Button();
+            this.McNamecb = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -47,41 +47,41 @@ namespace Ex1
             this.dataGridView1.Size = new System.Drawing.Size(948, 492);
             this.dataGridView1.TabIndex = 19;
             // 
-            // button3
+            // Backbt
             // 
-            this.button3.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button3.Location = new System.Drawing.Point(863, 24);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(92, 58);
-            this.button3.TabIndex = 22;
-            this.button3.Text = "戻る";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.Backbt.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.Backbt.Location = new System.Drawing.Point(863, 24);
+            this.Backbt.Name = "Backbt";
+            this.Backbt.Size = new System.Drawing.Size(92, 58);
+            this.Backbt.TabIndex = 22;
+            this.Backbt.Text = "戻る";
+            this.Backbt.UseVisualStyleBackColor = true;
+            this.Backbt.Click += new System.EventHandler(this.Backbt_Click);
             // 
-            // button1
+            // Displaybt
             // 
-            this.button1.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button1.Location = new System.Drawing.Point(748, 24);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 58);
-            this.button1.TabIndex = 23;
-            this.button1.Text = "表示";
-            this.button1.UseVisualStyleBackColor = true;
+            this.Displaybt.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.Displaybt.Location = new System.Drawing.Point(748, 24);
+            this.Displaybt.Name = "Displaybt";
+            this.Displaybt.Size = new System.Drawing.Size(94, 58);
+            this.Displaybt.TabIndex = 23;
+            this.Displaybt.Text = "表示";
+            this.Displaybt.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // McNamecb
             // 
-            this.comboBox1.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.McNamecb.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.McNamecb.FormattingEnabled = true;
+            this.McNamecb.Items.AddRange(new object[] {
             "ZRX1200r",
             "XL1200r",
             "ZZR250",
             "XV250ビラーゴ",
             "エリミネーター125"});
-            this.comboBox1.Location = new System.Drawing.Point(112, 38);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(212, 32);
-            this.comboBox1.TabIndex = 21;
+            this.McNamecb.Location = new System.Drawing.Point(112, 38);
+            this.McNamecb.Name = "McNamecb";
+            this.McNamecb.Size = new System.Drawing.Size(212, 32);
+            this.McNamecb.TabIndex = 21;
             // 
             // label2
             // 
@@ -110,9 +110,9 @@ namespace Ex1
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(973, 610);
             this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.Backbt);
+            this.Controls.Add(this.Displaybt);
+            this.Controls.Add(this.McNamecb);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridView1);
             this.Name = "TouringReport";
@@ -126,9 +126,9 @@ namespace Ex1
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button Backbt;
+        private System.Windows.Forms.Button Displaybt;
+        private System.Windows.Forms.ComboBox McNamecb;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.CheckBox checkBox1;
     }

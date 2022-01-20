@@ -18,10 +18,8 @@ namespace Ex1
             this.MaximizeBox = false;
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            //Selection_screen s1 = new Selection_screen();
-            //s1.Visible = true;
+        private void TouringClosebt_Click(object sender, EventArgs e)
+        {            
             this.Close();
         }
 
@@ -36,16 +34,15 @@ namespace Ex1
         private void btPictureDelete_Click(object sender, EventArgs e)
         {
             pbPicture.Image = null;
+        }
+                
+        
 
+        private void TouringAddbt_Click(object sender, EventArgs e)
+        {       //同じ言葉が保存されてしまう。
+            Namecb.Items.Add(Namecb.Text);
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (!Setting.Set || String.IsNullOrWhiteSpace(comboBox1.Text))
-            {
-                MessageBox.Show("追加しました");
-                return;
-            }
-        }
+        
     }
 }

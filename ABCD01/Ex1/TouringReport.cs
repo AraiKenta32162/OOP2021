@@ -18,7 +18,7 @@ namespace Ex1
             this.MaximizeBox = false;
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void Backbt_Click(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -27,5 +27,6 @@ namespace Ex1
         {
             throw new NotImplementedException();
         }
+                
     }
 }

@@ -30,74 +30,74 @@ namespace Ex1
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Selection_screen));
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.Maintenancebt = new System.Windows.Forms.Button();
+            this.Touringbt = new System.Windows.Forms.Button();
+            this.Logbt = new System.Windows.Forms.Button();
+            this.Reportbt = new System.Windows.Forms.Button();
+            this.Closebt = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // Maintenancebt
             // 
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Font = new System.Drawing.Font("Stencil", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(108, 126);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(210, 144);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Today\'s maintenance";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.Maintenancebt.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Maintenancebt.BackgroundImage")));
+            this.Maintenancebt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Maintenancebt.Font = new System.Drawing.Font("Stencil", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Maintenancebt.ForeColor = System.Drawing.Color.White;
+            this.Maintenancebt.Location = new System.Drawing.Point(108, 126);
+            this.Maintenancebt.Name = "Maintenancebt";
+            this.Maintenancebt.Size = new System.Drawing.Size(210, 144);
+            this.Maintenancebt.TabIndex = 1;
+            this.Maintenancebt.Text = "Today\'s maintenance";
+            this.Maintenancebt.UseVisualStyleBackColor = true;
+            this.Maintenancebt.Click += new System.EventHandler(this.Maintenancebt_Click);
             // 
-            // button2
+            // Touringbt
             // 
-            this.button2.Font = new System.Drawing.Font("Stencil", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(373, 126);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(210, 144);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Today\'s Touring";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.Touringbt.Font = new System.Drawing.Font("Stencil", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Touringbt.Location = new System.Drawing.Point(373, 126);
+            this.Touringbt.Name = "Touringbt";
+            this.Touringbt.Size = new System.Drawing.Size(210, 144);
+            this.Touringbt.TabIndex = 2;
+            this.Touringbt.Text = "Today\'s Touring";
+            this.Touringbt.UseVisualStyleBackColor = true;
+            this.Touringbt.Click += new System.EventHandler(this.Touringbt_Click);
             // 
-            // button3
+            // Logbt
             // 
-            this.button3.Font = new System.Drawing.Font("Stencil", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(139, 277);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(150, 60);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Maintenance\r\nlog";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.Logbt.Font = new System.Drawing.Font("Stencil", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Logbt.Location = new System.Drawing.Point(139, 277);
+            this.Logbt.Name = "Logbt";
+            this.Logbt.Size = new System.Drawing.Size(150, 60);
+            this.Logbt.TabIndex = 2;
+            this.Logbt.Text = "Maintenance\r\nlog";
+            this.Logbt.UseVisualStyleBackColor = true;
+            this.Logbt.Click += new System.EventHandler(this.Logbt_Click);
             // 
-            // button4
+            // Reportbt
             // 
-            this.button4.Font = new System.Drawing.Font("Stencil", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(406, 277);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(150, 60);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "Touring\r\nReport\r\n";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.Reportbt.Font = new System.Drawing.Font("Stencil", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Reportbt.Location = new System.Drawing.Point(406, 277);
+            this.Reportbt.Name = "Reportbt";
+            this.Reportbt.Size = new System.Drawing.Size(150, 60);
+            this.Reportbt.TabIndex = 2;
+            this.Reportbt.Text = "Touring\r\nReport\r\n";
+            this.Reportbt.UseVisualStyleBackColor = true;
+            this.Reportbt.Click += new System.EventHandler(this.Reportbt_Click);
             // 
-            // button5
+            // Closebt
             // 
-            this.button5.Font = new System.Drawing.Font("Stencil", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(593, 398);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(98, 40);
-            this.button5.TabIndex = 3;
-            this.button5.Text = "close";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.Closebt.Font = new System.Drawing.Font("Stencil", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Closebt.Location = new System.Drawing.Point(593, 398);
+            this.Closebt.Name = "Closebt";
+            this.Closebt.Size = new System.Drawing.Size(98, 40);
+            this.Closebt.TabIndex = 3;
+            this.Closebt.Text = "close";
+            this.Closebt.UseVisualStyleBackColor = true;
+            this.Closebt.Click += new System.EventHandler(this.Closebt_Click);
             // 
             // pictureBox1
             // 
@@ -144,11 +144,11 @@ namespace Ex1
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Closebt);
+            this.Controls.Add(this.Reportbt);
+            this.Controls.Add(this.Logbt);
+            this.Controls.Add(this.Touringbt);
+            this.Controls.Add(this.Maintenancebt);
             this.Name = "Selection_screen";
             this.Text = "Selection_screen";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -158,11 +158,11 @@ namespace Ex1
         }
 
         #endregion
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button Maintenancebt;
+        private System.Windows.Forms.Button Touringbt;
+        private System.Windows.Forms.Button Logbt;
+        private System.Windows.Forms.Button Reportbt;
+        private System.Windows.Forms.Button Closebt;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label label1;

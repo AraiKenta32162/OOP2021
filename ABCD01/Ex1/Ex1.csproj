@@ -75,7 +75,7 @@
     <Compile Include="MaintenanceDetails.Designer.cs">
       <DependentUpon>MaintenanceDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ms.cs" />
+    <Compile Include="Mc.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

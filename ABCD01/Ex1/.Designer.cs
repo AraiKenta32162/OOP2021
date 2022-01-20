@@ -44,16 +44,16 @@ namespace Ex1
             this.label5 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.MaintenanceAddbt = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.McNamecb = new System.Windows.Forms.ComboBox();
+            this.Backbt = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.Namecb = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -235,16 +235,16 @@ namespace Ex1
             this.label6.TabIndex = 1;
             this.label6.Text = "整備詳細";
             // 
-            // button1
+            // MaintenanceAddbt
             // 
-            this.button1.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button1.Location = new System.Drawing.Point(530, 221);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(81, 38);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "追加";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.MaintenanceAddbt.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.MaintenanceAddbt.Location = new System.Drawing.Point(530, 221);
+            this.MaintenanceAddbt.Name = "MaintenanceAddbt";
+            this.MaintenanceAddbt.Size = new System.Drawing.Size(81, 38);
+            this.MaintenanceAddbt.TabIndex = 6;
+            this.MaintenanceAddbt.Text = "追加";
+            this.MaintenanceAddbt.UseVisualStyleBackColor = true;
+            this.MaintenanceAddbt.Click += new System.EventHandler(this.MaintenanceAddbt_Click);
             // 
             // label8
             // 
@@ -290,31 +290,32 @@ namespace Ex1
             this.textBox4.Size = new System.Drawing.Size(212, 22);
             this.textBox4.TabIndex = 9;
             // 
-            // comboBox1
+            // McNamecb
             // 
-            this.comboBox1.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.McNamecb.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.McNamecb.FormattingEnabled = true;
+            this.McNamecb.Items.AddRange(new object[] {
             "ZRX1200r",
             "XL1200r",
             "ZZR250",
             "XV250ビラーゴ",
             "エリミネーター125"});
-            this.comboBox1.Location = new System.Drawing.Point(71, 64);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(212, 23);
-            this.comboBox1.TabIndex = 10;
+            this.McNamecb.Location = new System.Drawing.Point(71, 64);
+            this.McNamecb.Name = "McNamecb";
+            this.McNamecb.Size = new System.Drawing.Size(212, 23);
+            this.McNamecb.TabIndex = 10;
+            this.McNamecb.SelectedIndexChanged += new System.EventHandler(this.Namecb_SelectedIndexChanged);
             // 
-            // button2
+            // Backbt
             // 
-            this.button2.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button2.Location = new System.Drawing.Point(530, 289);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(81, 38);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "戻る";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.Backbt.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.Backbt.Location = new System.Drawing.Point(530, 289);
+            this.Backbt.Name = "Backbt";
+            this.Backbt.Size = new System.Drawing.Size(81, 38);
+            this.Backbt.TabIndex = 6;
+            this.Backbt.Text = "戻る";
+            this.Backbt.UseVisualStyleBackColor = true;
+            this.Backbt.Click += new System.EventHandler(this.Backbt_Click);
             // 
             // label7
             // 
@@ -326,13 +327,20 @@ namespace Ex1
             this.label7.TabIndex = 1;
             this.label7.Text = "記入者";
             // 
-            // textBox5
+            // Namecb
             // 
-            this.textBox5.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.textBox5.Location = new System.Drawing.Point(370, 29);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(212, 22);
-            this.textBox5.TabIndex = 8;
+            this.Namecb.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.Namecb.FormattingEnabled = true;
+            this.Namecb.Items.AddRange(new object[] {
+            "ZRX1200r",
+            "XL1200r",
+            "ZZR250",
+            "XV250ビラーゴ",
+            "エリミネーター125"});
+            this.Namecb.Location = new System.Drawing.Point(370, 28);
+            this.Namecb.Name = "Namecb";
+            this.Namecb.Size = new System.Drawing.Size(212, 23);
+            this.Namecb.TabIndex = 11;
             // 
             // Seibi
             // 
@@ -340,13 +348,13 @@ namespace Ex1
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(637, 354);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.Namecb);
+            this.Controls.Add(this.McNamecb);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox5);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Backbt);
+            this.Controls.Add(this.MaintenanceAddbt);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.groupBox1);
@@ -362,6 +370,7 @@ namespace Ex1
             this.Controls.Add(this.dateTimePicker1);
             this.Name = "Seibi";
             this.Text = "整備";
+            this.Load += new System.EventHandler(this.Seibi_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -386,16 +395,16 @@ namespace Ex1
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button MaintenanceAddbt;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ComboBox McNamecb;
+        private System.Windows.Forms.Button Backbt;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.ComboBox Namecb;
     }
 }
 

@@ -35,6 +35,9 @@ namespace Ex1
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button3 = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.ofdPictureOpen = new System.Windows.Forms.OpenFileDialog();
+            this.sfdFileSave = new System.Windows.Forms.SaveFileDialog();
+            this.ofdFileOpen = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,6 +75,7 @@ namespace Ex1
             this.button1.TabIndex = 17;
             this.button1.Text = "表示";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // dataGridView1
             // 
@@ -104,6 +108,14 @@ namespace Ex1
             this.checkBox1.Text = "全車表示";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
+            // ofdPictureOpen
+            // 
+            this.ofdPictureOpen.FileName = "openFileDialog1";
+            // 
+            // ofdFileOpen
+            // 
+            this.ofdFileOpen.FileName = "openFileDialog2";
+            // 
             // MaintenanceDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -130,5 +142,8 @@ namespace Ex1
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.OpenFileDialog ofdPictureOpen;
+        private System.Windows.Forms.SaveFileDialog sfdFileSave;
+        private System.Windows.Forms.OpenFileDialog ofdFileOpen;
     }
 }
