@@ -238,7 +238,7 @@ namespace Ex1
             // MaintenanceAddbt
             // 
             this.MaintenanceAddbt.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.MaintenanceAddbt.Location = new System.Drawing.Point(530, 221);
+            this.MaintenanceAddbt.Location = new System.Drawing.Point(530, 231);
             this.MaintenanceAddbt.Name = "MaintenanceAddbt";
             this.MaintenanceAddbt.Size = new System.Drawing.Size(81, 38);
             this.MaintenanceAddbt.TabIndex = 6;
@@ -342,7 +342,7 @@ namespace Ex1
             this.Namecb.Size = new System.Drawing.Size(212, 23);
             this.Namecb.TabIndex = 11;
             // 
-            // Seibi
+            // Maintenance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -368,7 +368,7 @@ namespace Ex1
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dateTimePicker1);
-            this.Name = "Seibi";
+            this.Name = "Maintenance";
             this.Text = "整備";
             this.Load += new System.EventHandler(this.Seibi_Load);
             this.groupBox1.ResumeLayout(false);

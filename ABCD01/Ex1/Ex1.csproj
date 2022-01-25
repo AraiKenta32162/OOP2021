@@ -68,6 +68,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="infosys202119DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>infosys202119DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="infosys202119DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>infosys202119DataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ItemData.cs" />
     <Compile Include="MaintenanceDetails.cs">
       <SubType>Form</SubType>
@@ -130,6 +140,28 @@
     <EmbeddedResource Include="TouringReport.resx">
       <DependentUpon>TouringReport.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="infosys202119DataSet.xsc">
+      <DependentUpon>infosys202119DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="infosys202119DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>infosys202119DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="infosys202119DataSet.xss">
+      <DependentUpon>infosys202119DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="infosys202119DataSet1.xsc">
+      <DependentUpon>infosys202119DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="infosys202119DataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>infosys202119DataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="infosys202119DataSet1.xss">
+      <DependentUpon>infosys202119DataSet1.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -155,8 +187,10 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Resources\" />
+    <Content Include="Resources\kawasaki.jpg" />
+    <Content Include="Resources\メイン背景1.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

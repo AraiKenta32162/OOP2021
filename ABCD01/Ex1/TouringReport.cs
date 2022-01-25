@@ -27,6 +27,12 @@ namespace Ex1
         {
             throw new NotImplementedException();
         }
-                
+
+        private void TouringReport_Load(object sender, EventArgs e)
+        {
+            // TODO: このコード行はデータを 'infosys202119DataSet1.Touring' テーブルに読み込みます。必要に応じて移動、または削除をしてください。
+            this.touringTableAdapter.Fill(this.infosys202119Touring.Touring);
+
+        }
     }
 }

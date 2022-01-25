@@ -29,18 +29,46 @@ namespace Ex1
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Backbt = new System.Windows.Forms.Button();
             this.Displaybt = new System.Windows.Forms.Button();
             this.McNamecb = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.infosys202119Touring = new Ex1.infosys202119DataSet1();
+            this.touringBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.touringTableAdapter = new Ex1.infosys202119DataSet1TableAdapters.TouringTableAdapter();
+            this.tableAdapterManager = new Ex1.infosys202119DataSet1TableAdapters.TableAdapterManager();
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.autherDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.carNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.distanceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.destinationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.peopleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.costDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pictureDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.infosys202119Touring)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.touringBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDDataGridViewTextBoxColumn,
+            this.dateDataGridViewTextBoxColumn,
+            this.autherDataGridViewTextBoxColumn,
+            this.carNameDataGridViewTextBoxColumn,
+            this.distanceDataGridViewTextBoxColumn,
+            this.destinationDataGridViewTextBoxColumn,
+            this.peopleDataGridViewTextBoxColumn,
+            this.costDataGridViewTextBoxColumn,
+            this.pictureDataGridViewImageColumn});
+            this.dataGridView1.DataSource = this.touringBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 106);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 21;
@@ -104,6 +132,80 @@ namespace Ex1
             this.checkBox1.Text = "全車表示";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
+            // infosys202119Touring
+            // 
+            this.infosys202119Touring.DataSetName = "infosys202119DataSet1";
+            this.infosys202119Touring.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // touringBindingSource
+            // 
+            this.touringBindingSource.DataMember = "Touring";
+            this.touringBindingSource.DataSource = this.infosys202119Touring;
+            // 
+            // touringTableAdapter
+            // 
+            this.touringTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.TouringTableAdapter = this.touringTableAdapter;
+            this.tableAdapterManager.UpdateOrder = Ex1.infosys202119DataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            // 
+            // dateDataGridViewTextBoxColumn
+            // 
+            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
+            this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
+            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            // 
+            // autherDataGridViewTextBoxColumn
+            // 
+            this.autherDataGridViewTextBoxColumn.DataPropertyName = "Auther";
+            this.autherDataGridViewTextBoxColumn.HeaderText = "Auther";
+            this.autherDataGridViewTextBoxColumn.Name = "autherDataGridViewTextBoxColumn";
+            // 
+            // carNameDataGridViewTextBoxColumn
+            // 
+            this.carNameDataGridViewTextBoxColumn.DataPropertyName = "CarName";
+            this.carNameDataGridViewTextBoxColumn.HeaderText = "CarName";
+            this.carNameDataGridViewTextBoxColumn.Name = "carNameDataGridViewTextBoxColumn";
+            // 
+            // distanceDataGridViewTextBoxColumn
+            // 
+            this.distanceDataGridViewTextBoxColumn.DataPropertyName = "Distance";
+            this.distanceDataGridViewTextBoxColumn.HeaderText = "Distance";
+            this.distanceDataGridViewTextBoxColumn.Name = "distanceDataGridViewTextBoxColumn";
+            // 
+            // destinationDataGridViewTextBoxColumn
+            // 
+            this.destinationDataGridViewTextBoxColumn.DataPropertyName = "Destination";
+            this.destinationDataGridViewTextBoxColumn.HeaderText = "Destination";
+            this.destinationDataGridViewTextBoxColumn.Name = "destinationDataGridViewTextBoxColumn";
+            // 
+            // peopleDataGridViewTextBoxColumn
+            // 
+            this.peopleDataGridViewTextBoxColumn.DataPropertyName = "People";
+            this.peopleDataGridViewTextBoxColumn.HeaderText = "People";
+            this.peopleDataGridViewTextBoxColumn.Name = "peopleDataGridViewTextBoxColumn";
+            // 
+            // costDataGridViewTextBoxColumn
+            // 
+            this.costDataGridViewTextBoxColumn.DataPropertyName = "Cost";
+            this.costDataGridViewTextBoxColumn.HeaderText = "Cost";
+            this.costDataGridViewTextBoxColumn.Name = "costDataGridViewTextBoxColumn";
+            // 
+            // pictureDataGridViewImageColumn
+            // 
+            this.pictureDataGridViewImageColumn.DataPropertyName = "Picture";
+            this.pictureDataGridViewImageColumn.HeaderText = "Picture";
+            this.pictureDataGridViewImageColumn.Name = "pictureDataGridViewImageColumn";
+            // 
             // TouringReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -117,7 +219,10 @@ namespace Ex1
             this.Controls.Add(this.dataGridView1);
             this.Name = "TouringReport";
             this.Text = "TouringReport";
+            this.Load += new System.EventHandler(this.TouringReport_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.infosys202119Touring)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.touringBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -131,5 +236,18 @@ namespace Ex1
         private System.Windows.Forms.ComboBox McNamecb;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.CheckBox checkBox1;
+        private infosys202119DataSet1 infosys202119Touring;
+        private System.Windows.Forms.BindingSource touringBindingSource;
+        private infosys202119DataSet1TableAdapters.TouringTableAdapter touringTableAdapter;
+        private infosys202119DataSet1TableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn autherDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn carNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn distanceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn destinationDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn peopleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn costDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewImageColumn pictureDataGridViewImageColumn;
     }
 }
