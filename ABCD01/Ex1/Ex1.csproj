@@ -81,11 +81,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Servicing.cs">
+    <Compile Include="Maintenance.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include=".Designer.cs">
-      <DependentUpon>Servicing.cs</DependentUpon>
+      <DependentUpon>Maintenance.cs</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Program.cs" />
@@ -113,8 +113,8 @@
     <EmbeddedResource Include="MaintenanceDetails.resx">
       <DependentUpon>MaintenanceDetails.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Servicing.resx">
-      <DependentUpon>Servicing.cs</DependentUpon>
+    <EmbeddedResource Include="Maintenance.resx">
+      <DependentUpon>Maintenance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
