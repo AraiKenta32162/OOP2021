@@ -103,6 +103,7 @@
     <Compile Include="Tooling.Designer.cs">
       <DependentUpon>Tooling.cs</DependentUpon>
     </Compile>
+    <Compile Include="ToolingData.cs" />
     <Compile Include="TouringReport.cs">
       <SubType>Form</SubType>
     </Compile>

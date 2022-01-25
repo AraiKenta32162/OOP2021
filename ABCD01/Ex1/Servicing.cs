@@ -11,12 +11,12 @@ using System.Windows.Forms;
 
 namespace Ex1
 {
-    public partial class Seibi : Form
+    public partial class Maintenance : Form
     {
         private Setting setting = Setting.getInstance();
         BindingList<Mc> listMS = new BindingList<Mc>();
 
-        public Seibi()
+        public Maintenance()
         {
             InitializeComponent();
             this.MaximizeBox = false;

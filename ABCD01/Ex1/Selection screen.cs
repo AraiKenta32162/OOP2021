@@ -21,7 +21,7 @@ namespace Ex1
         
 
         //設定画面
-        private Seibi seibi = new Seibi();
+        private Maintenance seibi = new Maintenance();
         private Tooling tooling = new Tooling();
         private MaintenanceDetails maintenance = new MaintenanceDetails();
         private TouringReport touring = new TouringReport();

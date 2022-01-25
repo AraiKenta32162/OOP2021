@@ -1,7 +1,7 @@
 ﻿
 namespace Ex1
 {
-    partial class Seibi
+    partial class Maintenance
     {
         /// <summary>
         /// 必要なデザイナー変数です。
