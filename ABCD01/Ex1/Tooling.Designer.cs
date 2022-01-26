@@ -33,13 +33,13 @@ namespace Ex1
             this.label8 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.dtpDate = new System.Windows.Forms.DateTimePicker();
+            this.Distancetb = new System.Windows.Forms.TextBox();
+            this.Destinationtb = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.Peopletb = new System.Windows.Forms.TextBox();
+            this.Costtb = new System.Windows.Forms.TextBox();
             this.pbPicture = new System.Windows.Forms.PictureBox();
             this.btPictureDelete = new System.Windows.Forms.Button();
             this.btPictureOpen = new System.Windows.Forms.Button();
@@ -48,7 +48,7 @@ namespace Ex1
             this.Namecb = new System.Windows.Forms.ComboBox();
             this.TouringClosebt = new System.Windows.Forms.Button();
             this.ofdPictureOpen = new System.Windows.Forms.OpenFileDialog();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbAuthor = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbPicture)).BeginInit();
             this.SuspendLayout();
@@ -57,7 +57,7 @@ namespace Ex1
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label9.Location = new System.Drawing.Point(20, 151);
+            this.label9.Location = new System.Drawing.Point(13, 135);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(52, 15);
             this.label9.TabIndex = 4;
@@ -67,7 +67,7 @@ namespace Ex1
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label8.Location = new System.Drawing.Point(5, 120);
+            this.label8.Location = new System.Drawing.Point(-2, 104);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(67, 15);
             this.label8.TabIndex = 6;
@@ -77,7 +77,7 @@ namespace Ex1
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label2.Location = new System.Drawing.Point(20, 92);
+            this.label2.Location = new System.Drawing.Point(13, 76);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 15);
             this.label2.TabIndex = 7;
@@ -87,41 +87,41 @@ namespace Ex1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label1.Location = new System.Drawing.Point(20, 33);
+            this.label1.Location = new System.Drawing.Point(13, 17);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(52, 15);
             this.label1.TabIndex = 8;
             this.label1.Text = "記入日";
             // 
-            // dateTimePicker1
+            // dtpDate
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(78, 29);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(212, 22);
-            this.dateTimePicker1.TabIndex = 3;
+            this.dtpDate.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.dtpDate.Location = new System.Drawing.Point(71, 13);
+            this.dtpDate.Name = "dtpDate";
+            this.dtpDate.Size = new System.Drawing.Size(212, 22);
+            this.dtpDate.TabIndex = 3;
             // 
-            // textBox3
+            // Distancetb
             // 
-            this.textBox3.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.textBox3.Location = new System.Drawing.Point(78, 117);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(212, 22);
-            this.textBox3.TabIndex = 13;
+            this.Distancetb.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.Distancetb.Location = new System.Drawing.Point(71, 101);
+            this.Distancetb.Name = "Distancetb";
+            this.Distancetb.Size = new System.Drawing.Size(212, 22);
+            this.Distancetb.TabIndex = 13;
             // 
-            // textBox2
+            // Destinationtb
             // 
-            this.textBox2.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.textBox2.Location = new System.Drawing.Point(78, 148);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(212, 22);
-            this.textBox2.TabIndex = 13;
+            this.Destinationtb.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.Destinationtb.Location = new System.Drawing.Point(71, 132);
+            this.Destinationtb.Name = "Destinationtb";
+            this.Destinationtb.Size = new System.Drawing.Size(212, 22);
+            this.Destinationtb.TabIndex = 13;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label3.Location = new System.Drawing.Point(35, 181);
+            this.label3.Location = new System.Drawing.Point(28, 165);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(37, 15);
             this.label3.TabIndex = 6;
@@ -131,41 +131,41 @@ namespace Ex1
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label4.Location = new System.Drawing.Point(35, 211);
+            this.label4.Location = new System.Drawing.Point(28, 195);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(37, 15);
             this.label4.TabIndex = 4;
             this.label4.Text = "費用";
             // 
-            // textBox4
+            // Peopletb
             // 
-            this.textBox4.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.textBox4.Location = new System.Drawing.Point(78, 178);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(212, 22);
-            this.textBox4.TabIndex = 13;
+            this.Peopletb.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.Peopletb.Location = new System.Drawing.Point(71, 162);
+            this.Peopletb.Name = "Peopletb";
+            this.Peopletb.Size = new System.Drawing.Size(212, 22);
+            this.Peopletb.TabIndex = 13;
             // 
-            // textBox5
+            // Costtb
             // 
-            this.textBox5.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.textBox5.Location = new System.Drawing.Point(78, 211);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(212, 22);
-            this.textBox5.TabIndex = 13;
+            this.Costtb.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.Costtb.Location = new System.Drawing.Point(71, 195);
+            this.Costtb.Name = "Costtb";
+            this.Costtb.Size = new System.Drawing.Size(212, 22);
+            this.Costtb.TabIndex = 13;
             // 
             // pbPicture
             // 
             this.pbPicture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbPicture.Location = new System.Drawing.Point(307, 57);
+            this.pbPicture.Location = new System.Drawing.Point(300, 41);
             this.pbPicture.Name = "pbPicture";
             this.pbPicture.Size = new System.Drawing.Size(257, 153);
-            this.pbPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbPicture.TabIndex = 14;
             this.pbPicture.TabStop = false;
             // 
             // btPictureDelete
             // 
-            this.btPictureDelete.Location = new System.Drawing.Point(462, 26);
+            this.btPictureDelete.Location = new System.Drawing.Point(455, 10);
             this.btPictureDelete.Name = "btPictureDelete";
             this.btPictureDelete.Size = new System.Drawing.Size(102, 25);
             this.btPictureDelete.TabIndex = 17;
@@ -175,7 +175,7 @@ namespace Ex1
             // 
             // btPictureOpen
             // 
-            this.btPictureOpen.Location = new System.Drawing.Point(354, 26);
+            this.btPictureOpen.Location = new System.Drawing.Point(347, 10);
             this.btPictureOpen.Name = "btPictureOpen";
             this.btPictureOpen.Size = new System.Drawing.Size(102, 25);
             this.btPictureOpen.TabIndex = 16;
@@ -186,7 +186,7 @@ namespace Ex1
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(305, 32);
+            this.label7.Location = new System.Drawing.Point(298, 16);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(29, 12);
             this.label7.TabIndex = 15;
@@ -195,7 +195,7 @@ namespace Ex1
             // TouringAddbt
             // 
             this.TouringAddbt.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.TouringAddbt.Location = new System.Drawing.Point(411, 214);
+            this.TouringAddbt.Location = new System.Drawing.Point(374, 200);
             this.TouringAddbt.Name = "TouringAddbt";
             this.TouringAddbt.Size = new System.Drawing.Size(96, 38);
             this.TouringAddbt.TabIndex = 18;
@@ -213,7 +213,7 @@ namespace Ex1
             "ZZR250",
             "XV250ビラーゴ",
             "エリミネーター125"});
-            this.Namecb.Location = new System.Drawing.Point(78, 85);
+            this.Namecb.Location = new System.Drawing.Point(71, 69);
             this.Namecb.Name = "Namecb";
             this.Namecb.Size = new System.Drawing.Size(212, 23);
             this.Namecb.TabIndex = 20;
@@ -221,7 +221,7 @@ namespace Ex1
             // TouringClosebt
             // 
             this.TouringClosebt.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.TouringClosebt.Location = new System.Drawing.Point(513, 214);
+            this.TouringClosebt.Location = new System.Drawing.Point(476, 200);
             this.TouringClosebt.Name = "TouringClosebt";
             this.TouringClosebt.Size = new System.Drawing.Size(81, 38);
             this.TouringClosebt.TabIndex = 21;
@@ -233,19 +233,19 @@ namespace Ex1
             // 
             this.ofdPictureOpen.FileName = "openFileDialog1";
             // 
-            // textBox1
+            // tbAuthor
             // 
-            this.textBox1.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.textBox1.Location = new System.Drawing.Point(78, 57);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(212, 22);
-            this.textBox1.TabIndex = 23;
+            this.tbAuthor.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.tbAuthor.Location = new System.Drawing.Point(71, 41);
+            this.tbAuthor.Name = "tbAuthor";
+            this.tbAuthor.Size = new System.Drawing.Size(212, 22);
+            this.tbAuthor.TabIndex = 23;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label5.Location = new System.Drawing.Point(20, 60);
+            this.label5.Location = new System.Drawing.Point(13, 44);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(52, 15);
             this.label5.TabIndex = 22;
@@ -255,8 +255,8 @@ namespace Ex1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(606, 254);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(569, 243);
+            this.Controls.Add(this.tbAuthor);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.TouringClosebt);
             this.Controls.Add(this.Namecb);
@@ -265,17 +265,17 @@ namespace Ex1
             this.Controls.Add(this.btPictureOpen);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.pbPicture);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.Costtb);
+            this.Controls.Add(this.Destinationtb);
+            this.Controls.Add(this.Peopletb);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.Distancetb);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtpDate);
             this.Name = "Tooling";
             this.Text = "Tooling";
             ((System.ComponentModel.ISupportInitialize)(this.pbPicture)).EndInit();
@@ -289,22 +289,22 @@ namespace Ex1
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.PictureBox pbPicture;
         private System.Windows.Forms.Button btPictureDelete;
         private System.Windows.Forms.Button btPictureOpen;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button TouringAddbt;
-        private System.Windows.Forms.ComboBox Namecb;
         private System.Windows.Forms.Button TouringClosebt;
         private System.Windows.Forms.OpenFileDialog ofdPictureOpen;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label5;
+        public System.Windows.Forms.TextBox tbAuthor;
+        public System.Windows.Forms.DateTimePicker dtpDate;
+        public System.Windows.Forms.TextBox Distancetb;
+        public System.Windows.Forms.TextBox Destinationtb;
+        public System.Windows.Forms.TextBox Peopletb;
+        public System.Windows.Forms.TextBox Costtb;
+        public System.Windows.Forms.ComboBox Namecb;
     }
 }

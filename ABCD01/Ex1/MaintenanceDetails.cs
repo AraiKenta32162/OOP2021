@@ -5,8 +5,7 @@ using System.Windows.Forms;
 namespace Ex1
 {
     public partial class MaintenanceDetails : Form
-    {
-        //public Selection_screen selection_Screen = new Selection_screen();
+    {        
 
         public MaintenanceDetails()
         {
@@ -30,7 +29,7 @@ namespace Ex1
         private void MaintenanceDetails_Load(object sender, EventArgs e)
         {
             // TODO: このコード行はデータを 'infosys202119DataSet.Maintenance' テーブルに読み込みます。必要に応じて移動、または削除をしてください。
-            this.maintenanceTableAdapter.Fill(this.infosys202119DataSet.Maintenance);
+            dgvMaintenanceData.Columns[5].Visible = false;
 
         }
     }

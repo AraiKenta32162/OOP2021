@@ -12,6 +12,7 @@ namespace Ex1
 {
     public partial class Tooling : Form
     {
+        BindingList<ToolingData> listTooling = new BindingList<ToolingData>();
         public Tooling()
         {
             InitializeComponent();
@@ -25,8 +26,7 @@ namespace Ex1
 
         private void btPictureOpen_Click(object sender, EventArgs e)
         {
-            if (ofdPictureOpen.ShowDialog() == DialogResult.OK)
-            {
+            if (ofdPictureOpen.ShowDialog() == DialogResult.OK){
                 pbPicture.Image = Image.FromFile(ofdPictureOpen.FileName);
             }
         }
@@ -35,14 +35,46 @@ namespace Ex1
         {
             pbPicture.Image = null;
         }
-                
-        
 
-        private void TouringAddbt_Click(object sender, EventArgs e)
+        public void TouringAddbt_Click(object sender, EventArgs e)
         {       //同じ言葉が保存されてしまう。
             Namecb.Items.Add(Namecb.Text);
+
+            if (tbAuthor.Text == "" || Namecb.Text == "")
+            {
+                MessageBox.Show("入力されていません");
+                return;
+            }
+
+            ToolingData carReport = new ToolingData
+            {
+                Date = dtpDate.Value,   　　　　　//記入日
+                Auther = tbAuthor.Text,　　　　　 //記入者
+                McName = Namecb.Text,  　 　　　　//車両名
+                Distance = Distancetb.Text,　　   //距離
+                Destination = Destinationtb.Text, //目的地
+                People = Peopletb.Text,           //人数
+                Cost = Costtb.Text,               //費用
+                Picture = pbPicture.Image         //写真
+            };
+            listTooling.Add(carReport);   //１レコード追加
+
+            //コンボボックスの履歴登録
+            setTbAuthor(tbAuthor.Text);
+            setNameCb(Namecb.Text);
         }
 
-        
+        private void setTbAuthor(string author)
+        {
+            if (!tbAuthor.Text.Contains(author))
+                tbAuthor.Text.Contains(author);
+        }
+
+        private void setNameCb(string text)
+        {
+            if (!Namecb.Items.Contains(text)){
+                Namecb.Items.Add(text);
+            }
+        }
     }
 }
