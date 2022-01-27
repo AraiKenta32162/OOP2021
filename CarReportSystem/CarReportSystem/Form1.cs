@@ -39,30 +39,7 @@ namespace CarReportSystem
             pbPicture.Image = null;
         }
 
-        private void btDataAdd_Click(object sender, EventArgs e)
-        {
-            if (cbAuthor.Text == "" || cbCarName.Text == "")
-            {
-                MessageBox.Show("入力されていません");
-                return;
-            }
-            else
-            {
-                CarReport carReport = new CarReport
-                {
-                    Date = dtpDate.Value,
-                    Auther = cbAuthor.Text,
-                    Maker = SelectedGroup(),
-                    CarName = cbCarName.Text,
-                    Picture = pbPicture.Image,
-                    Report = tbReport.Text,
-                };
-                listCarReport.Add(carReport);
-
-                setCbAuther(cbAuthor.Text);
-                setCbCarName(cbCarName.Text);
-            }
-        }
+       
         private CarReport.MakerGroup SelectedGroup()
         {
             foreach (var rb in gbMaker.Controls)

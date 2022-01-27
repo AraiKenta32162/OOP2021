@@ -77,7 +77,6 @@ namespace CarReportSystem {
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.btDataAdd = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.ssErrerLavel = new System.Windows.Forms.ToolStripStatusLabel();
             this.gbMaker.SuspendLayout();
@@ -532,16 +531,6 @@ namespace CarReportSystem {
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
-            // btDataAdd
-            // 
-            this.btDataAdd.Location = new System.Drawing.Point(7, 442);
-            this.btDataAdd.Name = "btDataAdd";
-            this.btDataAdd.Size = new System.Drawing.Size(56, 39);
-            this.btDataAdd.TabIndex = 9;
-            this.btDataAdd.Text = "追加";
-            this.btDataAdd.UseVisualStyleBackColor = true;
-            this.btDataAdd.Click += new System.EventHandler(this.btDataAdd_Click);
-            // 
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -567,7 +556,6 @@ namespace CarReportSystem {
             this.Controls.Add(this.bnNavi);
             this.Controls.Add(this.dgvRegistData);
             this.Controls.Add(this.btExit);
-            this.Controls.Add(this.btDataAdd);
             this.Controls.Add(this.btUpDate);
             this.Controls.Add(this.btConnect);
             this.Controls.Add(this.btPictureDelete);
@@ -658,7 +646,6 @@ namespace CarReportSystem {
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.Button btDataAdd;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel ssErrerLavel;
     }
