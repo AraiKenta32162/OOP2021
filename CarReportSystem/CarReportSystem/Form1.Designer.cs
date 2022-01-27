@@ -57,7 +57,7 @@ namespace CarReportSystem {
             this.carReportBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.carReportTableAdapter = new CarReportSystem.infosys202119DataSetTableAdapters.CarReportTableAdapter();
             this.tableAdapterManager = new CarReportSystem.infosys202119DataSetTableAdapters.TableAdapterManager();
-            this.carReportDataGridView = new System.Windows.Forms.DataGridView();
+            this.dgvRegistData = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -77,11 +77,12 @@ namespace CarReportSystem {
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.btDataAdd = new System.Windows.Forms.Button();
             this.gbMaker.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.infosys202119DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carReportBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.carReportDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRegistData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
             this.SuspendLayout();
@@ -290,7 +291,6 @@ namespace CarReportSystem {
             this.btPictureDelete.TabIndex = 9;
             this.btPictureDelete.Text = "削除";
             this.btPictureDelete.UseVisualStyleBackColor = true;
-            this.btPictureDelete.Click += new System.EventHandler(this.btPictureDelete_Click);
             // 
             // btOpen
             // 
@@ -310,11 +310,10 @@ namespace CarReportSystem {
             this.btUpDate.TabIndex = 9;
             this.btUpDate.Text = "更新";
             this.btUpDate.UseVisualStyleBackColor = true;
-            this.btUpDate.Click += new System.EventHandler(this.btUpDate_Click_1);
             // 
             // btExit
             // 
-            this.btExit.Location = new System.Drawing.Point(7, 478);
+            this.btExit.Location = new System.Drawing.Point(7, 513);
             this.btExit.Name = "btExit";
             this.btExit.Size = new System.Drawing.Size(56, 39);
             this.btExit.TabIndex = 9;
@@ -350,11 +349,11 @@ namespace CarReportSystem {
             this.tableAdapterManager.CarReportTableAdapter = this.carReportTableAdapter;
             this.tableAdapterManager.UpdateOrder = CarReportSystem.infosys202119DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // carReportDataGridView
+            // dgvRegistData
             // 
-            this.carReportDataGridView.AutoGenerateColumns = false;
-            this.carReportDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.carReportDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvRegistData.AutoGenerateColumns = false;
+            this.dgvRegistData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRegistData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
@@ -362,14 +361,14 @@ namespace CarReportSystem {
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewImageColumn1});
-            this.carReportDataGridView.DataSource = this.carReportBindingSource;
-            this.carReportDataGridView.Location = new System.Drawing.Point(71, 346);
-            this.carReportDataGridView.MultiSelect = false;
-            this.carReportDataGridView.Name = "carReportDataGridView";
-            this.carReportDataGridView.RowTemplate.Height = 21;
-            this.carReportDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.carReportDataGridView.Size = new System.Drawing.Size(617, 220);
-            this.carReportDataGridView.TabIndex = 22;
+            this.dgvRegistData.DataSource = this.carReportBindingSource;
+            this.dgvRegistData.Location = new System.Drawing.Point(71, 346);
+            this.dgvRegistData.MultiSelect = false;
+            this.dgvRegistData.Name = "dgvRegistData";
+            this.dgvRegistData.RowTemplate.Height = 21;
+            this.dgvRegistData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvRegistData.Size = new System.Drawing.Size(617, 220);
+            this.dgvRegistData.TabIndex = 22;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -528,14 +527,24 @@ namespace CarReportSystem {
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
+            // btDataAdd
+            // 
+            this.btDataAdd.Location = new System.Drawing.Point(7, 442);
+            this.btDataAdd.Name = "btDataAdd";
+            this.btDataAdd.Size = new System.Drawing.Size(56, 39);
+            this.btDataAdd.TabIndex = 9;
+            this.btDataAdd.Text = "追加";
+            this.btDataAdd.UseVisualStyleBackColor = true;
+            // 
             // fmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(703, 578);
             this.Controls.Add(this.bindingNavigator1);
-            this.Controls.Add(this.carReportDataGridView);
+            this.Controls.Add(this.dgvRegistData);
             this.Controls.Add(this.btExit);
+            this.Controls.Add(this.btDataAdd);
             this.Controls.Add(this.btUpDate);
             this.Controls.Add(this.btOpen);
             this.Controls.Add(this.btPictureDelete);
@@ -562,7 +571,7 @@ namespace CarReportSystem {
             ((System.ComponentModel.ISupportInitialize)(this.pbPicture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.infosys202119DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.carReportBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.carReportDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRegistData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
@@ -604,7 +613,7 @@ namespace CarReportSystem {
         private System.Windows.Forms.BindingSource carReportBindingSource;
         private infosys202119DataSetTableAdapters.CarReportTableAdapter carReportTableAdapter;
         private infosys202119DataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.DataGridView carReportDataGridView;
+        private System.Windows.Forms.DataGridView dgvRegistData;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -624,6 +633,7 @@ namespace CarReportSystem {
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
+        private System.Windows.Forms.Button btDataAdd;
     }
 }
 
