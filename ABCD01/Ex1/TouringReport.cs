@@ -33,7 +33,7 @@ namespace Ex1
             this.Close();
         }
 
-        private void TouringReport_Load(object sender, EventArgs e)
+        public void TouringReport_Load(object sender, EventArgs e)
         {
             // TODO: このコード行はデータを 'infosys202119DataSet1.Touring' テーブルに読み込みます。必要に応じて移動、または削除をしてください。
             dgvTouringData.Columns[5].Visible = false;

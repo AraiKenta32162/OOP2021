@@ -236,16 +236,14 @@ namespace Ex1
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dgvTouringData;
         private System.Windows.Forms.Button Backbt;
         private System.Windows.Forms.Button Displaybt;
         private System.Windows.Forms.ComboBox McNamecb;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.BindingSource touringBindingSource;
-        private infosys202119DataSet1TableAdapters.TouringTableAdapter touringTableAdapter;
-        private infosys202119DataSet1TableAdapters.TableAdapterManager tableAdapterManager;
+        public infosys202119DataSet1TableAdapters.TouringTableAdapter touringTableAdapter;
+        public infosys202119DataSet1TableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn autherDataGridViewTextBoxColumn;
@@ -257,5 +255,6 @@ namespace Ex1
         private System.Windows.Forms.DataGridViewImageColumn pictureDataGridViewImageColumn;
         private System.Windows.Forms.OpenFileDialog ofdFileOpen;
         public infosys202119DataSet1 infosys202119Touring;
+        public System.Windows.Forms.DataGridView dgvTouringData;
     }
 }

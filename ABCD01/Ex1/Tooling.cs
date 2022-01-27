@@ -16,10 +16,19 @@ namespace Ex1
     public partial class Tooling : Form
     {
         BindingList<ToolingData> listTooling = new BindingList<ToolingData>();
+        private static TouringReport TouringReport;
+
+        public static TouringReport Form1Instance
+        {
+            get { return TouringReport; }
+            set { TouringReport = value; }
+        }
+
         public Tooling()
         {
             InitializeComponent();
             this.MaximizeBox = false;
+            
         }
 
         private void TouringClosebt_Click(object sender, EventArgs e)
@@ -46,56 +55,57 @@ namespace Ex1
         }
 
         public void TouringAddbt_Click(object sender, EventArgs e)
-        {       //同じ言葉が保存されてしまう。
+        {
+            //同じ言葉が保存されてしまう。
             Namecb.Items.Add(Namecb.Text);
             //this.touringTableAdapter.Fill(this.infosys202119Touring.Touring);
 
-            if (tbAuthor.Text == "" || Namecb.Text == "")
-            {
-                MessageBox.Show("入力されていません");
-                return;
-            }
-            
-            ToolingData mcReport = new ToolingData
-            {
-                Date = dtpDate.Value,   　　　　　//記入日
-                Auther = tbAuthor.Text,　　　　　 //記入者
-                McName = Namecb.Text,  　 　　　　//車両名
-                Distance = Distancetb.Text,　　   //距離
-                Destination = Destinationtb.Text, //目的地
-                People = Peopletb.Text,           //人数
-                Cost = Costtb.Text,               //費用
-                Picture = pbPicture.Image         //写真
-            };
-            listTooling.Add(mcReport);   //１レコード追加
-
-            //コンボボックスの履歴登録
-            setTbAuthor(tbAuthor.Text);
-            setNameCb(Namecb.Text);
-#if false
-            /*****************************/
-            //try
+            //if (tbAuthor.Text == "" || Namecb.Text == "")
             //{
-            //    if (sfdFileSave.ShowDialog((IWin32Window)infosys202119Touring1) == DialogResult.OK)
-            //    {
-            //        //バイナリー形式でシリアル化
-            //        var bf = new BinaryFormatter();
-
-            //        using (FileStream fs = File.Open(sfdFileSave.FileName, FileMode.Create))
-            //        {
-            //            bf.Serialize(fs, listTooling);
-
-            //        }
-            //    }
+            //    MessageBox.Show("入力されていません");
+            //    return;
             //}
-            //catch (Exception)
+
+            //ToolingData mcReport = new ToolingData
             //{
-            //    MessageBox.Show("保存できませんでした");
+            //    Date = dtpDate.Value,   　　　　　//記入日
+            //    Auther = tbAuthor.Text,　　　　　 //記入者
+            //    McName = Namecb.Text,  　 　　　　//車両名
+            //    Distance = Distancetb.Text,　　   //距離
+            //    Destination = Destinationtb.Text, //目的地
+            //    People = Peopletb.Text,           //人数
+            //    Cost = Costtb.Text,               //費用
+            //    Picture = pbPicture.Image         //写真
+            //};
+            //listTooling.Add(mcReport);   //１レコード追加
 
-            //}
-            /*************************************/
-#endif
+            ////コンボボックスの履歴登録
+            //setTbAuthor(tbAuthor.Text);
+            //setNameCb(Namecb.Text);
+
+
+            if (TouringReport.dgvTouringData.CurrentRow == null) return;
+            //infosys202119Touring = dtpDate.Value;//日付
+            TouringReport.dgvTouringData.CurrentRow.Cells[2].Value = tbAuthor.Text;
+            TouringReport.dgvTouringData.CurrentRow.Cells[3].Value = Namecb.Text;
+            TouringReport.dgvTouringData.CurrentRow.Cells[4].Value = Distancetb.Text;
+            TouringReport.dgvTouringData.CurrentRow.Cells[5].Value = Destinationtb.Text;
+            TouringReport.dgvTouringData.CurrentRow.Cells[6].Value = Peopletb.Text;
+            TouringReport.dgvTouringData.CurrentRow.Cells[7].Value = Costtb.Text;
+            TouringReport.dgvTouringData.CurrentRow.Cells[8].Value = ImageToByteArray(pbPicture.Image);
+
+            this.Validate();
+            TouringReport.touringTableAdapter.Dispose();
+            TouringReport.tableAdapterManager.UpdateAll(this.infosys202119Touring);
+
             MessageBox.Show("保存しました。");
+        }
+
+        private object ImageToByteArray(Image img)
+        {
+            ImageConverter imgconv = new ImageConverter();
+            byte[] b = (byte[])imgconv.ConvertTo(img, typeof(byte[]));
+            return b;
         }
 
         public void setTbAuthor(string author)
@@ -109,6 +119,11 @@ namespace Ex1
             if (!Namecb.Items.Contains(text)){
                 Namecb.Items.Add(text);
             }
+        }
+
+        private void Tooling_Load(object sender, EventArgs e)
+        {
+            this.touringTableAdapter1.Fill(this.infosys202119Touring.Touring);
         }
     }
 }

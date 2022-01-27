@@ -52,6 +52,7 @@ namespace Ex1
             this.label5 = new System.Windows.Forms.Label();
             this.sfdFileSave = new System.Windows.Forms.SaveFileDialog();
             this.infosys202119Touring = new Ex1.infosys202119DataSet1();
+            this.touringTableAdapter1 = new Ex1.infosys202119DataSet1TableAdapters.TouringTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pbPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.infosys202119Touring)).BeginInit();
             this.SuspendLayout();
@@ -106,6 +107,7 @@ namespace Ex1
             // 
             // Distancetb
             // 
+            this.Distancetb.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.Distancetb.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.Distancetb.Location = new System.Drawing.Point(71, 101);
             this.Distancetb.Name = "Distancetb";
@@ -259,6 +261,10 @@ namespace Ex1
             this.infosys202119Touring.DataSetName = "infosys202119DataSet1";
             this.infosys202119Touring.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // touringTableAdapter1
+            // 
+            this.touringTableAdapter1.ClearBeforeFill = true;
+            // 
             // Tooling
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -286,6 +292,7 @@ namespace Ex1
             this.Controls.Add(this.dtpDate);
             this.Name = "Tooling";
             this.Text = "Tooling";
+            this.Load += new System.EventHandler(this.Tooling_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbPicture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.infosys202119Touring)).EndInit();
             this.ResumeLayout(false);
@@ -317,5 +324,6 @@ namespace Ex1
         public System.Windows.Forms.PictureBox pbPicture;
         private System.Windows.Forms.SaveFileDialog sfdFileSave;
         private infosys202119DataSet1 infosys202119Touring;
+        private infosys202119DataSet1TableAdapters.TouringTableAdapter touringTableAdapter1;
     }
 }
