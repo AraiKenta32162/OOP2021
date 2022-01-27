@@ -28,7 +28,23 @@ namespace Ex1
         {
             InitializeComponent();
             this.MaximizeBox = false;
-            
+        }
+
+        private void Tooling_Load(object sender, EventArgs e)
+        {
+            TouringReport.dgvTouringData.Columns[0].Visible = false;
+            TouringReport.dgvTouringData.Columns[1].HeaderText = "日付";
+            TouringReport.dgvTouringData.Columns[2].HeaderText = "記録者";
+            TouringReport.dgvTouringData.Columns[3].HeaderText = "メーカー";
+            TouringReport.dgvTouringData.Columns[4].HeaderText = "車種";
+            TouringReport.dgvTouringData.Columns[5].HeaderText = "レポート";
+            TouringReport.dgvTouringData.Columns[6].HeaderText = "画像";
+
+            //carReportDataGridView.Columns[6].Visible = false;
+            /*ssErrerLavel.Text = "";*/
+
+            // dgvRegistData.Columns[5].Visible = false;
+            this.touringTableAdapter1.Fill(this.infosys202119Touring.Touring);
         }
 
         private void TouringClosebt_Click(object sender, EventArgs e)
@@ -121,9 +137,6 @@ namespace Ex1
             }
         }
 
-        private void Tooling_Load(object sender, EventArgs e)
-        {
-            this.touringTableAdapter1.Fill(this.infosys202119Touring.Touring);
-        }
+        
     }
 }
