@@ -51,7 +51,9 @@ namespace Ex1
             this.tbAuthor = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.sfdFileSave = new System.Windows.Forms.SaveFileDialog();
+            this.infosys202119Touring1 = new Ex1.infosys202119DataSet1();
             ((System.ComponentModel.ISupportInitialize)(this.pbPicture)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.infosys202119Touring1)).BeginInit();
             this.SuspendLayout();
             // 
             // label9
@@ -252,6 +254,11 @@ namespace Ex1
             this.label5.TabIndex = 22;
             this.label5.Text = "記入者";
             // 
+            // infosys202119Touring1
+            // 
+            this.infosys202119Touring1.DataSetName = "infosys202119DataSet1";
+            this.infosys202119Touring1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // Tooling
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -280,6 +287,7 @@ namespace Ex1
             this.Name = "Tooling";
             this.Text = "Tooling";
             ((System.ComponentModel.ISupportInitialize)(this.pbPicture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.infosys202119Touring1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -308,5 +316,6 @@ namespace Ex1
         public System.Windows.Forms.ComboBox Namecb;
         public System.Windows.Forms.PictureBox pbPicture;
         private System.Windows.Forms.SaveFileDialog sfdFileSave;
+        private infosys202119DataSet1 infosys202119Touring1;
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Ex1.infosys202119DataSet1TableAdapters;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -41,14 +42,14 @@ namespace Ex1
         public void TouringAddbt_Click(object sender, EventArgs e)
         {       //同じ言葉が保存されてしまう。
             Namecb.Items.Add(Namecb.Text);
-
+                        
             if (tbAuthor.Text == "" || Namecb.Text == "")
             {
                 MessageBox.Show("入力されていません");
                 return;
             }
-
-            ToolingData carReport = new ToolingData
+            
+            ToolingData mcReport = new ToolingData
             {
                 Date = dtpDate.Value,   　　　　　//記入日
                 Auther = tbAuthor.Text,　　　　　 //記入者
@@ -59,31 +60,33 @@ namespace Ex1
                 Cost = Costtb.Text,               //費用
                 Picture = pbPicture.Image         //写真
             };
-            listTooling.Add(carReport);   //１レコード追加
+            listTooling.Add(mcReport);   //１レコード追加
 
             //コンボボックスの履歴登録
             setTbAuthor(tbAuthor.Text);
             setNameCb(Namecb.Text);
 
-            try
-            {
-                if (sfdFileSave.ShowDialog() == DialogResult.OK)
-                {
-                    //バイナリー形式でシリアル化
-                    var bf = new BinaryFormatter();
+            /*****************************/
+            //try
+            //{
+            //    if (sfdFileSave.ShowDialog((IWin32Window)infosys202119Touring1) == DialogResult.OK)
+            //    {
+            //        //バイナリー形式でシリアル化
+            //        var bf = new BinaryFormatter();
 
-                    using (FileStream fs = File.Open(sfdFileSave.FileName, FileMode.Create))
-                    {
-                        bf.Serialize(fs, listTooling);
+            //        using (FileStream fs = File.Open(sfdFileSave.FileName, FileMode.Create))
+            //        {
+            //            bf.Serialize(fs, listTooling);
 
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("保存できませんでした");
+            //        }
+            //    }
+            //}
+            //catch (Exception)
+            //{
+            //    MessageBox.Show("保存できませんでした");
 
-            }
+            //}
+            /*************************************/
         }
 
         public void setTbAuthor(string author)

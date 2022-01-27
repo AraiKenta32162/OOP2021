@@ -31,6 +31,12 @@ namespace Ex1
         {
             this.components = new System.ComponentModel.Container();
             this.dgvTouringData = new System.Windows.Forms.DataGridView();
+            this.Backbt = new System.Windows.Forms.Button();
+            this.Displaybt = new System.Windows.Forms.Button();
+            this.McNamecb = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.ofdFileOpen = new System.Windows.Forms.OpenFileDialog();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.autherDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,14 +48,8 @@ namespace Ex1
             this.pictureDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
             this.touringBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.infosys202119Touring = new Ex1.infosys202119DataSet1();
-            this.Backbt = new System.Windows.Forms.Button();
-            this.Displaybt = new System.Windows.Forms.Button();
-            this.McNamecb = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.touringTableAdapter = new Ex1.infosys202119DataSet1TableAdapters.TouringTableAdapter();
             this.tableAdapterManager = new Ex1.infosys202119DataSet1TableAdapters.TableAdapterManager();
-            this.ofdFileOpen = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTouringData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.touringBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.infosys202119Touring)).BeginInit();
@@ -73,9 +73,71 @@ namespace Ex1
             this.dgvTouringData.Location = new System.Drawing.Point(12, 106);
             this.dgvTouringData.Name = "dgvTouringData";
             this.dgvTouringData.RowTemplate.Height = 21;
-            this.dgvTouringData.Size = new System.Drawing.Size(948, 492);
+            this.dgvTouringData.Size = new System.Drawing.Size(943, 492);
             this.dgvTouringData.TabIndex = 19;
             this.dgvTouringData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTouringData_CellContentClick);
+            // 
+            // Backbt
+            // 
+            this.Backbt.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.Backbt.Location = new System.Drawing.Point(863, 25);
+            this.Backbt.Name = "Backbt";
+            this.Backbt.Size = new System.Drawing.Size(92, 58);
+            this.Backbt.TabIndex = 22;
+            this.Backbt.Text = "戻る";
+            this.Backbt.UseVisualStyleBackColor = true;
+            this.Backbt.Click += new System.EventHandler(this.Backbt_Click);
+            // 
+            // Displaybt
+            // 
+            this.Displaybt.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.Displaybt.Location = new System.Drawing.Point(748, 25);
+            this.Displaybt.Name = "Displaybt";
+            this.Displaybt.Size = new System.Drawing.Size(94, 58);
+            this.Displaybt.TabIndex = 23;
+            this.Displaybt.Text = "表示";
+            this.Displaybt.UseVisualStyleBackColor = true;
+            this.Displaybt.Click += new System.EventHandler(this.Displaybt_Click);
+            // 
+            // McNamecb
+            // 
+            this.McNamecb.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.McNamecb.FormattingEnabled = true;
+            this.McNamecb.Items.AddRange(new object[] {
+            "ZRX1200r",
+            "XL1200r",
+            "ZZR250",
+            "XV250ビラーゴ",
+            "エリミネーター125"});
+            this.McNamecb.Location = new System.Drawing.Point(112, 38);
+            this.McNamecb.Name = "McNamecb";
+            this.McNamecb.Size = new System.Drawing.Size(212, 32);
+            this.McNamecb.TabIndex = 21;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label2.Location = new System.Drawing.Point(24, 41);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(82, 24);
+            this.label2.TabIndex = 20;
+            this.label2.Text = "車両名";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Font = new System.Drawing.Font("MS UI Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.checkBox1.Location = new System.Drawing.Point(339, 39);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(139, 31);
+            this.checkBox1.TabIndex = 24;
+            this.checkBox1.Text = "全車表示";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // ofdFileOpen
+            // 
+            this.ofdFileOpen.FileName = "openFileDialog1";
             // 
             // iDDataGridViewTextBoxColumn
             // 
@@ -141,64 +203,6 @@ namespace Ex1
             this.infosys202119Touring.DataSetName = "infosys202119DataSet1";
             this.infosys202119Touring.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // Backbt
-            // 
-            this.Backbt.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.Backbt.Location = new System.Drawing.Point(863, 24);
-            this.Backbt.Name = "Backbt";
-            this.Backbt.Size = new System.Drawing.Size(92, 58);
-            this.Backbt.TabIndex = 22;
-            this.Backbt.Text = "戻る";
-            this.Backbt.UseVisualStyleBackColor = true;
-            this.Backbt.Click += new System.EventHandler(this.Backbt_Click);
-            // 
-            // Displaybt
-            // 
-            this.Displaybt.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.Displaybt.Location = new System.Drawing.Point(748, 24);
-            this.Displaybt.Name = "Displaybt";
-            this.Displaybt.Size = new System.Drawing.Size(94, 58);
-            this.Displaybt.TabIndex = 23;
-            this.Displaybt.Text = "表示";
-            this.Displaybt.UseVisualStyleBackColor = true;
-            this.Displaybt.Click += new System.EventHandler(this.Displaybt_Click);
-            // 
-            // McNamecb
-            // 
-            this.McNamecb.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.McNamecb.FormattingEnabled = true;
-            this.McNamecb.Items.AddRange(new object[] {
-            "ZRX1200r",
-            "XL1200r",
-            "ZZR250",
-            "XV250ビラーゴ",
-            "エリミネーター125"});
-            this.McNamecb.Location = new System.Drawing.Point(112, 38);
-            this.McNamecb.Name = "McNamecb";
-            this.McNamecb.Size = new System.Drawing.Size(212, 32);
-            this.McNamecb.TabIndex = 21;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label2.Location = new System.Drawing.Point(24, 41);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 24);
-            this.label2.TabIndex = 20;
-            this.label2.Text = "車両名";
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("MS UI Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.checkBox1.Location = new System.Drawing.Point(339, 39);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(139, 31);
-            this.checkBox1.TabIndex = 24;
-            this.checkBox1.Text = "全車表示";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
             // touringTableAdapter
             // 
             this.touringTableAdapter.ClearBeforeFill = true;
@@ -209,15 +213,11 @@ namespace Ex1
             this.tableAdapterManager.TouringTableAdapter = this.touringTableAdapter;
             this.tableAdapterManager.UpdateOrder = Ex1.infosys202119DataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // ofdFileOpen
-            // 
-            this.ofdFileOpen.FileName = "openFileDialog1";
-            // 
             // TouringReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(973, 610);
+            this.ClientSize = new System.Drawing.Size(968, 610);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.Backbt);
             this.Controls.Add(this.Displaybt);
@@ -243,7 +243,6 @@ namespace Ex1
         private System.Windows.Forms.ComboBox McNamecb;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.CheckBox checkBox1;
-        private infosys202119DataSet1 infosys202119Touring;
         private System.Windows.Forms.BindingSource touringBindingSource;
         private infosys202119DataSet1TableAdapters.TouringTableAdapter touringTableAdapter;
         private infosys202119DataSet1TableAdapters.TableAdapterManager tableAdapterManager;
@@ -257,5 +256,6 @@ namespace Ex1
         private System.Windows.Forms.DataGridViewTextBoxColumn costDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewImageColumn pictureDataGridViewImageColumn;
         private System.Windows.Forms.OpenFileDialog ofdFileOpen;
+        public infosys202119DataSet1 infosys202119Touring;
     }
 }

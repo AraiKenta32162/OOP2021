@@ -22,11 +22,6 @@ namespace Ex1
             get{return _toolingInstance; } set{ _toolingInstance = value;}
         }
 
-        //public string dtpDate
-        //{
-        //    get{return dtpDate;} set{ dtpDate = value;}
-        //}
-
         public TouringReport()
         {
             InitializeComponent();
@@ -37,11 +32,6 @@ namespace Ex1
         {
             this.Close();
         }
-
-        //public static implicit operator TouringReport(MaintenanceDetails v)
-        //{
-        //    throw new NotImplementedException();
-        //}
 
         private void TouringReport_Load(object sender, EventArgs e)
         {
@@ -73,7 +63,7 @@ namespace Ex1
         {
             try
             {
-                if (ofdFileOpen.ShowDialog() == DialogResult.OK)
+                if (ofdFileOpen.ShowDialog((IWin32Window)infosys202119Touring) == DialogResult.OK)
                 {
                     //バイナリー形式で逆シリアル化
                     var bf = new BinaryFormatter();
@@ -83,14 +73,11 @@ namespace Ex1
                         dgvTouringData.DataSource = null;
                         dgvTouringData.DataSource = listTooling;
                     }
-
                 }
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-
             }
             foreach (var item in listTooling)
             {
