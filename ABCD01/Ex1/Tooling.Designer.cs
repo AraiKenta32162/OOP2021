@@ -50,6 +50,7 @@ namespace Ex1
             this.ofdPictureOpen = new System.Windows.Forms.OpenFileDialog();
             this.tbAuthor = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.sfdFileSave = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pbPicture)).BeginInit();
             this.SuspendLayout();
             // 
@@ -199,7 +200,7 @@ namespace Ex1
             this.TouringAddbt.Name = "TouringAddbt";
             this.TouringAddbt.Size = new System.Drawing.Size(96, 38);
             this.TouringAddbt.TabIndex = 18;
-            this.TouringAddbt.Text = "追加";
+            this.TouringAddbt.Text = "保存";
             this.TouringAddbt.UseVisualStyleBackColor = true;
             this.TouringAddbt.Click += new System.EventHandler(this.TouringAddbt_Click);
             // 
@@ -291,7 +292,6 @@ namespace Ex1
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.PictureBox pbPicture;
         private System.Windows.Forms.Button btPictureDelete;
         private System.Windows.Forms.Button btPictureOpen;
         private System.Windows.Forms.Label label7;
@@ -306,5 +306,7 @@ namespace Ex1
         public System.Windows.Forms.TextBox Peopletb;
         public System.Windows.Forms.TextBox Costtb;
         public System.Windows.Forms.ComboBox Namecb;
+        public System.Windows.Forms.PictureBox pbPicture;
+        private System.Windows.Forms.SaveFileDialog sfdFileSave;
     }
 }

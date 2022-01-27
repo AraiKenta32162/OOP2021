@@ -49,6 +49,7 @@ namespace Ex1
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.touringTableAdapter = new Ex1.infosys202119DataSet1TableAdapters.TouringTableAdapter();
             this.tableAdapterManager = new Ex1.infosys202119DataSet1TableAdapters.TableAdapterManager();
+            this.ofdFileOpen = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTouringData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.touringBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.infosys202119Touring)).BeginInit();
@@ -160,6 +161,7 @@ namespace Ex1
             this.Displaybt.TabIndex = 23;
             this.Displaybt.Text = "表示";
             this.Displaybt.UseVisualStyleBackColor = true;
+            this.Displaybt.Click += new System.EventHandler(this.Displaybt_Click);
             // 
             // McNamecb
             // 
@@ -207,6 +209,10 @@ namespace Ex1
             this.tableAdapterManager.TouringTableAdapter = this.touringTableAdapter;
             this.tableAdapterManager.UpdateOrder = Ex1.infosys202119DataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
+            // ofdFileOpen
+            // 
+            this.ofdFileOpen.FileName = "openFileDialog1";
+            // 
             // TouringReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -250,5 +256,6 @@ namespace Ex1
         private System.Windows.Forms.DataGridViewTextBoxColumn peopleDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn costDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewImageColumn pictureDataGridViewImageColumn;
+        private System.Windows.Forms.OpenFileDialog ofdFileOpen;
     }
 }
