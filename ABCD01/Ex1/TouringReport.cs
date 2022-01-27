@@ -37,14 +37,12 @@ namespace Ex1
         {
             // TODO: このコード行はデータを 'infosys202119DataSet1.Touring' テーブルに読み込みます。必要に応じて移動、または削除をしてください。
             dgvTouringData.Columns[5].Visible = false;
-
         }
 
         public void dgvTouringData_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex == -1)
                 return;
-
             //選択された行のデータを取得
             ToolingData selectedMc = listTooling[e.RowIndex];
 
@@ -61,29 +59,7 @@ namespace Ex1
 
         private void Displaybt_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (ofdFileOpen.ShowDialog((IWin32Window)infosys202119Touring) == DialogResult.OK)
-                {
-                    //バイナリー形式で逆シリアル化
-                    var bf = new BinaryFormatter();
-                    using (FileStream fs = File.Open(ofdFileOpen.FileName, FileMode.Open, FileAccess.Read))
-                    {
-                        listTooling = (BindingList<ToolingData>)bf.Deserialize(fs);
-                        dgvTouringData.DataSource = null;
-                        dgvTouringData.DataSource = listTooling;
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            foreach (var item in listTooling)
-            {
-                _toolingInstance.setTbAuthor(item.Auther);
-                _toolingInstance.setNameCb(item.McName);
-            }
+            this.touringTableAdapter.Fill(this.infosys202119Touring.Touring);
         }
     }
 }

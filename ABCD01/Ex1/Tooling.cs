@@ -39,10 +39,17 @@ namespace Ex1
             pbPicture.Image = null;
         }
 
+        private void TouringReport_Load(object sender, EventArgs e)
+        {
+            // TODO: このコード行はデータを 'infosys202119DataSet1.Touring' テーブルに読み込みます。必要に応じて移動、または削除をしてください。
+            //dgvTouringData.Columns[5].Visible = false;
+        }
+
         public void TouringAddbt_Click(object sender, EventArgs e)
         {       //同じ言葉が保存されてしまう。
             Namecb.Items.Add(Namecb.Text);
-                        
+            //this.touringTableAdapter.Fill(this.infosys202119Touring.Touring);
+
             if (tbAuthor.Text == "" || Namecb.Text == "")
             {
                 MessageBox.Show("入力されていません");
@@ -65,7 +72,7 @@ namespace Ex1
             //コンボボックスの履歴登録
             setTbAuthor(tbAuthor.Text);
             setNameCb(Namecb.Text);
-
+#if false
             /*****************************/
             //try
             //{
@@ -87,6 +94,8 @@ namespace Ex1
 
             //}
             /*************************************/
+#endif
+            MessageBox.Show("保存しました。");
         }
 
         public void setTbAuthor(string author)
