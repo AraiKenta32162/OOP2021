@@ -32,14 +32,16 @@ namespace Ex1
 
         private void Tooling_Load(object sender, EventArgs e)
         {
-            //TouringReport.dgvTouringData.Columns[0].Visible = false;
-            infosys202119Touring.DataSetName = "ID";
-            infosys202119Touring.DataSetName = "日付";
-            infosys202119Touring.DataSetName = "記録者";
-            infosys202119Touring.DataSetName = "メーカー";
-            infosys202119Touring.DataSetName = "車種";
-            infosys202119Touring.DataSetName = "レポート";
-            infosys202119Touring.DataSetName = "画像";
+            dgvTooling.CurrentRow[0].Visible = false;
+            dgvTooling.Columns[1].Visible = "ID";    
+            dgvTooling.Columns[2].Visible = "日付";  
+            dgvTooling.Columns[3].Visible = "記録者";
+            dgvTooling.Columns[4].Visible = "車両名";
+            dgvTooling.Columns[5].Visible = "距離";  
+            dgvTooling.Columns[6].Visible = "目的地";
+            dgvTooling.Columns[7].Visible = "人数";  
+            dgvTooling.Columns[8].Visible = "費用";
+            dgvTooling.Columns[9].Visible = "写真";
 
             //ssErrerLavel.Text = "";
             //carReportDataGridView.Columns[6].Visible = false;
@@ -69,6 +71,7 @@ namespace Ex1
         {
             // TODO: このコード行はデータを 'infosys202119DataSet1.Touring' テーブルに読み込みます。必要に応じて移動、または削除をしてください。
             this.touringTableAdapter1.Fill(this.infosys202119Touring.Touring);
+            TouringReport.touringTableAdapter.Fill(this.infosys202119Touring.Touring);
         }
 
         public void TouringAddbt_Click(object sender, EventArgs e)
@@ -102,22 +105,21 @@ namespace Ex1
 
 
             //if (TouringReport.dgvTouringData.CurrentRow == null) return;
-            if (infosys202119Touring.DataSetName == null) return;
+            if (dgvTooling.CurrentRow == null) return;
 
-            //TouringReport.dgvTouringData.CurrentRow.Cells[2].Value = tbAuthor.Text;
-            infosys202119Touring.DataSetName = dtpDate.Text;//日付
-            infosys202119Touring.DataSetName = tbAuthor.Text;
-            infosys202119Touring.DataSetName = Namecb.Text;
-            infosys202119Touring.DataSetName = Distancetb.Text;
-            infosys202119Touring.DataSetName = Destinationtb.Text;
-            infosys202119Touring.DataSetName = Peopletb.Text;
-            infosys202119Touring.DataSetName = Costtb.Text;
-            infosys202119Touring.DataSetName = ImageToByteArray(pbPicture.Image);
+            dgvTooling.CurrentRow.Cells[1].Value = dtpDate.Text;//日付              /*infosys202119Touring.DataSetName*/
+            dgvTooling.CurrentRow.Cells[2].Value = tbAuthor.Text;
+            dgvTooling.CurrentRow.Cells[3].Value = Namecb.Text;
+            dgvTooling.CurrentRow.Cells[4].Value = Distancetb.Text;
+            dgvTooling.CurrentRow.Cells[5].Value = Destinationtb.Text;
+            dgvTooling.CurrentRow.Cells[6].Value = Peopletb.Text;
+            dgvTooling.CurrentRow.Cells[7].Value = Costtb.Text;
+            dgvTooling.CurrentRow.Cells[8].Value = ImageToByteArray(pbPicture.Image);
 
             this.Validate();
             //TouringReport./*tableAdapterManager*/touringTableAdapter.Dispose();
-            TouringReport.touringBindingSource.EndEdit();
-            TouringReport.tableAdapterManager.UpdateAll(this.infosys202119Touring);
+            this.touringBindingSource.EndEdit();
+            this.tableAdapterManager1.UpdateAll(this.infosys202119Touring);
             
             MessageBox.Show("保存しました。");
         }
@@ -142,6 +144,6 @@ namespace Ex1
             }
         }
 
-        
+       
     }
 }
