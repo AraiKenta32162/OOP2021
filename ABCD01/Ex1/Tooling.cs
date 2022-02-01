@@ -102,20 +102,20 @@ namespace Ex1
 
 
             //if (TouringReport.dgvTouringData.CurrentRow == null) return;
-            if (infosys202119Touring.DataSetName != null) return;
+            if (infosys202119Touring.DataSetName == null) return;
 
             //TouringReport.dgvTouringData.CurrentRow.Cells[2].Value = tbAuthor.Text;
-            infosys202119Touring.DataSetName.Cells[1].Value = dtpDate.CustomFormat;//日付
+            infosys202119Touring.DataSetName = dtpDate.Text;//日付
             infosys202119Touring.DataSetName = tbAuthor.Text;
             infosys202119Touring.DataSetName = Namecb.Text;
             infosys202119Touring.DataSetName = Distancetb.Text;
             infosys202119Touring.DataSetName = Destinationtb.Text;
             infosys202119Touring.DataSetName = Peopletb.Text;
             infosys202119Touring.DataSetName = Costtb.Text;
-            infosys202119Touring.DataSetName = (string)ImageToByteArray(pbPicture.Image);
+            infosys202119Touring.DataSetName = ImageToByteArray(pbPicture.Image);
 
             this.Validate();
-            //TouringReport.touringTableAdapter.Dispose();
+            TouringReport.touringTableAdapter.Dispose();
             TouringReport.tableAdapterManager.UpdateAll(this.infosys202119Touring);
             
             MessageBox.Show("保存しました。");
