@@ -32,16 +32,17 @@ namespace Ex1
 
         private void Tooling_Load(object sender, EventArgs e)
         {
-            TouringReport.dgvTouringData.Columns[0].Visible = false;
-            TouringReport.dgvTouringData.Columns[1].HeaderText = "日付";
-            TouringReport.dgvTouringData.Columns[2].HeaderText = "記録者";
-            TouringReport.dgvTouringData.Columns[3].HeaderText = "メーカー";
-            TouringReport.dgvTouringData.Columns[4].HeaderText = "車種";
-            TouringReport.dgvTouringData.Columns[5].HeaderText = "レポート";
-            TouringReport.dgvTouringData.Columns[6].HeaderText = "画像";
+            //TouringReport.dgvTouringData.Columns[0].Visible = false;
+            infosys202119Touring.DataSetName = "ID";
+            infosys202119Touring.DataSetName = "日付";
+            infosys202119Touring.DataSetName = "記録者";
+            infosys202119Touring.DataSetName = "メーカー";
+            infosys202119Touring.DataSetName = "車種";
+            infosys202119Touring.DataSetName = "レポート";
+            infosys202119Touring.DataSetName = "画像";
 
+            //ssErrerLavel.Text = "";
             //carReportDataGridView.Columns[6].Visible = false;
-            /*ssErrerLavel.Text = "";*/
 
             // dgvRegistData.Columns[5].Visible = false;
             this.touringTableAdapter1.Fill(this.infosys202119Touring.Touring);
@@ -100,15 +101,18 @@ namespace Ex1
             //setNameCb(Namecb.Text);
 
 
-            if (TouringReport.dgvTouringData.CurrentRow == null) return;
-            //infosys202119Touring = dtpDate.Value;//日付
-            TouringReport.dgvTouringData.CurrentRow.Cells[2].Value = tbAuthor.Text;
-            TouringReport.dgvTouringData.CurrentRow.Cells[3].Value = Namecb.Text;
-            TouringReport.dgvTouringData.CurrentRow.Cells[4].Value = Distancetb.Text;
-            TouringReport.dgvTouringData.CurrentRow.Cells[5].Value = Destinationtb.Text;
-            TouringReport.dgvTouringData.CurrentRow.Cells[6].Value = Peopletb.Text;
-            TouringReport.dgvTouringData.CurrentRow.Cells[7].Value = Costtb.Text;
-            TouringReport.dgvTouringData.CurrentRow.Cells[8].Value = ImageToByteArray(pbPicture.Image);
+            //if (TouringReport.dgvTouringData.CurrentRow == null) return;
+            if (infosys202119Touring.DataSetName != null) return;
+
+            infosys202119Touring.DataSetName = dtpDate.CustomFormat;//日付
+            //TouringReport.dgvTouringData.CurrentRow.Cells[2].Value = tbAuthor.Text;
+            infosys202119Touring.DataSetName = tbAuthor.Text;
+            infosys202119Touring.DataSetName = Namecb.Text;
+            infosys202119Touring.DataSetName = Distancetb.Text;
+            infosys202119Touring.DataSetName = Destinationtb.Text;
+            infosys202119Touring.DataSetName = Peopletb.Text;
+            infosys202119Touring.DataSetName = Costtb.Text;
+            infosys202119Touring.DataSetName = (string)ImageToByteArray(pbPicture.Image);
 
             this.Validate();
             TouringReport.touringTableAdapter.Dispose();
