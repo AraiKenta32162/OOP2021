@@ -115,17 +115,18 @@ namespace Ex1
             infosys202119Touring.DataSetName = ImageToByteArray(pbPicture.Image);
 
             this.Validate();
-            TouringReport.touringTableAdapter.Dispose();
+            //TouringReport.tableAdapterManager/*touringTableAdapter*/.Dispose();
+            TouringReport.touringBindingSource.EndEdit();
             TouringReport.tableAdapterManager.UpdateAll(this.infosys202119Touring);
             
             MessageBox.Show("保存しました。");
         }
 
-        private object ImageToByteArray(Image img)
+        private string ImageToByteArray(Image img)
         {
             ImageConverter imgconv = new ImageConverter();
             byte[] b = (byte[])imgconv.ConvertTo(img, typeof(byte[]));
-            return b;
+            return b.ToString();
         }
 
         public void setTbAuthor(string author)

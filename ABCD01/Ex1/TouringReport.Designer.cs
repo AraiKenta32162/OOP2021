@@ -241,7 +241,6 @@ namespace Ex1
         private System.Windows.Forms.ComboBox McNamecb;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.BindingSource touringBindingSource;
         public infosys202119DataSet1TableAdapters.TouringTableAdapter touringTableAdapter;
         public infosys202119DataSet1TableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
@@ -256,5 +255,6 @@ namespace Ex1
         private System.Windows.Forms.OpenFileDialog ofdFileOpen;
         public infosys202119DataSet1 infosys202119Touring;
         public System.Windows.Forms.DataGridView dgvTouringData;
+        public System.Windows.Forms.BindingSource touringBindingSource;
     }
 }
