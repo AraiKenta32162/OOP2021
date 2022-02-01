@@ -295,11 +295,12 @@ namespace Ex1
             this.costDataGridViewTextBoxColumn,
             this.pictureDataGridViewImageColumn});
             this.dgvTooling.DataSource = this.touringBindingSource;
-            this.dgvTooling.Location = new System.Drawing.Point(13, 223);
+            this.dgvTooling.Location = new System.Drawing.Point(12, 223);
             this.dgvTooling.Name = "dgvTooling";
             this.dgvTooling.RowTemplate.Height = 21;
             this.dgvTooling.Size = new System.Drawing.Size(544, 191);
             this.dgvTooling.TabIndex = 24;
+            this.dgvTooling.SelectionChanged += new System.EventHandler(this.dgvTooling_SelectionChanged);
             // 
             // iDDataGridViewTextBoxColumn
             // 

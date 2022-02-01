@@ -32,17 +32,17 @@ namespace Ex1
 
         private void Tooling_Load(object sender, EventArgs e)
         {
-            dgvTooling.CurrentRow[0].Visible = false;
-            dgvTooling.Columns[1].Visible = "ID";    
-            dgvTooling.Columns[2].Visible = "日付";  
-            dgvTooling.Columns[3].Visible = "記録者";
-            dgvTooling.Columns[4].Visible = "車両名";
-            dgvTooling.Columns[5].Visible = "距離";  
-            dgvTooling.Columns[6].Visible = "目的地";
-            dgvTooling.Columns[7].Visible = "人数";  
-            dgvTooling.Columns[8].Visible = "費用";
-            dgvTooling.Columns[9].Visible = "写真";
+            dgvTooling.Columns[0].Visible = false;
+            dgvTooling.Columns[1].HeaderText = "日付";  //"ID";    
+            dgvTooling.Columns[2].HeaderText = "記録者";
+            dgvTooling.Columns[3].HeaderText = "車両名";
+            dgvTooling.Columns[4].HeaderText = "距離";  
+            dgvTooling.Columns[5].HeaderText = "目的地";
+            dgvTooling.Columns[6].HeaderText = "人数";  
+            dgvTooling.Columns[7].HeaderText = "費用";
+            dgvTooling.Columns[8].HeaderText = "写真";
 
+         
             //ssErrerLavel.Text = "";
             //carReportDataGridView.Columns[6].Visible = false;
 
@@ -131,6 +131,13 @@ namespace Ex1
             return b.ToString();
         }
 
+        private string ByteArrayToImage(Image img)
+        {
+            ImageConverter imgconv = new ImageConverter();
+            byte[] b = (byte[])imgconv.ConvertTo(img, typeof(byte[]));
+            return b.ToString();
+        }
+
         public void setTbAuthor(string author)
         {
             if (!tbAuthor.Text.Contains(author))
@@ -143,7 +150,9 @@ namespace Ex1
                 Namecb.Items.Add(text);
             }
         }
+        private void dgvTooling_SelectionChanged(object sender, EventArgs e)
+        {
 
-       
+        }
     }
 }
