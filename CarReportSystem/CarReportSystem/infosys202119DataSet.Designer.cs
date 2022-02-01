@@ -497,6 +497,7 @@ namespace CarReportSystem {
                 this.columnCarName.AllowDBNull = false;
                 this.columnCarName.MaxLength = 50;
                 this.columnReport.MaxLength = 500;
+                this.columnPicture.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -727,12 +728,7 @@ namespace CarReportSystem {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public byte[] Picture {
                 get {
-                    try {
-                        return ((byte[])(this[this.tableCarReport.PictureColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("テーブル \'CarReport\' にある列 \'Picture\' の値は DBNull です。", e);
-                    }
+                    return ((byte[])(this[this.tableCarReport.PictureColumn]));
                 }
                 set {
                     this[this.tableCarReport.PictureColumn] = value;
@@ -785,18 +781,6 @@ namespace CarReportSystem {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetReportNull() {
                 this[this.tableCarReport.ReportColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsPictureNull() {
-                return this.IsNull(this.tableCarReport.PictureColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetPictureNull() {
-                this[this.tableCarReport.PictureColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1183,7 +1167,7 @@ SELECT ID, CreatedDate, Author, Maker, CarName, Report, Picture FROM CarReport W
                 this.Adapter.InsertCommand.Parameters[4].Value = ((string)(Report));
             }
             if ((Picture == null)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Picture");
             }
             else {
                 this.Adapter.InsertCommand.Parameters[5].Value = ((byte[])(Picture));
@@ -1240,7 +1224,7 @@ SELECT ID, CreatedDate, Author, Maker, CarName, Report, Picture FROM CarReport W
                 this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Report));
             }
             if ((Picture == null)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Picture");
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[5].Value = ((byte[])(Picture));
