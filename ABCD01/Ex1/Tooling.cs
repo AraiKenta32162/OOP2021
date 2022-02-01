@@ -68,7 +68,7 @@ namespace Ex1
         private void TouringReport_Load(object sender, EventArgs e)
         {
             // TODO: このコード行はデータを 'infosys202119DataSet1.Touring' テーブルに読み込みます。必要に応じて移動、または削除をしてください。
-            //dgvTouringData.Columns[5].Visible = false;
+            this.touringTableAdapter1.Fill(this.infosys202119Touring.Touring);
         }
 
         public void TouringAddbt_Click(object sender, EventArgs e)
@@ -115,7 +115,7 @@ namespace Ex1
             infosys202119Touring.DataSetName = ImageToByteArray(pbPicture.Image);
 
             this.Validate();
-            //TouringReport.tableAdapterManager/*touringTableAdapter*/.Dispose();
+            //TouringReport./*tableAdapterManager*/touringTableAdapter.Dispose();
             TouringReport.touringBindingSource.EndEdit();
             TouringReport.tableAdapterManager.UpdateAll(this.infosys202119Touring);
             
