@@ -43,7 +43,7 @@ namespace Ex1
             dgvTooling.Columns[8].HeaderText = "写真";
 
          
-            //ssErrerLavel.Text = "";
+            ssErrerLavel.Text = "";
             //carReportDataGridView.Columns[6].Visible = false;
 
             // dgvRegistData.Columns[5].Visible = false;
@@ -124,18 +124,18 @@ namespace Ex1
             MessageBox.Show("保存しました。");
         }
 
-        private string ImageToByteArray(Image img)
+        public static byte[] ImageToByteArray(Image img)
         {
             ImageConverter imgconv = new ImageConverter();
             byte[] b = (byte[])imgconv.ConvertTo(img, typeof(byte[]));
-            return b.ToString();
+            return b;
         }
 
-        private string ByteArrayToImage(Image img)
+        public static Image ByteArrayToImage(byte[] b)
         {
             ImageConverter imgconv = new ImageConverter();
-            byte[] b = (byte[])imgconv.ConvertTo(img, typeof(byte[]));
-            return b.ToString();
+            Image img = (Image)imgconv.ConvertFrom(b);
+            return img;
         }
 
         public void setTbAuthor(string author)
@@ -152,7 +152,39 @@ namespace Ex1
         }
         private void dgvTooling_SelectionChanged(object sender, EventArgs e)
         {
-
+            if (dgvTooling.CurrentRow == null) return;
+            try
+            {
+                pbPicture.Image = null;
+                dtpDate.Value = (DateTime)dgvTooling.CurrentRow.Cells[1].Value;//日付
+                tbAuthor.Text = dgvTooling.CurrentRow.Cells[2].Value.ToString();
+                //setMakerRadioButton((CarReport.MakerGroup)
+                //    Enum.Parse(typeof(CarReport.MakerGroup),carReportDataGridView.CurrentRow.Cells[3].Value.ToString())
+                //    );   // メーカー（文字列→　列挙型）
+                //var mk = (CarReport.MakerGroup)
+                //    Enum.Parse(typeof(CarReport.MakerGroup), dgvTooling.CurrentRow.Cells[3].Value.ToString());
+                //setMakerRadioButton(mk);
+                Namecb.Text = dgvTooling.CurrentRow.Cells[3].Value.ToString();
+                Distancetb.Text = dgvTooling.CurrentRow.Cells[4].Value.ToString();
+                Destinationtb.Text = dgvTooling.CurrentRow.Cells[5].Value.ToString();
+                Peopletb.Text = dgvTooling.CurrentRow.Cells[6].Value.ToString();
+                Costtb.Text = dgvTooling.CurrentRow.Cells[7].Value.ToString();
+                pbPicture.Image = ByteArrayToImage((byte[])dgvTooling.CurrentRow.Cells[8].Value);
+                ssErrerLavel.Text = "";
+                /* 
+                 *"人数";   
+                 *"費用"; 
+                 *"写真";*/ 
+            }
+            catch (InvalidCastException)
+            {
+                pbPicture.Image = null;
+            }
+            catch (Exception ex)
+            {
+                ssErrerLavel.Text = ex.Message;
+                // MessageBox.Show(ex.Message);
+            }
         }
     }
 }
