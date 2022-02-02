@@ -71,6 +71,11 @@ namespace Ex1
         {
             // TODO: このコード行はデータを 'infosys202119DataSet1.Touring' テーブルに読み込みます。必要に応じて移動、または削除をしてください。
             this.touringTableAdapter1.Fill(this.infosys202119Touring.Touring);
+
+            for (int i = 0; i < dgvTooling.RowCount; i++)
+            {
+                setTbAuthor(dgvTooling.CurrentRow.Cells[0].Value.ToString());                
+            }
             TouringReport.touringTableAdapter.Fill(this.infosys202119Touring.Touring);
         }
 
@@ -78,36 +83,9 @@ namespace Ex1
         {
             //同じ言葉が保存されてしまう。
             Namecb.Items.Add(Namecb.Text);
-            //this.touringTableAdapter.Fill(this.infosys202119Touring.Touring);
-
-            //if (tbAuthor.Text == "" || Namecb.Text == "")
-            //{
-            //    MessageBox.Show("入力されていません");
-            //    return;
-            //}
-
-            //ToolingData mcReport = new ToolingData
-            //{
-            //    Date = dtpDate.Value,   　　　　　//記入日
-            //    Auther = tbAuthor.Text,　　　　　 //記入者
-            //    McName = Namecb.Text,  　 　　　　//車両名
-            //    Distance = Distancetb.Text,　　   //距離
-            //    Destination = Destinationtb.Text, //目的地
-            //    People = Peopletb.Text,           //人数
-            //    Cost = Costtb.Text,               //費用
-            //    Picture = pbPicture.Image         //写真
-            //};
-            //listTooling.Add(mcReport);   //１レコード追加
-
-            ////コンボボックスの履歴登録
-            //setTbAuthor(tbAuthor.Text);
-            //setNameCb(Namecb.Text);
-
-
-            //if (TouringReport.dgvTouringData.CurrentRow == null) return;
+            
             if (dgvTooling.CurrentRow == null) return;
-
-            dgvTooling.CurrentRow.Cells[1].Value = dtpDate.Text;//日付              /*infosys202119Touring.DataSetName*/
+            dgvTooling.CurrentRow.Cells[1].Value = dtpDate.Text;//日付
             dgvTooling.CurrentRow.Cells[2].Value = tbAuthor.Text;
             dgvTooling.CurrentRow.Cells[3].Value = Namecb.Text;
             dgvTooling.CurrentRow.Cells[4].Value = Distancetb.Text;
@@ -115,6 +93,11 @@ namespace Ex1
             dgvTooling.CurrentRow.Cells[6].Value = Peopletb.Text;
             dgvTooling.CurrentRow.Cells[7].Value = Costtb.Text;
             dgvTooling.CurrentRow.Cells[8].Value = ImageToByteArray(pbPicture.Image);
+
+            infosys202119DataSet1TableAdapters.TouringTableAdapter regionTableAdapter = 
+                new infosys202119DataSet1TableAdapters.TouringTableAdapter();
+
+            regionTableAdapter.Insert(/*5, "NorthWestern"*/);
 
             this.Validate();
             //TouringReport./*tableAdapterManager*/touringTableAdapter.Dispose();
@@ -155,12 +138,12 @@ namespace Ex1
             if (dgvTooling.CurrentRow == null) return;
             try
             {
-                pbPicture.Image = null;
                 dtpDate.Value = (DateTime)dgvTooling.CurrentRow.Cells[1].Value;//日付
                 tbAuthor.Text = dgvTooling.CurrentRow.Cells[2].Value.ToString();
                 //setMakerRadioButton((CarReport.MakerGroup)
                 //    Enum.Parse(typeof(CarReport.MakerGroup),carReportDataGridView.CurrentRow.Cells[3].Value.ToString())
                 //    );   // メーカー（文字列→　列挙型）
+
                 //var mk = (CarReport.MakerGroup)
                 //    Enum.Parse(typeof(CarReport.MakerGroup), dgvTooling.CurrentRow.Cells[3].Value.ToString());
                 //setMakerRadioButton(mk);
@@ -171,10 +154,6 @@ namespace Ex1
                 Costtb.Text = dgvTooling.CurrentRow.Cells[7].Value.ToString();
                 pbPicture.Image = ByteArrayToImage((byte[])dgvTooling.CurrentRow.Cells[8].Value);
                 ssErrerLavel.Text = "";
-                /* 
-                 *"人数";   
-                 *"費用"; 
-                 *"写真";*/ 
             }
             catch (InvalidCastException)
             {
@@ -183,7 +162,6 @@ namespace Ex1
             catch (Exception ex)
             {
                 ssErrerLavel.Text = ex.Message;
-                // MessageBox.Show(ex.Message);
             }
         }
     }

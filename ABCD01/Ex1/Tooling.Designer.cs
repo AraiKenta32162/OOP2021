@@ -66,11 +66,13 @@ namespace Ex1
             this.pictureDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
             this.touringBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableAdapterManager1 = new Ex1.infosys202119DataSet1TableAdapters.TableAdapterManager();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.ssErrerLavel = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pbPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.infosys202119Touring)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTooling)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.touringBindingSource)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label9
@@ -368,21 +370,28 @@ namespace Ex1
             this.tableAdapterManager1.TouringTableAdapter = this.touringTableAdapter1;
             this.tableAdapterManager1.UpdateOrder = Ex1.infosys202119DataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // toolStrip1
+            // statusStrip1
             // 
-            this.toolStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(569, 25);
-            this.toolStrip1.TabIndex = 25;
-            this.toolStrip1.Text = "toolStrip1";
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ssErrerLavel});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 460);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(569, 22);
+            this.statusStrip1.TabIndex = 25;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // ssErrerLavel
+            // 
+            this.ssErrerLavel.Name = "ssErrerLavel";
+            this.ssErrerLavel.Size = new System.Drawing.Size(118, 17);
+            this.ssErrerLavel.Text = "toolStripStatusLabel1";
             // 
             // Tooling
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(569, 474);
-            this.Controls.Add(this.toolStrip1);
+            this.ClientSize = new System.Drawing.Size(569, 482);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.dgvTooling);
             this.Controls.Add(this.tbAuthor);
             this.Controls.Add(this.label5);
@@ -411,6 +420,8 @@ namespace Ex1
             ((System.ComponentModel.ISupportInitialize)(this.infosys202119Touring)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTooling)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.touringBindingSource)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -453,6 +464,7 @@ namespace Ex1
         private System.Windows.Forms.DataGridViewImageColumn pictureDataGridViewImageColumn;
         public System.Windows.Forms.BindingSource touringBindingSource;
         private infosys202119DataSet1TableAdapters.TableAdapterManager tableAdapterManager1;
-        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel ssErrerLavel;
     }
 }
