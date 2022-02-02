@@ -166,5 +166,18 @@ namespace Ex1
                 ssErrerLavel.Text = ex.Message;
             }
         }
+
+        private void btnewAdd_Click(object sender, EventArgs e)
+        {
+
+            dtpDate.Value = DateTime.Now;
+            tbAuthor.Text = "";
+            Namecb.Text = "";
+            Distancetb.Text = "";
+            Destinationtb.Text = "";
+            Peopletb.Text = "";
+            Costtb.Text = "";
+            pbPicture.Image = null;
+        }
     }
 }

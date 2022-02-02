@@ -68,6 +68,7 @@ namespace Ex1
             this.tableAdapterManager1 = new Ex1.infosys202119DataSet1TableAdapters.TableAdapterManager();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.ssErrerLavel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.btnewAdd = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.infosys202119Touring)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTooling)).BeginInit();
@@ -386,6 +387,17 @@ namespace Ex1
             this.ssErrerLavel.Size = new System.Drawing.Size(118, 17);
             this.ssErrerLavel.Text = "toolStripStatusLabel1";
             // 
+            // btnewAdd
+            // 
+            this.btnewAdd.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btnewAdd.Location = new System.Drawing.Point(202, 421);
+            this.btnewAdd.Name = "btnewAdd";
+            this.btnewAdd.Size = new System.Drawing.Size(125, 38);
+            this.btnewAdd.TabIndex = 18;
+            this.btnewAdd.Text = "新規追加";
+            this.btnewAdd.UseVisualStyleBackColor = true;
+            this.btnewAdd.Click += new System.EventHandler(this.btnewAdd_Click);
+            // 
             // Tooling
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -397,6 +409,7 @@ namespace Ex1
             this.Controls.Add(this.label5);
             this.Controls.Add(this.TouringClosebt);
             this.Controls.Add(this.Namecb);
+            this.Controls.Add(this.btnewAdd);
             this.Controls.Add(this.TouringAddbt);
             this.Controls.Add(this.btPictureDelete);
             this.Controls.Add(this.btPictureOpen);
@@ -466,5 +479,6 @@ namespace Ex1
         private infosys202119DataSet1TableAdapters.TableAdapterManager tableAdapterManager1;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel ssErrerLavel;
+        private System.Windows.Forms.Button btnewAdd;
     }
 }
