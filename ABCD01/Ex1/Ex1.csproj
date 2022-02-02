@@ -115,7 +115,7 @@
     <Compile Include="Tooling.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tooling.Designer.cs">
+    <Compile Include="Tooling.designer.cs">
       <DependentUpon>Tooling.cs</DependentUpon>
     </Compile>
     <Compile Include="ToolingData.cs" />

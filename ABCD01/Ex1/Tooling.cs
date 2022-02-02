@@ -36,13 +36,13 @@ namespace Ex1
             dgvTooling.Columns[1].HeaderText = "日付";  //"ID";    
             dgvTooling.Columns[2].HeaderText = "記録者";
             dgvTooling.Columns[3].HeaderText = "車両名";
-            dgvTooling.Columns[4].HeaderText = "距離";  
+            dgvTooling.Columns[4].HeaderText = "距離";
             dgvTooling.Columns[5].HeaderText = "目的地";
-            dgvTooling.Columns[6].HeaderText = "人数";  
+            dgvTooling.Columns[6].HeaderText = "人数";
             dgvTooling.Columns[7].HeaderText = "費用";
             dgvTooling.Columns[8].HeaderText = "写真";
 
-         
+
             ssErrerLavel.Text = "";
             //carReportDataGridView.Columns[6].Visible = false;
 
@@ -51,13 +51,14 @@ namespace Ex1
         }
 
         private void TouringClosebt_Click(object sender, EventArgs e)
-        {            
+        {
             this.Close();
         }
 
         private void btPictureOpen_Click(object sender, EventArgs e)
         {
-            if (ofdPictureOpen.ShowDialog() == DialogResult.OK){
+            if (ofdPictureOpen.ShowDialog() == DialogResult.OK)
+            {
                 pbPicture.Image = Image.FromFile(ofdPictureOpen.FileName);
             }
         }
@@ -74,7 +75,7 @@ namespace Ex1
 
             for (int i = 0; i < dgvTooling.RowCount; i++)
             {
-                setTbAuthor(dgvTooling.CurrentRow.Cells[0].Value.ToString());                
+                setTbAuthor(dgvTooling.CurrentRow.Cells[0].Value.ToString());
             }
             TouringReport.touringTableAdapter.Fill(this.infosys202119Touring.Touring);
         }
@@ -83,7 +84,7 @@ namespace Ex1
         {
             //同じ言葉が保存されてしまう。
             Namecb.Items.Add(Namecb.Text);
-            
+
             if (dgvTooling.CurrentRow == null) return;
             dgvTooling.CurrentRow.Cells[1].Value = dtpDate.Text;//日付
             dgvTooling.CurrentRow.Cells[2].Value = tbAuthor.Text;
@@ -94,7 +95,7 @@ namespace Ex1
             dgvTooling.CurrentRow.Cells[7].Value = Costtb.Text;
             dgvTooling.CurrentRow.Cells[8].Value = ImageToByteArray(pbPicture.Image);
 
-            infosys202119DataSet1TableAdapters.TouringTableAdapter regionTableAdapter = 
+            infosys202119DataSet1TableAdapters.TouringTableAdapter regionTableAdapter =
                 new infosys202119DataSet1TableAdapters.TouringTableAdapter();
 
             regionTableAdapter.Insert(/*5, "NorthWestern"*/);
@@ -103,7 +104,7 @@ namespace Ex1
             //TouringReport./*tableAdapterManager*/touringTableAdapter.Dispose();
             this.touringBindingSource.EndEdit();
             this.tableAdapterManager1.UpdateAll(this.infosys202119Touring);
-            
+
             MessageBox.Show("保存しました。");
         }
 
@@ -129,7 +130,8 @@ namespace Ex1
 
         public void setNameCb(string text)
         {
-            if (!Namecb.Items.Contains(text)){
+            if (!Namecb.Items.Contains(text))
+            {
                 Namecb.Items.Add(text);
             }
         }
