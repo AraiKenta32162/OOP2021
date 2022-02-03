@@ -299,7 +299,7 @@ namespace Ex1
             this.costDataGridViewTextBoxColumn,
             this.pictureDataGridViewImageColumn});
             this.dgvTooling.DataSource = this.touringBindingSource;
-            this.dgvTooling.Location = new System.Drawing.Point(12, 223);
+            this.dgvTooling.Location = new System.Drawing.Point(12, 224);
             this.dgvTooling.Name = "dgvTooling";
             this.dgvTooling.RowTemplate.Height = 21;
             this.dgvTooling.Size = new System.Drawing.Size(544, 191);

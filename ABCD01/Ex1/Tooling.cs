@@ -70,13 +70,13 @@ namespace Ex1
 
         private void TouringReport_Load(object sender, EventArgs e)
         {
-            // TODO: このコード行はデータを 'infosys202119DataSet1.Touring' テーブルに読み込みます。必要に応じて移動、または削除をしてください。
-            this.touringTableAdapter1.Fill(this.infosys202119Touring.Touring);
+            //// TODO: このコード行はデータを 'infosys202119DataSet1.Touring' テーブルに読み込みます。必要に応じて移動、または削除をしてください。
+            //this.touringTableAdapter1.Fill(this.infosys202119Touring.Touring);
 
-            for (int i = 0; i < dgvTooling.RowCount; i++)
-            {
-                setTbAuthor(dgvTooling.CurrentRow.Cells[0].Value.ToString());
-            }
+            //for (int i = 0; i < dgvTooling.RowCount; i++)
+            //{
+            //    setTbAuthor(dgvTooling.CurrentRow.Cells[0].Value.ToString());
+            //}
             TouringReport.touringTableAdapter.Fill(this.infosys202119Touring.Touring);
         }
 
@@ -95,8 +95,8 @@ namespace Ex1
             dgvTooling.CurrentRow.Cells[7].Value = Costtb.Text;
             dgvTooling.CurrentRow.Cells[8].Value = ImageToByteArray(pbPicture.Image);
 
-            infosys202119DataSet1TableAdapters.TouringTableAdapter regionTableAdapter =
-                new infosys202119DataSet1TableAdapters.TouringTableAdapter();
+            TouringTableAdapter regionTableAdapter =
+                new TouringTableAdapter();
 
             regionTableAdapter.Insert(/*5, "NorthWestern"*/);
 
@@ -169,6 +169,13 @@ namespace Ex1
 
         private void btnewAdd_Click(object sender, EventArgs e)
         {
+            // TODO: このコード行はデータを 'infosys202119DataSet1.Touring' テーブルに読み込みます。必要に応じて移動、または削除をしてください。
+            this.touringTableAdapter1.Fill(this.infosys202119Touring.Touring);
+
+            for (int i = 0; i < dgvTooling.RowCount; i++)
+            {
+                setTbAuthor(dgvTooling.CurrentRow.Cells[0].Value.ToString());
+            }
 
             dtpDate.Value = DateTime.Now;
             tbAuthor.Text = "";
