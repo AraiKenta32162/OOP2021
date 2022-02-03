@@ -31,8 +31,8 @@ namespace Ex1
 
         private void MaintenanceAddbt_Click(object sender, EventArgs e)
         {
-            McNamecb.Items.Add(McNamecb.Text);
             Namecb.Items.Add(Namecb.Text);
+            cbAuthor.Items.Add(cbAuthor.Text);
         }
 
         private void setCbAuthor(object text)
@@ -68,6 +68,42 @@ namespace Ex1
         {
 
         }
-        
+
+        private void btnewAdd_Click(object sender, EventArgs e)
+        {
+            // TODO: このコード行はデータを 'infosys202119DataSet1.Touring' テーブルに読み込みます。必要に応じて移動、または削除をしてください。
+            this.maintenanceTableAdapter1.Fill(this.infosys202119Maintenance.Maintenance);
+            maintenanceTableAdapter1.Fill(infosys202119Maintenance.Maintenance);
+
+            for (int i = 0; i < dgvMaintenance.RowCount; i++)
+            {
+                setTbAuthor(dgvMaintenance.CurrentRow.Cells[0].Value.ToString());
+            }
+
+            //新規レコードの追加
+            DataRow newDrv = infosys202119Maintenance.Maintenance.NewRow();
+            newDrv[0] = false;
+            newDrv[1] = dtpDate.Value;
+            newDrv[2] = tbAuthor.Text;
+            newDrv[3] = cbAuthor.Text;
+            newDrv[4] = Distancetb.Text;
+            newDrv[5] = Destinationtb.Text;
+            newDrv[6] = Peopletb.Text;
+            newDrv[7] = Costtb.Text;
+            newDrv[8] = pbPicture.Image;
+            //データセットに新しいレコードを追加
+            infosys202119Maintenance.Maintenance.Rows.Add(newDrv);
+            //データベース更新
+            maintenanceTableAdapter1.Update(infosys202119Maintenance.Maintenance);
+
+            dtpDate.Value = DateTime.Now;
+            tbAuthor.Text = "";
+            cbAuthor.Text = "";
+            Distancetb.Text = "";
+            Destinationtb.Text = "";
+            Peopletb.Text = "";
+            Costtb.Text = "";
+            pbPicture.Image = null;
+        }
     }
 }

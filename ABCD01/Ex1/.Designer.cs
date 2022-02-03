@@ -29,41 +29,47 @@ namespace Ex1
         /// </summary>
         private void InitializeComponent()
         {
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.rbOthers = new System.Windows.Forms.RadioButton();
+            this.rbKawasaki = new System.Windows.Forms.RadioButton();
+            this.rbSuzuki = new System.Windows.Forms.RadioButton();
+            this.rbYamaha = new System.Windows.Forms.RadioButton();
+            this.rbHonda = new System.Windows.Forms.RadioButton();
+            this.cbOverview = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbDetail = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.MaintenanceAddbt = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.Distancetb = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.McNamecb = new System.Windows.Forms.ComboBox();
+            this.Namecb = new System.Windows.Forms.ComboBox();
             this.Backbt = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.Namecb = new System.Windows.Forms.ComboBox();
+            this.cbAuthor = new System.Windows.Forms.ComboBox();
+            this.dgvMaintenance = new System.Windows.Forms.DataGridView();
+            this.btnewAdd = new System.Windows.Forms.Button();
+            this.maintenanceTableAdapter1 = new Ex1.infosys202119DataSetTableAdapters.MaintenanceTableAdapter();
+            this.infosys202119Maintenance = new Ex1.infosys202119DataSet();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMaintenance)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.infosys202119Maintenance)).BeginInit();
             this.SuspendLayout();
             // 
-            // dateTimePicker1
+            // dtpDate
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(71, 29);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(212, 22);
-            this.dateTimePicker1.TabIndex = 0;
+            this.dtpDate.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.dtpDate.Location = new System.Drawing.Point(71, 29);
+            this.dtpDate.Name = "dtpDate";
+            this.dtpDate.Size = new System.Drawing.Size(212, 22);
+            this.dtpDate.TabIndex = 0;
             // 
             // label1
             // 
@@ -103,11 +109,11 @@ namespace Ex1
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.radioButton5);
-            this.groupBox1.Controls.Add(this.radioButton4);
-            this.groupBox1.Controls.Add(this.radioButton3);
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
+            this.groupBox1.Controls.Add(this.rbOthers);
+            this.groupBox1.Controls.Add(this.rbKawasaki);
+            this.groupBox1.Controls.Add(this.rbSuzuki);
+            this.groupBox1.Controls.Add(this.rbYamaha);
+            this.groupBox1.Controls.Add(this.rbHonda);
             this.groupBox1.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.groupBox1.Location = new System.Drawing.Point(71, 123);
             this.groupBox1.Name = "groupBox1";
@@ -115,66 +121,66 @@ namespace Ex1
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             // 
-            // radioButton5
+            // rbOthers
             // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(356, 12);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(63, 19);
-            this.radioButton5.TabIndex = 4;
-            this.radioButton5.TabStop = true;
-            this.radioButton5.Text = "その他";
-            this.radioButton5.UseVisualStyleBackColor = true;
+            this.rbOthers.AutoSize = true;
+            this.rbOthers.Location = new System.Drawing.Point(356, 12);
+            this.rbOthers.Name = "rbOthers";
+            this.rbOthers.Size = new System.Drawing.Size(63, 19);
+            this.rbOthers.TabIndex = 4;
+            this.rbOthers.TabStop = true;
+            this.rbOthers.Text = "その他";
+            this.rbOthers.UseVisualStyleBackColor = true;
             // 
-            // radioButton4
+            // rbKawasaki
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(256, 12);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(94, 19);
-            this.radioButton4.TabIndex = 3;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "KAWASAKI";
-            this.radioButton4.UseVisualStyleBackColor = true;
+            this.rbKawasaki.AutoSize = true;
+            this.rbKawasaki.Location = new System.Drawing.Point(256, 12);
+            this.rbKawasaki.Name = "rbKawasaki";
+            this.rbKawasaki.Size = new System.Drawing.Size(94, 19);
+            this.rbKawasaki.TabIndex = 3;
+            this.rbKawasaki.TabStop = true;
+            this.rbKawasaki.Text = "KAWASAKI";
+            this.rbKawasaki.UseVisualStyleBackColor = true;
             // 
-            // radioButton3
+            // rbSuzuki
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(175, 12);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(75, 19);
-            this.radioButton3.TabIndex = 2;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "SUZUKI";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.rbSuzuki.AutoSize = true;
+            this.rbSuzuki.Location = new System.Drawing.Point(175, 12);
+            this.rbSuzuki.Name = "rbSuzuki";
+            this.rbSuzuki.Size = new System.Drawing.Size(75, 19);
+            this.rbSuzuki.TabIndex = 2;
+            this.rbSuzuki.TabStop = true;
+            this.rbSuzuki.Text = "SUZUKI";
+            this.rbSuzuki.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // rbYamaha
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(87, 13);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(82, 19);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "YAMAHA";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rbYamaha.AutoSize = true;
+            this.rbYamaha.Location = new System.Drawing.Point(87, 13);
+            this.rbYamaha.Name = "rbYamaha";
+            this.rbYamaha.Size = new System.Drawing.Size(82, 19);
+            this.rbYamaha.TabIndex = 1;
+            this.rbYamaha.TabStop = true;
+            this.rbYamaha.Text = "YAMAHA";
+            this.rbYamaha.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // rbHonda
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(6, 13);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(75, 19);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "HONDA";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rbHonda.AutoSize = true;
+            this.rbHonda.Location = new System.Drawing.Point(6, 13);
+            this.rbHonda.Name = "rbHonda";
+            this.rbHonda.Size = new System.Drawing.Size(75, 19);
+            this.rbHonda.TabIndex = 0;
+            this.rbHonda.TabStop = true;
+            this.rbHonda.Text = "HONDA";
+            this.rbHonda.UseVisualStyleBackColor = true;
             // 
-            // comboBox2
+            // cbOverview
             // 
-            this.comboBox2.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.cbOverview.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.cbOverview.FormattingEnabled = true;
+            this.cbOverview.Items.AddRange(new object[] {
             "オイル油脂類交換5000km/半年",
             "オイルフィルター交換/オイル交換2回ごと",
             "エンジン系統点検・整備",
@@ -184,11 +190,11 @@ namespace Ex1
             "足廻り点検・整備",
             "電気・灯火類点検・整備",
             "外装点検・整備"});
-            this.comboBox2.Location = new System.Drawing.Point(71, 165);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(306, 23);
-            this.comboBox2.TabIndex = 4;
-            this.comboBox2.Text = "エンジン点検・整備";
+            this.cbOverview.Location = new System.Drawing.Point(71, 165);
+            this.cbOverview.Name = "cbOverview";
+            this.cbOverview.Size = new System.Drawing.Size(306, 23);
+            this.cbOverview.TabIndex = 4;
+            this.cbOverview.Text = "エンジン点検・整備";
             // 
             // label4
             // 
@@ -214,14 +220,14 @@ namespace Ex1
             this.label5.TabIndex = 1;
             this.label5.Text = "排気量";
             // 
-            // textBox1
+            // tbDetail
             // 
-            this.textBox1.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.textBox1.Location = new System.Drawing.Point(71, 206);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(434, 137);
-            this.textBox1.TabIndex = 5;
+            this.tbDetail.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.tbDetail.Location = new System.Drawing.Point(71, 206);
+            this.tbDetail.Multiline = true;
+            this.tbDetail.Name = "tbDetail";
+            this.tbDetail.Size = new System.Drawing.Size(511, 157);
+            this.tbDetail.TabIndex = 5;
             // 
             // label6
             // 
@@ -238,7 +244,7 @@ namespace Ex1
             // MaintenanceAddbt
             // 
             this.MaintenanceAddbt.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.MaintenanceAddbt.Location = new System.Drawing.Point(530, 231);
+            this.MaintenanceAddbt.Location = new System.Drawing.Point(499, 568);
             this.MaintenanceAddbt.Name = "MaintenanceAddbt";
             this.MaintenanceAddbt.Size = new System.Drawing.Size(81, 38);
             this.MaintenanceAddbt.TabIndex = 6;
@@ -266,13 +272,13 @@ namespace Ex1
             this.label9.TabIndex = 1;
             this.label9.Text = "車検日";
             // 
-            // textBox2
+            // Distancetb
             // 
-            this.textBox2.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.textBox2.Location = new System.Drawing.Point(370, 62);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(212, 22);
-            this.textBox2.TabIndex = 8;
+            this.Distancetb.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.Distancetb.Location = new System.Drawing.Point(370, 62);
+            this.Distancetb.Name = "Distancetb";
+            this.Distancetb.Size = new System.Drawing.Size(212, 22);
+            this.Distancetb.TabIndex = 8;
             // 
             // textBox3
             // 
@@ -290,26 +296,26 @@ namespace Ex1
             this.textBox4.Size = new System.Drawing.Size(212, 22);
             this.textBox4.TabIndex = 9;
             // 
-            // McNamecb
+            // Namecb
             // 
-            this.McNamecb.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.McNamecb.FormattingEnabled = true;
-            this.McNamecb.Items.AddRange(new object[] {
+            this.Namecb.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.Namecb.FormattingEnabled = true;
+            this.Namecb.Items.AddRange(new object[] {
             "ZRX1200r",
             "XL1200r",
             "ZZR250",
             "XV250ビラーゴ",
             "エリミネーター125"});
-            this.McNamecb.Location = new System.Drawing.Point(71, 64);
-            this.McNamecb.Name = "McNamecb";
-            this.McNamecb.Size = new System.Drawing.Size(212, 23);
-            this.McNamecb.TabIndex = 10;
-            this.McNamecb.SelectedIndexChanged += new System.EventHandler(this.Namecb_SelectedIndexChanged);
+            this.Namecb.Location = new System.Drawing.Point(71, 64);
+            this.Namecb.Name = "Namecb";
+            this.Namecb.Size = new System.Drawing.Size(212, 23);
+            this.Namecb.TabIndex = 10;
+            this.Namecb.SelectedIndexChanged += new System.EventHandler(this.Namecb_SelectedIndexChanged);
             // 
             // Backbt
             // 
             this.Backbt.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.Backbt.Location = new System.Drawing.Point(530, 289);
+            this.Backbt.Location = new System.Drawing.Point(409, 568);
             this.Backbt.Name = "Backbt";
             this.Backbt.Size = new System.Drawing.Size(81, 38);
             this.Backbt.TabIndex = 6;
@@ -327,36 +333,67 @@ namespace Ex1
             this.label7.TabIndex = 1;
             this.label7.Text = "記入者";
             // 
-            // Namecb
+            // cbAuthor
             // 
-            this.Namecb.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.Namecb.FormattingEnabled = true;
-            this.Namecb.Items.AddRange(new object[] {
+            this.cbAuthor.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.cbAuthor.FormattingEnabled = true;
+            this.cbAuthor.Items.AddRange(new object[] {
             "ZRX1200r",
             "XL1200r",
             "ZZR250",
             "XV250ビラーゴ",
             "エリミネーター125"});
-            this.Namecb.Location = new System.Drawing.Point(370, 28);
-            this.Namecb.Name = "Namecb";
-            this.Namecb.Size = new System.Drawing.Size(212, 23);
-            this.Namecb.TabIndex = 11;
+            this.cbAuthor.Location = new System.Drawing.Point(370, 28);
+            this.cbAuthor.Name = "cbAuthor";
+            this.cbAuthor.Size = new System.Drawing.Size(212, 23);
+            this.cbAuthor.TabIndex = 11;
+            // 
+            // dgvMaintenance
+            // 
+            this.dgvMaintenance.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMaintenance.Location = new System.Drawing.Point(71, 369);
+            this.dgvMaintenance.Name = "dgvMaintenance";
+            this.dgvMaintenance.RowTemplate.Height = 21;
+            this.dgvMaintenance.Size = new System.Drawing.Size(509, 193);
+            this.dgvMaintenance.TabIndex = 12;
+            // 
+            // btnewAdd
+            // 
+            this.btnewAdd.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btnewAdd.Location = new System.Drawing.Point(186, 568);
+            this.btnewAdd.Name = "btnewAdd";
+            this.btnewAdd.Size = new System.Drawing.Size(135, 38);
+            this.btnewAdd.TabIndex = 6;
+            this.btnewAdd.Text = "新規追加";
+            this.btnewAdd.UseVisualStyleBackColor = true;
+            this.btnewAdd.Click += new System.EventHandler(this.btnewAdd_Click);
+            // 
+            // maintenanceTableAdapter1
+            // 
+            this.maintenanceTableAdapter1.ClearBeforeFill = true;
+            // 
+            // infosys202119Maintenance
+            // 
+            this.infosys202119Maintenance.DataSetName = "infosys202119DataSet";
+            this.infosys202119Maintenance.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // Maintenance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(637, 354);
+            this.ClientSize = new System.Drawing.Size(592, 618);
+            this.Controls.Add(this.dgvMaintenance);
+            this.Controls.Add(this.cbAuthor);
             this.Controls.Add(this.Namecb);
-            this.Controls.Add(this.McNamecb);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.Distancetb);
+            this.Controls.Add(this.btnewAdd);
             this.Controls.Add(this.Backbt);
             this.Controls.Add(this.MaintenanceAddbt);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.tbDetail);
+            this.Controls.Add(this.cbOverview);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
@@ -367,12 +404,14 @@ namespace Ex1
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtpDate);
             this.Name = "Maintenance";
             this.Text = "整備";
             this.Load += new System.EventHandler(this.Seibi_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMaintenance)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.infosys202119Maintenance)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -380,31 +419,35 @@ namespace Ex1
 
         #endregion
 
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpDate;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton5;
-        private System.Windows.Forms.RadioButton radioButton4;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.RadioButton rbYamaha;
+        private System.Windows.Forms.RadioButton rbHonda;
+        private System.Windows.Forms.RadioButton rbOthers;
+        private System.Windows.Forms.RadioButton rbKawasaki;
+        private System.Windows.Forms.RadioButton rbSuzuki;
+        private System.Windows.Forms.ComboBox cbOverview;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbDetail;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button MaintenanceAddbt;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox Distancetb;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.ComboBox McNamecb;
+        private System.Windows.Forms.ComboBox Namecb;
         private System.Windows.Forms.Button Backbt;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox Namecb;
+        private System.Windows.Forms.ComboBox cbAuthor;
+        private System.Windows.Forms.DataGridView dgvMaintenance;
+        private System.Windows.Forms.Button btnewAdd;
+        private infosys202119DataSetTableAdapters.MaintenanceTableAdapter maintenanceTableAdapter1;
+        private infosys202119DataSet infosys202119Maintenance;
     }
 }
 
