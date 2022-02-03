@@ -233,8 +233,26 @@ namespace Ex1
             this.Namecb.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.Namecb.FormattingEnabled = true;
             this.Namecb.Items.AddRange(new object[] {
+            "-----～1000cc-------",
+            "GL1800ゴールドウィング",
+            "CB1300Super Four",
+            "CB1300Super ボルドール",
             "ZRX1200r",
             "XL1200r",
+            "-----1000cc--------",
+            "CBR1000RR-R",
+            "------750cc--------",
+            "NC750X",
+            "CBR650R",
+            "CB650R",
+            "レブル500",
+            "------400cc--------",
+            "CB400SuperFour",
+            "CBR400R",
+            "GB350",
+            "------250cc--------",
+            "CBR250RR",
+            "レブル250",
             "ZZR250",
             "XV250ビラーゴ",
             "エリミネーター125"});

@@ -33,7 +33,7 @@ namespace Ex1
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gbMaker = new System.Windows.Forms.GroupBox();
             this.rbOthers = new System.Windows.Forms.RadioButton();
             this.rbKawasaki = new System.Windows.Forms.RadioButton();
             this.rbSuzuki = new System.Windows.Forms.RadioButton();
@@ -58,7 +58,7 @@ namespace Ex1
             this.btnewAdd = new System.Windows.Forms.Button();
             this.maintenanceTableAdapter1 = new Ex1.infosys202119DataSetTableAdapters.MaintenanceTableAdapter();
             this.infosys202119Maintenance = new Ex1.infosys202119DataSet();
-            this.groupBox1.SuspendLayout();
+            this.gbMaker.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMaintenance)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.infosys202119Maintenance)).BeginInit();
             this.SuspendLayout();
@@ -107,19 +107,19 @@ namespace Ex1
             this.label3.TabIndex = 1;
             this.label3.Text = "メーカー名";
             // 
-            // groupBox1
+            // gbMaker
             // 
-            this.groupBox1.Controls.Add(this.rbOthers);
-            this.groupBox1.Controls.Add(this.rbKawasaki);
-            this.groupBox1.Controls.Add(this.rbSuzuki);
-            this.groupBox1.Controls.Add(this.rbYamaha);
-            this.groupBox1.Controls.Add(this.rbHonda);
-            this.groupBox1.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.groupBox1.Location = new System.Drawing.Point(71, 123);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(434, 36);
-            this.groupBox1.TabIndex = 3;
-            this.groupBox1.TabStop = false;
+            this.gbMaker.Controls.Add(this.rbOthers);
+            this.gbMaker.Controls.Add(this.rbKawasaki);
+            this.gbMaker.Controls.Add(this.rbSuzuki);
+            this.gbMaker.Controls.Add(this.rbYamaha);
+            this.gbMaker.Controls.Add(this.rbHonda);
+            this.gbMaker.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.gbMaker.Location = new System.Drawing.Point(71, 123);
+            this.gbMaker.Name = "gbMaker";
+            this.gbMaker.Size = new System.Drawing.Size(434, 36);
+            this.gbMaker.TabIndex = 3;
+            this.gbMaker.TabStop = false;
             // 
             // rbOthers
             // 
@@ -223,10 +223,10 @@ namespace Ex1
             // tbDetail
             // 
             this.tbDetail.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.tbDetail.Location = new System.Drawing.Point(71, 206);
+            this.tbDetail.Location = new System.Drawing.Point(12, 221);
             this.tbDetail.Multiline = true;
             this.tbDetail.Name = "tbDetail";
-            this.tbDetail.Size = new System.Drawing.Size(511, 157);
+            this.tbDetail.Size = new System.Drawing.Size(568, 157);
             this.tbDetail.TabIndex = 5;
             // 
             // label6
@@ -235,7 +235,7 @@ namespace Ex1
             this.label6.BackColor = System.Drawing.Color.White;
             this.label6.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label6.ForeColor = System.Drawing.Color.Red;
-            this.label6.Location = new System.Drawing.Point(3, 209);
+            this.label6.Location = new System.Drawing.Point(1, 203);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(67, 15);
             this.label6.TabIndex = 1;
@@ -244,7 +244,7 @@ namespace Ex1
             // MaintenanceAddbt
             // 
             this.MaintenanceAddbt.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.MaintenanceAddbt.Location = new System.Drawing.Point(499, 568);
+            this.MaintenanceAddbt.Location = new System.Drawing.Point(499, 583);
             this.MaintenanceAddbt.Name = "MaintenanceAddbt";
             this.MaintenanceAddbt.Size = new System.Drawing.Size(81, 38);
             this.MaintenanceAddbt.TabIndex = 6;
@@ -315,7 +315,7 @@ namespace Ex1
             // Backbt
             // 
             this.Backbt.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.Backbt.Location = new System.Drawing.Point(409, 568);
+            this.Backbt.Location = new System.Drawing.Point(409, 583);
             this.Backbt.Name = "Backbt";
             this.Backbt.Size = new System.Drawing.Size(81, 38);
             this.Backbt.TabIndex = 6;
@@ -351,16 +351,16 @@ namespace Ex1
             // dgvMaintenance
             // 
             this.dgvMaintenance.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMaintenance.Location = new System.Drawing.Point(71, 369);
+            this.dgvMaintenance.Location = new System.Drawing.Point(12, 384);
             this.dgvMaintenance.Name = "dgvMaintenance";
             this.dgvMaintenance.RowTemplate.Height = 21;
-            this.dgvMaintenance.Size = new System.Drawing.Size(509, 193);
+            this.dgvMaintenance.Size = new System.Drawing.Size(568, 193);
             this.dgvMaintenance.TabIndex = 12;
             // 
             // btnewAdd
             // 
             this.btnewAdd.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btnewAdd.Location = new System.Drawing.Point(186, 568);
+            this.btnewAdd.Location = new System.Drawing.Point(186, 583);
             this.btnewAdd.Name = "btnewAdd";
             this.btnewAdd.Size = new System.Drawing.Size(135, 38);
             this.btnewAdd.TabIndex = 6;
@@ -382,7 +382,7 @@ namespace Ex1
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(592, 618);
+            this.ClientSize = new System.Drawing.Size(592, 627);
             this.Controls.Add(this.dgvMaintenance);
             this.Controls.Add(this.cbAuthor);
             this.Controls.Add(this.Namecb);
@@ -394,7 +394,7 @@ namespace Ex1
             this.Controls.Add(this.MaintenanceAddbt);
             this.Controls.Add(this.tbDetail);
             this.Controls.Add(this.cbOverview);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gbMaker);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -408,8 +408,8 @@ namespace Ex1
             this.Name = "Maintenance";
             this.Text = "整備";
             this.Load += new System.EventHandler(this.Seibi_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gbMaker.ResumeLayout(false);
+            this.gbMaker.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMaintenance)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.infosys202119Maintenance)).EndInit();
             this.ResumeLayout(false);
@@ -423,7 +423,7 @@ namespace Ex1
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gbMaker;
         private System.Windows.Forms.RadioButton rbYamaha;
         private System.Windows.Forms.RadioButton rbHonda;
         private System.Windows.Forms.RadioButton rbOthers;

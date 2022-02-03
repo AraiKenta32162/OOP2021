@@ -49,7 +49,7 @@ namespace Ex1
         private Mc.MakerGroup selectedGroup()
         {
 
-            foreach (var rb in groupBox1.Controls)
+            foreach (var rb in gbMaker.Controls)
             {
                 if (((RadioButton)rb).Checked)
                 {
@@ -77,14 +77,14 @@ namespace Ex1
 
             for (int i = 0; i < dgvMaintenance.RowCount; i++)
             {
-                setTbAuthor(dgvMaintenance.CurrentRow.Cells[0].Value.ToString());
+                setCbAuthor(dgvMaintenance.CurrentRow.Cells[0].Value.ToString());
             }
 
             //新規レコードの追加
             DataRow newDrv = infosys202119Maintenance.Maintenance.NewRow();
             newDrv[0] = false;
             newDrv[1] = dtpDate.Value;
-            newDrv[2] = tbAuthor.Text;
+            newDrv[2] = cbAuthor.Text;
             newDrv[3] = cbAuthor.Text;
             newDrv[4] = Distancetb.Text;
             newDrv[5] = Destinationtb.Text;
