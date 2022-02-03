@@ -69,6 +69,7 @@ namespace Ex1
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.ssErrerLavel = new System.Windows.Forms.ToolStripStatusLabel();
             this.btnewAdd = new System.Windows.Forms.Button();
+            this.btDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.infosys202119Touring)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTooling)).BeginInit();
@@ -219,7 +220,7 @@ namespace Ex1
             // TouringAddbt
             // 
             this.TouringAddbt.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.TouringAddbt.Location = new System.Drawing.Point(374, 421);
+            this.TouringAddbt.Location = new System.Drawing.Point(374, 419);
             this.TouringAddbt.Name = "TouringAddbt";
             this.TouringAddbt.Size = new System.Drawing.Size(96, 38);
             this.TouringAddbt.TabIndex = 18;
@@ -299,10 +300,10 @@ namespace Ex1
             this.costDataGridViewTextBoxColumn,
             this.pictureDataGridViewImageColumn});
             this.dgvTooling.DataSource = this.touringBindingSource;
-            this.dgvTooling.Location = new System.Drawing.Point(12, 224);
+            this.dgvTooling.Location = new System.Drawing.Point(12, 223);
             this.dgvTooling.Name = "dgvTooling";
             this.dgvTooling.RowTemplate.Height = 21;
-            this.dgvTooling.Size = new System.Drawing.Size(544, 191);
+            this.dgvTooling.Size = new System.Drawing.Size(545, 191);
             this.dgvTooling.TabIndex = 24;
             this.dgvTooling.SelectionChanged += new System.EventHandler(this.dgvTooling_SelectionChanged);
             // 
@@ -390,13 +391,24 @@ namespace Ex1
             // btnewAdd
             // 
             this.btnewAdd.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btnewAdd.Location = new System.Drawing.Point(202, 421);
+            this.btnewAdd.Location = new System.Drawing.Point(16, 419);
             this.btnewAdd.Name = "btnewAdd";
             this.btnewAdd.Size = new System.Drawing.Size(125, 38);
             this.btnewAdd.TabIndex = 18;
             this.btnewAdd.Text = "新規追加";
             this.btnewAdd.UseVisualStyleBackColor = true;
             this.btnewAdd.Click += new System.EventHandler(this.btnewAdd_Click);
+            // 
+            // btDelete
+            // 
+            this.btDelete.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btDelete.Location = new System.Drawing.Point(272, 419);
+            this.btDelete.Name = "btDelete";
+            this.btDelete.Size = new System.Drawing.Size(96, 38);
+            this.btDelete.TabIndex = 18;
+            this.btDelete.Text = "削除";
+            this.btDelete.UseVisualStyleBackColor = true;
+            this.btDelete.Click += new System.EventHandler(this.btDelete_Click);
             // 
             // Tooling
             // 
@@ -410,6 +422,7 @@ namespace Ex1
             this.Controls.Add(this.TouringClosebt);
             this.Controls.Add(this.Namecb);
             this.Controls.Add(this.btnewAdd);
+            this.Controls.Add(this.btDelete);
             this.Controls.Add(this.TouringAddbt);
             this.Controls.Add(this.btPictureDelete);
             this.Controls.Add(this.btPictureOpen);
@@ -480,5 +493,6 @@ namespace Ex1
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel ssErrerLavel;
         private System.Windows.Forms.Button btnewAdd;
+        private System.Windows.Forms.Button btDelete;
     }
 }

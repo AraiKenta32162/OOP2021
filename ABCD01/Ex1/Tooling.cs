@@ -1,22 +1,15 @@
 ﻿using Ex1.infosys202119DataSet1TableAdapters;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Ex1
 {
     public partial class Tooling : Form
     {
-        BindingList<ToolingData> listTooling = new BindingList<ToolingData>();
         private static TouringReport TouringReport;
+        System.Windows.Data.CollectionViewSource TouringViewSource;
 
         public static TouringReport Form1Instance
         {
@@ -42,11 +35,7 @@ namespace Ex1
             dgvTooling.Columns[7].HeaderText = "費用";
             dgvTooling.Columns[8].HeaderText = "写真";
 
-
             ssErrerLavel.Text = "";
-            //carReportDataGridView.Columns[6].Visible = false;
-
-            // dgvRegistData.Columns[5].Visible = false;
             this.touringTableAdapter1.Fill(this.infosys202119Touring.Touring);
         }
 
@@ -70,13 +59,6 @@ namespace Ex1
 
         private void TouringReport_Load(object sender, EventArgs e)
         {
-            //// TODO: このコード行はデータを 'infosys202119DataSet1.Touring' テーブルに読み込みます。必要に応じて移動、または削除をしてください。
-            //this.touringTableAdapter1.Fill(this.infosys202119Touring.Touring);
-
-            //for (int i = 0; i < dgvTooling.RowCount; i++)
-            //{
-            //    setTbAuthor(dgvTooling.CurrentRow.Cells[0].Value.ToString());
-            //}
             TouringReport.touringTableAdapter.Fill(this.infosys202119Touring.Touring);
         }
 
@@ -86,6 +68,7 @@ namespace Ex1
             Namecb.Items.Add(Namecb.Text);
 
             if (dgvTooling.CurrentRow == null) return;
+            dgvTooling.Columns[0].Visible = false;
             dgvTooling.CurrentRow.Cells[1].Value = dtpDate.Text;//日付
             dgvTooling.CurrentRow.Cells[2].Value = tbAuthor.Text;
             dgvTooling.CurrentRow.Cells[3].Value = Namecb.Text;
@@ -98,14 +81,13 @@ namespace Ex1
             TouringTableAdapter regionTableAdapter =
                 new TouringTableAdapter();
 
-            regionTableAdapter.Insert(/*5, "NorthWestern"*/);
-
             this.Validate();
-            //TouringReport./*tableAdapterManager*/touringTableAdapter.Dispose();
+            //TouringReport.tableAdapterManagertouringTableAdapter.Dispose();
             this.touringBindingSource.EndEdit();
             this.tableAdapterManager1.UpdateAll(this.infosys202119Touring);
 
-            MessageBox.Show("保存しました。");
+            MessageBox.Show("保存しました。");                                
+
         }
 
         public static byte[] ImageToByteArray(Image img)
@@ -171,11 +153,28 @@ namespace Ex1
         {
             // TODO: このコード行はデータを 'infosys202119DataSet1.Touring' テーブルに読み込みます。必要に応じて移動、または削除をしてください。
             this.touringTableAdapter1.Fill(this.infosys202119Touring.Touring);
+            touringTableAdapter1.Fill(infosys202119Touring.Touring);
 
             for (int i = 0; i < dgvTooling.RowCount; i++)
             {
                 setTbAuthor(dgvTooling.CurrentRow.Cells[0].Value.ToString());
             }
+
+            //新規レコードの追加
+            DataRow newDrv = infosys202119Touring.Touring.NewRow();
+            newDrv[0] = false;
+            newDrv[1] = dtpDate.Value;
+            newDrv[2] = tbAuthor.Text;
+            newDrv[3] = Namecb.Text;
+            newDrv[4] = Distancetb.Text;
+            newDrv[5] = Destinationtb.Text;
+            newDrv[6] = Peopletb.Text;
+            newDrv[7] = Costtb.Text;
+            newDrv[8] = pbPicture.Image;
+            //データセットに新しいレコードを追加
+            infosys202119Touring.Touring.Rows.Add(newDrv);
+            //データベース更新
+            touringTableAdapter1.Update(infosys202119Touring.Touring);
 
             dtpDate.Value = DateTime.Now;
             tbAuthor.Text = "";
@@ -185,6 +184,16 @@ namespace Ex1
             Peopletb.Text = "";
             Costtb.Text = "";
             pbPicture.Image = null;
+        }
+
+        private void btDelete_Click(object sender, EventArgs e)
+        {
+            //選択行の取り出し
+            DataRowView drv = (DataRowView)TouringViewSource.View.CurrentItem;
+            //選択されたレコードの削除
+            drv.Delete();
+            //データベース更新
+            touringTableAdapter1.Update(infosys202119Touring.Touring);
         }
     }
 }

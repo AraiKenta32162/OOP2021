@@ -66,6 +66,7 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="infosys202119DataSet.Designer.cs">
@@ -83,6 +84,7 @@
       <DependentUpon>infosys202119DataSet1.xsd</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
+    <Compile Include="infosys202119DataSet1TableAdapters\touringTableAdapter.cs" />
     <Compile Include="ItemData.cs" />
     <Compile Include="MaintenanceDetails.cs">
       <SubType>Form</SubType>
