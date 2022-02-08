@@ -33,7 +33,7 @@ namespace Ex1
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MaintenanceDetails));
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Displaybt = new System.Windows.Forms.Button();
             this.dgvMaintenanceData = new System.Windows.Forms.DataGridView();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.createdDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,8 +46,8 @@ namespace Ex1
             this.outlineDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.detailsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.maintenanceBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.infosys202119DataSet = new Ex1.infosys202119DataSet();
-            this.button3 = new System.Windows.Forms.Button();
+            this.infosys202119Maintenance = new Ex1.infosys202119DataSet();
+            this.Backbt = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.ofdPictureOpen = new System.Windows.Forms.OpenFileDialog();
             this.sfdFileSave = new System.Windows.Forms.SaveFileDialog();
@@ -68,7 +68,7 @@ namespace Ex1
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMaintenanceData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maintenanceBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.infosys202119DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.infosys202119Maintenance)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
             this.SuspendLayout();
@@ -98,16 +98,16 @@ namespace Ex1
             this.label2.TabIndex = 12;
             this.label2.Text = "車両名";
             // 
-            // button1
+            // Displaybt
             // 
-            this.button1.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button1.Location = new System.Drawing.Point(737, 28);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(103, 58);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "表示";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.Displaybt.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.Displaybt.Location = new System.Drawing.Point(737, 28);
+            this.Displaybt.Name = "Displaybt";
+            this.Displaybt.Size = new System.Drawing.Size(103, 58);
+            this.Displaybt.TabIndex = 17;
+            this.Displaybt.Text = "表示";
+            this.Displaybt.UseVisualStyleBackColor = true;
+            this.Displaybt.Click += new System.EventHandler(this.Displaybt_Click);
             // 
             // dgvMaintenanceData
             // 
@@ -195,23 +195,23 @@ namespace Ex1
             // maintenanceBindingSource
             // 
             this.maintenanceBindingSource.DataMember = "Maintenance";
-            this.maintenanceBindingSource.DataSource = this.infosys202119DataSet;
+            this.maintenanceBindingSource.DataSource = this.infosys202119Maintenance;
             // 
-            // infosys202119DataSet
+            // infosys202119Maintenance
             // 
-            this.infosys202119DataSet.DataSetName = "infosys202119DataSet";
-            this.infosys202119DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.infosys202119Maintenance.DataSetName = "infosys202119DataSet";
+            this.infosys202119Maintenance.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // button3
+            // Backbt
             // 
-            this.button3.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button3.Location = new System.Drawing.Point(855, 28);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(92, 58);
-            this.button3.TabIndex = 17;
-            this.button3.Text = "戻る";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.Backbt.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.Backbt.Location = new System.Drawing.Point(855, 28);
+            this.Backbt.Name = "Backbt";
+            this.Backbt.Size = new System.Drawing.Size(92, 58);
+            this.Backbt.TabIndex = 17;
+            this.Backbt.Text = "戻る";
+            this.Backbt.UseVisualStyleBackColor = true;
+            this.Backbt.Click += new System.EventHandler(this.Backbt_Click);
             // 
             // checkBox1
             // 
@@ -364,8 +364,8 @@ namespace Ex1
             this.Controls.Add(this.bindingNavigator1);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.dgvMaintenanceData);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Backbt);
+            this.Controls.Add(this.Displaybt);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label2);
             this.Name = "MaintenanceDetails";
@@ -373,7 +373,7 @@ namespace Ex1
             this.Load += new System.EventHandler(this.MaintenanceDetails_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMaintenanceData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.maintenanceBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.infosys202119DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.infosys202119Maintenance)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
@@ -385,14 +385,14 @@ namespace Ex1
         #endregion
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Displaybt;
         private System.Windows.Forms.DataGridView dgvMaintenanceData;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button Backbt;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.OpenFileDialog ofdPictureOpen;
         private System.Windows.Forms.SaveFileDialog sfdFileSave;
         private System.Windows.Forms.OpenFileDialog ofdFileOpen;
-        private infosys202119DataSet infosys202119DataSet;
+        private infosys202119DataSet infosys202119Maintenance;
         private System.Windows.Forms.BindingSource maintenanceBindingSource;
         private infosys202119DataSetTableAdapters.MaintenanceTableAdapter maintenanceTableAdapter;
         private infosys202119DataSetTableAdapters.TableAdapterManager tableAdapterManager;

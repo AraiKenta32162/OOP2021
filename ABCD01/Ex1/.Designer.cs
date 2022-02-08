@@ -540,29 +540,15 @@ namespace Ex1
         }
 
         #endregion
-
-        private System.Windows.Forms.DateTimePicker dtpDate;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.GroupBox gbMaker;
-        private System.Windows.Forms.RadioButton rbYamaha;
-        private System.Windows.Forms.RadioButton rbHonda;
-        private System.Windows.Forms.RadioButton rbOthers;
-        private System.Windows.Forms.RadioButton rbKawasaki;
-        private System.Windows.Forms.RadioButton rbSuzuki;
-        private System.Windows.Forms.ComboBox cbOverview;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox tbDetail;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button MaintenanceAddbt;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox Distancetb;
-        private System.Windows.Forms.TextBox inspectiontb;
-        private System.Windows.Forms.TextBox Exhausttb;
-        private System.Windows.Forms.ComboBox Namecb;
         private System.Windows.Forms.Button Backbt;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dgvMaintenance;
@@ -585,7 +571,20 @@ namespace Ex1
         private System.Windows.Forms.DataGridViewTextBoxColumn outlineDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn detailsDataGridViewTextBoxColumn;
         private System.Windows.Forms.ToolStripStatusLabel ssErrerLavel;
-        private System.Windows.Forms.TextBox tbAuthor;
+        public System.Windows.Forms.DateTimePicker dtpDate;
+        public System.Windows.Forms.TextBox Distancetb;
+        public System.Windows.Forms.TextBox inspectiontb;
+        public System.Windows.Forms.TextBox Exhausttb;
+        public System.Windows.Forms.ComboBox Namecb;
+        public System.Windows.Forms.TextBox tbAuthor;
+        public System.Windows.Forms.GroupBox gbMaker;
+        public System.Windows.Forms.RadioButton rbYamaha;
+        public System.Windows.Forms.RadioButton rbHonda;
+        public System.Windows.Forms.RadioButton rbOthers;
+        public System.Windows.Forms.RadioButton rbKawasaki;
+        public System.Windows.Forms.RadioButton rbSuzuki;
+        public System.Windows.Forms.ComboBox cbOverview;
+        public System.Windows.Forms.TextBox tbDetail;
     }
 }
 

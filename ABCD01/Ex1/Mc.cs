@@ -11,7 +11,7 @@ namespace Ex1
         [DisplayName("記録者")]
         public string Auther { get; set; }  //記録者
         [DisplayName("車名")]
-        public string CarName { get; set; } //車名
+        public string McName { get; set; } //車名
         [DisplayName("走行距離")]
         public string Distance { get; set; } //走行距離
         [DisplayName("排気量")]
@@ -45,7 +45,7 @@ namespace Ex1
         {
             this.Date = date;
             this.Auther = auther;
-            this.CarName = carName;
+            this.McName = carName;
             this.Distance = distance;
             this.Exhaust = exhaust;
             this.Inspection = inspection;

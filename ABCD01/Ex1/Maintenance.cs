@@ -70,25 +70,40 @@ namespace Ex1
             }
         }
 
-        
-
         private Mc.MakerGroup selectedGroup()
         {
-
-            foreach (var rb in gbMaker.Controls)
-            {
-                if (((RadioButton)rb).Checked)
-                {
-                    return (Mc.MakerGroup)int.Parse(((string)((RadioButton)rb).Tag));
-                }
-            }
+            //foreach (var rb in gbMaker.Controls)
+            //{
+            //    if (((RadioButton)rb).Checked)
+            //    {
+            //        return (Mc.MakerGroup)int.Parse((string)((RadioButton)rb).Tag);
+            //        return (Mc.MakerGroup)int.Parse((string)(RadioButton)rb).ToString;
+            //    }
+            //}
             return Mc.MakerGroup.その他;
         }
 
-        //private void Namecb_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-
-        //}
+        private void setMakerRadioButton(Mc.MakerGroup mg)
+        {
+            switch (mg)
+            {
+                case Mc.MakerGroup.HONDA:
+                    rbHonda.Checked = true;
+                    break;
+                case Mc.MakerGroup.YAMAHA:
+                    rbYamaha.Checked = true;
+                    break;
+                case Mc.MakerGroup.SUZUKI:
+                    rbSuzuki.Checked = true;
+                    break;
+                case Mc.MakerGroup.KAWASAKI:
+                    rbKawasaki.Checked = true;
+                    break;
+                default:    //その他
+                    rbOthers.Checked = true;
+                    break;
+            }
+        }
 
         private void btnewAdd_Click(object sender, EventArgs e)
         {
@@ -98,7 +113,7 @@ namespace Ex1
 
             for (int i = 0; i < dgvMaintenance.RowCount; i++)
             {
-                setCbAuthor(dgvMaintenance.CurrentRow.Cells[0].Value.ToString());
+                setTbAuthor(dgvMaintenance.CurrentRow.Cells[0].Value.ToString());
             }
 
             //新規レコードの追加
@@ -124,7 +139,7 @@ namespace Ex1
             Distancetb.Text = "";
             Exhausttb.Text = "";
             inspectiontb.Text = "";
-            selectedGroup() ;
+            selectedGroup();
             cbOverview.Text = "";
             tbDetail.Text = "";
         }
@@ -153,20 +168,19 @@ namespace Ex1
             {
                 dtpDate.Value = (DateTime)dgvMaintenance.CurrentRow.Cells[1].Value;//日付
                 tbAuthor.Text = dgvMaintenance.CurrentRow.Cells[2].Value.ToString();
-                //setMakerRadioButton((CarReport.MakerGroup)
-                //    Enum.Parse(typeof(CarReport.MakerGroup),carReportDataGridView.CurrentRow.Cells[3].Value.ToString())
-                //    );   // メーカー（文字列→　列挙型）
-
-                //var mk = (Maintenance.MakerGroup)
-                //    Enum.Parse(typeof(CarReport.MakerGroup), dgvMaintenance.CurrentRow.Cells[3].Value.ToString());
-                //setMakerRadioButton(mk);
-
                 Namecb.Text = dgvMaintenance.CurrentRow.Cells[3].Value.ToString();
                 Distancetb.Text = dgvMaintenance.CurrentRow.Cells[4].Value.ToString();
-                Destinationtb.Text = dgvMaintenance.CurrentRow.Cells[5].Value.ToString();
-                Peopletb.Text = dgvMaintenance.CurrentRow.Cells[6].Value.ToString();
-                Costtb.Text = dgvMaintenance.CurrentRow.Cells[7].Value.ToString();
-                Costtb.Text = dgvMaintenance.CurrentRow.Cells[7].Value.ToString();
+                Exhausttb.Text = dgvMaintenance.CurrentRow.Cells[5].Value.ToString();
+                inspectiontb.Text = dgvMaintenance.CurrentRow.Cells[6].Value.ToString();
+
+                setMakerRadioButton((Mc.MakerGroup)Enum.Parse(typeof(Mc.MakerGroup)
+                  , dgvMaintenance.CurrentRow.Cells[7].Value.ToString()));    // メーカー（文字列→　列挙型）
+                //var mk = (Maintenance.MakerGroup)
+                //    Enum.Parse(typeof(CarReport.MakerGroup), dgvMaintenance.CurrentRow.Cells[3].Value.ToString());
+                //setMakerRadioButton(mk)
+
+                cbOverview.Text = dgvMaintenance.CurrentRow.Cells[8].Value.ToString();
+                tbDetail.Text = dgvMaintenance.CurrentRow.Cells[9].Value.ToString();
                 ssErrerLavel.Text = "";
             }
             catch (InvalidCastException)
