@@ -29,6 +29,7 @@ namespace Ex1
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -48,19 +49,37 @@ namespace Ex1
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.Distancetb = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.inspectiontb = new System.Windows.Forms.TextBox();
+            this.Exhausttb = new System.Windows.Forms.TextBox();
             this.Namecb = new System.Windows.Forms.ComboBox();
             this.Backbt = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.cbAuthor = new System.Windows.Forms.ComboBox();
             this.dgvMaintenance = new System.Windows.Forms.DataGridView();
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.createdDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.autherDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.carNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.distanceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.exhaustDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.inspectionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.makerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.outlineDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.detailsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaintenanceBS = new System.Windows.Forms.BindingSource(this.components);
+            this.infosys202119Maintenance = new Ex1.infosys202119DataSet();
             this.btnewAdd = new System.Windows.Forms.Button();
             this.maintenanceTableAdapter1 = new Ex1.infosys202119DataSetTableAdapters.MaintenanceTableAdapter();
-            this.infosys202119Maintenance = new Ex1.infosys202119DataSet();
+            this.tableAdapterManager1 = new Ex1.infosys202119DataSetTableAdapters.TableAdapterManager();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.ssErrerLavel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tbAuthor = new System.Windows.Forms.TextBox();
             this.gbMaker.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMaintenance)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MaintenanceBS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.infosys202119Maintenance)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dtpDate
@@ -280,21 +299,21 @@ namespace Ex1
             this.Distancetb.Size = new System.Drawing.Size(212, 22);
             this.Distancetb.TabIndex = 8;
             // 
-            // textBox3
+            // inspectiontb
             // 
-            this.textBox3.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.textBox3.Location = new System.Drawing.Point(370, 95);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(212, 22);
-            this.textBox3.TabIndex = 8;
+            this.inspectiontb.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.inspectiontb.Location = new System.Drawing.Point(370, 95);
+            this.inspectiontb.Name = "inspectiontb";
+            this.inspectiontb.Size = new System.Drawing.Size(212, 22);
+            this.inspectiontb.TabIndex = 8;
             // 
-            // textBox4
+            // Exhausttb
             // 
-            this.textBox4.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.textBox4.Location = new System.Drawing.Point(71, 95);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(212, 22);
-            this.textBox4.TabIndex = 9;
+            this.Exhausttb.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.Exhausttb.Location = new System.Drawing.Point(71, 95);
+            this.Exhausttb.Name = "Exhausttb";
+            this.Exhausttb.Size = new System.Drawing.Size(212, 22);
+            this.Exhausttb.TabIndex = 9;
             // 
             // Namecb
             // 
@@ -310,7 +329,6 @@ namespace Ex1
             this.Namecb.Name = "Namecb";
             this.Namecb.Size = new System.Drawing.Size(212, 23);
             this.Namecb.TabIndex = 10;
-            this.Namecb.SelectedIndexChanged += new System.EventHandler(this.Namecb_SelectedIndexChanged);
             // 
             // Backbt
             // 
@@ -333,29 +351,100 @@ namespace Ex1
             this.label7.TabIndex = 1;
             this.label7.Text = "記入者";
             // 
-            // cbAuthor
-            // 
-            this.cbAuthor.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.cbAuthor.FormattingEnabled = true;
-            this.cbAuthor.Items.AddRange(new object[] {
-            "ZRX1200r",
-            "XL1200r",
-            "ZZR250",
-            "XV250ビラーゴ",
-            "エリミネーター125"});
-            this.cbAuthor.Location = new System.Drawing.Point(370, 28);
-            this.cbAuthor.Name = "cbAuthor";
-            this.cbAuthor.Size = new System.Drawing.Size(212, 23);
-            this.cbAuthor.TabIndex = 11;
-            // 
             // dgvMaintenance
             // 
+            this.dgvMaintenance.AllowUserToAddRows = false;
+            this.dgvMaintenance.AutoGenerateColumns = false;
             this.dgvMaintenance.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMaintenance.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDDataGridViewTextBoxColumn,
+            this.createdDateDataGridViewTextBoxColumn,
+            this.autherDataGridViewTextBoxColumn,
+            this.carNameDataGridViewTextBoxColumn,
+            this.distanceDataGridViewTextBoxColumn,
+            this.exhaustDataGridViewTextBoxColumn,
+            this.inspectionDataGridViewTextBoxColumn,
+            this.makerDataGridViewTextBoxColumn,
+            this.outlineDataGridViewTextBoxColumn,
+            this.detailsDataGridViewTextBoxColumn});
+            this.dgvMaintenance.DataSource = this.MaintenanceBS;
             this.dgvMaintenance.Location = new System.Drawing.Point(12, 384);
             this.dgvMaintenance.Name = "dgvMaintenance";
             this.dgvMaintenance.RowTemplate.Height = 21;
             this.dgvMaintenance.Size = new System.Drawing.Size(568, 193);
             this.dgvMaintenance.TabIndex = 12;
+            this.dgvMaintenance.SelectionChanged += new System.EventHandler(this.dgvMaintenance_SelectionChanged);
+            // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // createdDateDataGridViewTextBoxColumn
+            // 
+            this.createdDateDataGridViewTextBoxColumn.DataPropertyName = "CreatedDate";
+            this.createdDateDataGridViewTextBoxColumn.HeaderText = "CreatedDate";
+            this.createdDateDataGridViewTextBoxColumn.Name = "createdDateDataGridViewTextBoxColumn";
+            // 
+            // autherDataGridViewTextBoxColumn
+            // 
+            this.autherDataGridViewTextBoxColumn.DataPropertyName = "Auther";
+            this.autherDataGridViewTextBoxColumn.HeaderText = "Auther";
+            this.autherDataGridViewTextBoxColumn.Name = "autherDataGridViewTextBoxColumn";
+            // 
+            // carNameDataGridViewTextBoxColumn
+            // 
+            this.carNameDataGridViewTextBoxColumn.DataPropertyName = "CarName";
+            this.carNameDataGridViewTextBoxColumn.HeaderText = "CarName";
+            this.carNameDataGridViewTextBoxColumn.Name = "carNameDataGridViewTextBoxColumn";
+            // 
+            // distanceDataGridViewTextBoxColumn
+            // 
+            this.distanceDataGridViewTextBoxColumn.DataPropertyName = "Distance";
+            this.distanceDataGridViewTextBoxColumn.HeaderText = "Distance";
+            this.distanceDataGridViewTextBoxColumn.Name = "distanceDataGridViewTextBoxColumn";
+            // 
+            // exhaustDataGridViewTextBoxColumn
+            // 
+            this.exhaustDataGridViewTextBoxColumn.DataPropertyName = "Exhaust";
+            this.exhaustDataGridViewTextBoxColumn.HeaderText = "Exhaust";
+            this.exhaustDataGridViewTextBoxColumn.Name = "exhaustDataGridViewTextBoxColumn";
+            // 
+            // inspectionDataGridViewTextBoxColumn
+            // 
+            this.inspectionDataGridViewTextBoxColumn.DataPropertyName = "Inspection";
+            this.inspectionDataGridViewTextBoxColumn.HeaderText = "Inspection";
+            this.inspectionDataGridViewTextBoxColumn.Name = "inspectionDataGridViewTextBoxColumn";
+            // 
+            // makerDataGridViewTextBoxColumn
+            // 
+            this.makerDataGridViewTextBoxColumn.DataPropertyName = "Maker";
+            this.makerDataGridViewTextBoxColumn.HeaderText = "Maker";
+            this.makerDataGridViewTextBoxColumn.Name = "makerDataGridViewTextBoxColumn";
+            // 
+            // outlineDataGridViewTextBoxColumn
+            // 
+            this.outlineDataGridViewTextBoxColumn.DataPropertyName = "Outline";
+            this.outlineDataGridViewTextBoxColumn.HeaderText = "Outline";
+            this.outlineDataGridViewTextBoxColumn.Name = "outlineDataGridViewTextBoxColumn";
+            // 
+            // detailsDataGridViewTextBoxColumn
+            // 
+            this.detailsDataGridViewTextBoxColumn.DataPropertyName = "Details";
+            this.detailsDataGridViewTextBoxColumn.HeaderText = "Details";
+            this.detailsDataGridViewTextBoxColumn.Name = "detailsDataGridViewTextBoxColumn";
+            // 
+            // MaintenanceBS
+            // 
+            this.MaintenanceBS.DataMember = "Maintenance";
+            this.MaintenanceBS.DataSource = this.infosys202119Maintenance;
+            // 
+            // infosys202119Maintenance
+            // 
+            this.infosys202119Maintenance.DataSetName = "infosys202119DataSet";
+            this.infosys202119Maintenance.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btnewAdd
             // 
@@ -372,22 +461,52 @@ namespace Ex1
             // 
             this.maintenanceTableAdapter1.ClearBeforeFill = true;
             // 
-            // infosys202119Maintenance
+            // tableAdapterManager1
             // 
-            this.infosys202119Maintenance.DataSetName = "infosys202119DataSet";
-            this.infosys202119Maintenance.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.tableAdapterManager1.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager1.MaintenanceTableAdapter = this.maintenanceTableAdapter1;
+            this.tableAdapterManager1.UpdateOrder = Ex1.infosys202119DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ssErrerLavel});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 622);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(592, 22);
+            this.statusStrip1.TabIndex = 13;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // ssErrerLavel
+            // 
+            this.ssErrerLavel.Name = "ssErrerLavel";
+            this.ssErrerLavel.Size = new System.Drawing.Size(118, 17);
+            this.ssErrerLavel.Text = "toolStripStatusLabel1";
+            // 
+            // tbAuthor
+            // 
+            this.tbAuthor.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.tbAuthor.Location = new System.Drawing.Point(370, 26);
+            this.tbAuthor.Name = "tbAuthor";
+            this.tbAuthor.Size = new System.Drawing.Size(212, 22);
+            this.tbAuthor.TabIndex = 8;
             // 
             // Maintenance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(592, 627);
+            this.ClientSize = new System.Drawing.Size(592, 644);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.dgvMaintenance);
-            this.Controls.Add(this.cbAuthor);
             this.Controls.Add(this.Namecb);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.Exhausttb);
+            this.Controls.Add(this.inspectiontb);
+            this.Controls.Add(this.tbAuthor);
             this.Controls.Add(this.Distancetb);
             this.Controls.Add(this.btnewAdd);
             this.Controls.Add(this.Backbt);
@@ -407,11 +526,14 @@ namespace Ex1
             this.Controls.Add(this.dtpDate);
             this.Name = "Maintenance";
             this.Text = "整備";
-            this.Load += new System.EventHandler(this.Seibi_Load);
+            this.Load += new System.EventHandler(this.Maintenance_Load);
             this.gbMaker.ResumeLayout(false);
             this.gbMaker.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMaintenance)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MaintenanceBS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.infosys202119Maintenance)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -438,16 +560,32 @@ namespace Ex1
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox Distancetb;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox inspectiontb;
+        private System.Windows.Forms.TextBox Exhausttb;
         private System.Windows.Forms.ComboBox Namecb;
         private System.Windows.Forms.Button Backbt;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox cbAuthor;
         private System.Windows.Forms.DataGridView dgvMaintenance;
         private System.Windows.Forms.Button btnewAdd;
         private infosys202119DataSetTableAdapters.MaintenanceTableAdapter maintenanceTableAdapter1;
         private infosys202119DataSet infosys202119Maintenance;
+        private infosys202119DataSetTableAdapters.TableAdapterManager tableAdapterManager1;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.BindingSource MaintenanceBS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn createdDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn autherDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn carNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn distanceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn exhaustDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn inspectionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn makerDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn outlineDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn detailsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ToolStripStatusLabel ssErrerLavel;
+        private System.Windows.Forms.TextBox tbAuthor;
     }
 }
 

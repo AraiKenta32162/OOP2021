@@ -26,7 +26,7 @@ namespace Ex1
         private void Tooling_Load(object sender, EventArgs e)
         {
             dgvTooling.Columns[0].Visible = false;
-            dgvTooling.Columns[1].HeaderText = "日付";  //"ID";    
+            dgvTooling.Columns[1].HeaderText = "日付";
             dgvTooling.Columns[2].HeaderText = "記録者";
             dgvTooling.Columns[3].HeaderText = "車両名";
             dgvTooling.Columns[4].HeaderText = "距離";
