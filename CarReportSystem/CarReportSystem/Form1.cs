@@ -148,8 +148,10 @@ namespace CarReportSystem
                 ssErrerLavel.Text = "";
                 dtpDate.Value = (DateTime)dgvRegistData.CurrentRow.Cells[1].Value;                       //日付
                 cbAuthor.Text = dgvRegistData.CurrentRow.Cells[2].Value.ToString();                      //記録者
+                /***/
                 //setMakerRadioButton((CarReport.MakerGroup)Enum.Parse(typeof(CarReport.MakerGroup)
-                //,carReportDataGridView.CurrentRow.Cells[3].Value.ToString()));                                   //メーカー(文字列→列挙型)
+                //, carReportDataGridView.CurrentRow.Cells[3].Value.ToString()));                          //メーカー(文字列→列挙型)
+                /***/
                 cbCarName.Text = dgvRegistData.CurrentRow.Cells[4].Value.ToString();                     //車名
                 tbReport.Text = dgvRegistData.CurrentRow.Cells[5].Value.ToString();                      //レポート
 
