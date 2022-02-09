@@ -25,6 +25,8 @@ namespace Ex1
 
         private void Tooling_Load(object sender, EventArgs e)
         {
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+
             dgvTooling.Columns[0].Visible = false;
             dgvTooling.Columns[1].HeaderText = "日付";
             dgvTooling.Columns[2].HeaderText = "記録者";
@@ -109,7 +111,6 @@ namespace Ex1
             if (!tbAuthor.Text.Contains(author))
                 tbAuthor.Text.Contains(author);
         }
-
         public void setNameCb(string text)
         {
             if (!Namecb.Items.Contains(text))
@@ -117,20 +118,14 @@ namespace Ex1
                 Namecb.Items.Add(text);
             }
         }
+
         private void dgvTooling_SelectionChanged(object sender, EventArgs e)
         {
             if (dgvTooling.CurrentRow == null) return;
             try
             {
                 dtpDate.Value = (DateTime)dgvTooling.CurrentRow.Cells[1].Value;//日付
-                tbAuthor.Text = dgvTooling.CurrentRow.Cells[2].Value.ToString();
-                //setMakerRadioButton((CarReport.MakerGroup)
-                //    Enum.Parse(typeof(CarReport.MakerGroup),carReportDataGridView.CurrentRow.Cells[3].Value.ToString())
-                //    );   // メーカー（文字列→　列挙型）
-
-                //var mk = (CarReport.MakerGroup)
-                //    Enum.Parse(typeof(CarReport.MakerGroup), dgvTooling.CurrentRow.Cells[3].Value.ToString());
-                //setMakerRadioButton(mk);
+                tbAuthor.Text = dgvTooling.CurrentRow.Cells[2].Value.ToString();                
                 Namecb.Text = dgvTooling.CurrentRow.Cells[3].Value.ToString();
                 Distancetb.Text = dgvTooling.CurrentRow.Cells[4].Value.ToString();
                 Destinationtb.Text = dgvTooling.CurrentRow.Cells[5].Value.ToString();
@@ -170,7 +165,7 @@ namespace Ex1
             newDrv[5] = Destinationtb.Text;
             newDrv[6] = Peopletb.Text;
             newDrv[7] = Costtb.Text;
-            newDrv[8] = pbPicture.Image;
+            newDrv[8] = ImageToByteArray(pbPicture.Image);
             //データセットに新しいレコードを追加
             infosys202119Touring.Touring.Rows.Add(newDrv);
             //データベース更新
@@ -183,13 +178,15 @@ namespace Ex1
             Destinationtb.Text = "";
             Peopletb.Text = "";
             Costtb.Text = "";
-            pbPicture.Image = null;
+            pbPicture.Image = pbPicture.Image;
         }
 
         private void btDelete_Click(object sender, EventArgs e)
         {
-            //選択行の取り出し
             DataRowView drv = (DataRowView)TouringViewSource.View.CurrentItem;
+            //MakerTextBox.Text = drv.Row[3].ToString();
+            //選択行の取り出し
+            DataRowView newDrv = (DataRowView)TouringViewSource.View.CurrentItem;
             //選択されたレコードの削除
             drv.Delete();
             //データベース更新

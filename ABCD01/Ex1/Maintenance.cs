@@ -159,6 +159,7 @@ namespace Ex1
 
             ssErrerLavel.Text = "";
             this.maintenanceTableAdapter1.Fill(this.infosys202119Maintenance.Maintenance);
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
 
         private void dgvMaintenance_SelectionChanged(object sender, EventArgs e)

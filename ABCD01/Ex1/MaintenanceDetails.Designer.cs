@@ -31,8 +31,6 @@ namespace Ex1
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MaintenanceDetails));
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.Displaybt = new System.Windows.Forms.Button();
             this.dgvMaintenanceData = new System.Windows.Forms.DataGridView();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,7 +46,6 @@ namespace Ex1
             this.maintenanceBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.infosys202119Maintenance = new Ex1.infosys202119DataSet();
             this.Backbt = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.ofdPictureOpen = new System.Windows.Forms.OpenFileDialog();
             this.sfdFileSave = new System.Windows.Forms.SaveFileDialog();
             this.ofdFileOpen = new System.Windows.Forms.OpenFileDialog();
@@ -73,31 +70,6 @@ namespace Ex1
             this.bindingNavigator1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // comboBox1
-            // 
-            this.comboBox1.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "ZRX1200r",
-            "XL1200r",
-            "ZZR250",
-            "XV250ビラーゴ",
-            "エリミネーター125"});
-            this.comboBox1.Location = new System.Drawing.Point(104, 42);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(212, 32);
-            this.comboBox1.TabIndex = 14;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label2.Location = new System.Drawing.Point(16, 45);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 24);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "車両名";
-            // 
             // Displaybt
             // 
             this.Displaybt.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
@@ -111,6 +83,9 @@ namespace Ex1
             // 
             // dgvMaintenanceData
             // 
+            this.dgvMaintenanceData.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvMaintenanceData.AutoGenerateColumns = false;
             this.dgvMaintenanceData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMaintenanceData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -212,17 +187,6 @@ namespace Ex1
             this.Backbt.Text = "戻る";
             this.Backbt.UseVisualStyleBackColor = true;
             this.Backbt.Click += new System.EventHandler(this.Backbt_Click);
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("MS UI Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.checkBox1.Location = new System.Drawing.Point(332, 43);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(139, 31);
-            this.checkBox1.TabIndex = 19;
-            this.checkBox1.Text = "全車表示";
-            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // ofdPictureOpen
             // 
@@ -362,12 +326,10 @@ namespace Ex1
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(973, 610);
             this.Controls.Add(this.bindingNavigator1);
-            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.dgvMaintenanceData);
             this.Controls.Add(this.Backbt);
             this.Controls.Add(this.Displaybt);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MaintenanceDetails";
             this.Text = "MaintenanceDetails";
             this.Load += new System.EventHandler(this.MaintenanceDetails_Load);
@@ -383,12 +345,9 @@ namespace Ex1
         }
 
         #endregion
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button Displaybt;
         private System.Windows.Forms.DataGridView dgvMaintenanceData;
         private System.Windows.Forms.Button Backbt;
-        private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.OpenFileDialog ofdPictureOpen;
         private System.Windows.Forms.SaveFileDialog sfdFileSave;
         private System.Windows.Forms.OpenFileDialog ofdFileOpen;
