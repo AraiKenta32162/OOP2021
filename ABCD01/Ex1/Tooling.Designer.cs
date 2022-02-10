@@ -382,6 +382,7 @@ namespace Ex1
             this.dgvTooling.RowTemplate.Height = 21;
             this.dgvTooling.Size = new System.Drawing.Size(545, 191);
             this.dgvTooling.TabIndex = 24;
+            this.dgvTooling.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvTooling_DataError);
             this.dgvTooling.SelectionChanged += new System.EventHandler(this.dgvTooling_SelectionChanged);
             // 
             // iDDataGridViewTextBoxColumn

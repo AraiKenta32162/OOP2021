@@ -61,5 +61,10 @@ namespace Ex1
         {
             this.touringTableAdapter.Fill(this.infosys202119Touring.Touring);
         }
+
+        private void dgvTouringData_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+
+        }
     }
 }

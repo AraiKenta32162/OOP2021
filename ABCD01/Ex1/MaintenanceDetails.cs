@@ -58,12 +58,4 @@ namespace Ex1
             _maintenanceInstance.tbDetail.Text = selectedMc.Details;
         }
     }
-}/*dtpDate.Value;
-  *tbAuthor.Text;
-   Namecb.Text;
-   Distancetb.Text;
-   Exhausttb.Text;
-   inspectiontb.Text;
-   selectedGroup();
-   cbOverview.Text;
-   tbDetail.Text; */
+}

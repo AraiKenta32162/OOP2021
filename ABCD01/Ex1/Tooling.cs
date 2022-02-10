@@ -67,7 +67,7 @@ namespace Ex1
         public void TouringAddbt_Click(object sender, EventArgs e)
         {
             //同じ言葉が保存されてしまう。
-            Namecb.Items.Add(Namecb.Text);
+            //Namecb.Items.Add(Namecb.Text);
 
             if (dgvTooling.CurrentRow == null) return;
             dgvTooling.Columns[0].Visible = false;
@@ -88,7 +88,7 @@ namespace Ex1
             this.touringBindingSource.EndEdit();
             this.tableAdapterManager1.UpdateAll(this.infosys202119Touring);
 
-            MessageBox.Show("保存しました。");                                
+            MessageBox.Show("保存しました。");
 
         }
 
@@ -125,7 +125,7 @@ namespace Ex1
             try
             {
                 dtpDate.Value = (DateTime)dgvTooling.CurrentRow.Cells[1].Value;//日付
-                tbAuthor.Text = dgvTooling.CurrentRow.Cells[2].Value.ToString();                
+                tbAuthor.Text = dgvTooling.CurrentRow.Cells[2].Value.ToString();
                 Namecb.Text = dgvTooling.CurrentRow.Cells[3].Value.ToString();
                 Distancetb.Text = dgvTooling.CurrentRow.Cells[4].Value.ToString();
                 Destinationtb.Text = dgvTooling.CurrentRow.Cells[5].Value.ToString();
@@ -166,6 +166,7 @@ namespace Ex1
             newDrv[6] = Peopletb.Text;
             newDrv[7] = Costtb.Text;
             newDrv[8] = ImageToByteArray(pbPicture.Image);
+
             //データセットに新しいレコードを追加
             infosys202119Touring.Touring.Rows.Add(newDrv);
             //データベース更新
@@ -191,6 +192,11 @@ namespace Ex1
             drv.Delete();
             //データベース更新
             touringTableAdapter1.Update(infosys202119Touring.Touring);
+        }
+
+        private void dgvTooling_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+
         }
     }
 }
